@@ -146,13 +146,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="Content\bootstrap\dist\css\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap\dist\css\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap\dist\css\bootstrap.css" />
-    <Content Include="Content\bootstrap\dist\css\bootstrap.min.css" />
-    <Content Include="Content\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\bootstrap\dist\js\bootstrap.js" />
-    <Content Include="Content\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Content\Bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Content\Bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Content\Bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Content\Bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Content\Bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Content\Bootstrap\dist\js\bootstrap.min.js" />
     <Content Include="Content\Images\01.jpg" />
     <Content Include="Content\Images\02.jpg" />
     <Content Include="Content\Images\03.jpg" />
@@ -179,19 +179,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Mvc.sitemap" />
-    <Content Include="Content\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
     <None Include="MvcSiteMapSchema.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\barryarnott-uat - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\barryarnott-uat - Web Deploy.pubxml" />
-    <Content Include="Views\Image\Display.cshtml" />
+    <Content Include="Views\Image\DisplaySpecific.cshtml" />
     <Content Include="Views\Image\Create.cshtml" />
     <Content Include="Views\Shared\_ImageGallery.cshtml" />
     <Content Include="Views\Image\Index.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
@@ -205,6 +204,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Image\Delete.cshtml" />
     <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Image\DisplayAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201311222112254_InitialCreate.resx">

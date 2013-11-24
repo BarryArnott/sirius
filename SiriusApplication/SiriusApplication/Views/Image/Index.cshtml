@@ -1,7 +1,11 @@
 ﻿@{
-    ViewBag.Title = "All Photos";
+    ViewBag.Title = "Welcome to Barry's image sharing";
 }
 
-<h2>All Photos</h2>
+<p>
+    Welcome to Barry's Images.
+</p>
 
-@Html.Action("_ImageGallery", "Image")
+<h2>Latest Images</h2>
+
+@Html.Action("_ImageGallery", "Image", new { number = 3 })

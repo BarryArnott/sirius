@@ -50,7 +50,13 @@ namespace SiriusApplication.Controllers
             return PartialView("_ImageGallery", images);
         }
 
-        public ActionResult Display (int id)
+        public ActionResult DisplayAll()
+        {
+            return View("Index");
+        }
+
+
+        public ActionResult DisplayById (int id)
         {
             Image image = context.FindImageById(id);
 
@@ -59,7 +65,7 @@ namespace SiriusApplication.Controllers
                 return HttpNotFound();
             }
 
-            return View("Display", image);
+            return View("DisplaySpecific", image);
         }
 
         public ActionResult DisplayByTitle(string title)
@@ -69,7 +75,7 @@ namespace SiriusApplication.Controllers
             {
                 return HttpNotFound();
             }
-            return View("Display", image);
+            return View("DisplaySpecific", image);
         }
 
         public ActionResult Create()

@@ -14,9 +14,9 @@ namespace SiriusApplication
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "ImageRoute",
+                name: "ImageIdRoute",
                 url: "Image/{id}",
-                defaults: new { controller = "Image", action = "Display" },
+                defaults: new { controller = "Image", action = "DisplayById" },
                 constraints: new { id = "[0-9]+" }
             );
 

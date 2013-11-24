@@ -35,7 +35,7 @@ namespace SiriusTests
 
             Assert.IsNotNull(routeData);
             Assert.AreEqual("Image", routeData.Values["controller"]);
-            Assert.AreEqual("Display", routeData.Values["action"]);
+            Assert.AreEqual("DisplayById", routeData.Values["action"]);
             Assert.AreEqual("2", routeData.Values["id"]);
         }
 
