@@ -1,23 +1,7 @@
 ﻿@{
-    Layout = null;
+    ViewBag.Title = "All Photos";
 }
 
-<!DOCTYPE html>
+<h2>All Photos</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>All Images</title>
-</head>
-<body>
-    <div>
-        <h2>All Images</h2>
-        
-        <p>
-            @Html.ActionLink("Add an image", "Create", "Image")
-        </p>
-        
-        @Html.Action("_ImageGallery", "Image")
-    </div>
-</body>
-</html>
+@Html.Action("_ImageGallery", "Image")

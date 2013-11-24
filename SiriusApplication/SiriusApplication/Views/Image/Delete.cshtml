@@ -1,0 +1,36 @@
+﻿@model SiriusApplication.Models.Image
+
+@{
+    ViewBag.Title = "Delete Image: " + Model.Title;
+}
+
+<h2>Delete Image: "@Model.Title"</h2>
+
+<p>Are you sure you want to delete this image?</p>
+
+@using (Html.BeginForm("Delete", "Image", FormMethod.Post))
+{
+    <div class="photo-display">
+        <img width="200" src="@Url.Action("GetImage", "Image", new { id = Model.ImageID })" />
+    </div>
+            
+    <div class="photo-description">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="photo-metadata">
+        <div>
+            <span class="display-label">
+                @Html.DisplayNameFor(model => model.CreatedDate):
+            </span>
+            <span class="display-field">
+                @Html.DisplayFor(model => model.CreatedDate)
+            </span>
+        </div>
+    </div>
+
+    <p>
+        <input type="submit" value="Delete" />
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,33 +1,36 @@
 ﻿@model SiriusApplication.Models.Image
 
 @{
-    Layout = null;
+    ViewBag.Title = Model.Title;
 }
 
-<!DOCTYPE html>
+<h2>"@Model.Title"</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Image: @Model.Title </title>
-</head>
-<body>
-    <div>
-        <h2>"@Model.Title"</h2>
+@if (Model.ImageFile != null)
+{
+    <div class="photo-display">
         <img width="800" src="@Url.Action("GetImage", "Image", new { id = Model.ImageID })" />
-
-        <p>
-            @Html.DisplayFor(model => model.Description)
-        </p>
-
-        <p>
-            @Html.DisplayNameFor(model => model.CreatedDate):
-            @Html.DisplayFor(model => model.CreatedDate)
-        </p>
-
-        <p>
-            @Html.ActionLink("Back to List", "Index")
-        </p>
     </div>
-</body>
-</html>
+}
+
+<div class="photo-description">
+    @Html.DisplayFor(model => model.Description)
+</div>
+
+<div class="photo-metadata">
+
+    <div>
+        <span class="display-label">
+            @Html.DisplayNameFor(model => model.CreatedDate):
+        </span>
+        <span class="display-field">
+            @Html.DisplayFor(model => model.CreatedDate)
+        </span>
+    </div>
+
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Delete This Photo", "Delete", new { id = Model.ImageID })
+</p>
