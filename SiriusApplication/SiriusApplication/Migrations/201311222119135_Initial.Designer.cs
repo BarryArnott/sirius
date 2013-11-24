@@ -11,7 +11,7 @@ namespace SiriusApplication.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201311102115034_Initial"; }
+            get { return "201311222119135_Initial"; }
         }
         
         string IMigrationMetadata.Source

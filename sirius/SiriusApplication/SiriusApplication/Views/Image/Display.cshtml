@@ -1,0 +1,33 @@
+﻿@model SiriusApplication.Models.Image
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Image: @Model.Title </title>
+</head>
+<body>
+    <div>
+        <h2>"@Model.Title"</h2>
+        <img width="800" src="@Url.Action("GetImage", "Image", new { id = Model.ImageID })" />
+
+        <p>
+            @Html.DisplayFor(model => model.Description)
+        </p>
+
+        <p>
+            @Html.DisplayNameFor(model => model.CreatedDate):
+            @Html.DisplayFor(model => model.CreatedDate)
+        </p>
+
+        <p>
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</body>
+</html>

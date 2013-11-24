@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Welcome to Barry's Images</title>
+</head>
+<body>
+    <div>
+        <p>
+            Welcome to Barry's Images.
+        </p>
+        
+        <h2>Latest Images</h2>
+        
+        @Html.Action("_ImageGallery", "Image", new { number = 3 })
+    </div>
+</body>
+</html>
