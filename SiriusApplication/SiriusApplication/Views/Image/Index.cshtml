@@ -2,10 +2,38 @@
     ViewBag.Title = "Welcome to Barry's image sharing";
 }
 
-<p>
-    Welcome to Barry's Images.
-</p>
+<div class="container-content">
+    <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#imageCarousel" data-slide-to="1"></li>
+            <li data-target="#imageCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="../../Content/Images/01.jpg" class="img-responsive" />
+            </div>
+            <div class="item">
+                <img src="../../Content/Images/02.jpg" class="img-responsive" />
+            </div>
+            <div class="item">
+                <img src="../../Content/Images/03.jpg" class="img-responsive" />
+            </div>
+        </div>
+        <!-- next and prev navigation -->
+        <a class="left carousel-control" href="#imageCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#imageCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
 
-<h2>Latest Images</h2>
+    <p>
+        Welcome to Barry's Images.
+    </p>
 
-@Html.Action("_ImageGallery", "Image", new { number = 3 })
+    <h2>Latest Images</h2>
+
+    @Html.Action("_ImageGallery", "Image", new { number = 3 })
+</div>
