@@ -1,15 +1,15 @@
 ﻿using System.Web.Mvc;
+using SiriusApplication.Utils;
 
 namespace SiriusApplication.Controllers
 {
+    [ValueReporter]
+    [HandleError(View = "Error")]
     public class HomeController : Controller
     {
-        //
-        // GET: /Home/
-
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
     }

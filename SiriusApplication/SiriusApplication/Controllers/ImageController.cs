@@ -55,7 +55,6 @@ namespace SiriusApplication.Controllers
             return View("Index");
         }
 
-
         public ActionResult DisplayById (int id)
         {
             Image image = context.FindImageById(id);
@@ -147,11 +146,6 @@ namespace SiriusApplication.Controllers
             {
                 return null;
             }
-        }
-
-        public ActionResult SlideShow()
-        {
-            throw new NotImplementedException("The SlideShow action is not yet ready");
         }
     }
 }

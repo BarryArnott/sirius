@@ -57,6 +57,7 @@
     <Compile Include="ImageControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoutingTests.cs" />
+    <Compile Include="HomeControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SiriusApplication\SiriusApplication.csproj">
