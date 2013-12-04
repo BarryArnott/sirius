@@ -26,6 +26,25 @@ namespace SiriusApplication.Models
         {
             base.Seed(context);
 
+            var albums = new List<Album>
+            {
+                new Album {
+                    AlbumID = 1,
+                    Title = "Album 1",
+                    Description = "Yosemite and Space Shuttle",
+                    CreatedDate = DateTime.Today
+                },
+                new Album {
+                    AlbumID = 2,
+                    Title = "Album 2",
+                    Description = "Opportunity and Hubble",
+                    CreatedDate = DateTime.Today
+                }
+            };
+
+            albums.ForEach(s => context.Albums.Add(s));
+            context.SaveChanges();
+
             var images = new List<Image>
             {
                 new Image {
@@ -95,25 +114,6 @@ namespace SiriusApplication.Models
             };
 
             comments.ForEach(s => context.Comments.Add(s));
-            context.SaveChanges();
-
-            var albums = new List<Album>
-            {
-                new Album {
-                    AlbumID = 1,
-                    Title = "Album 1",
-                    Description = "Yosemite and Space Shuttle",
-                    CreatedDate = DateTime.Today
-                },
-                new Album {
-                    AlbumID = 2,
-                    Title = "Album 2",
-                    Description = "Opportunity and Hubble",
-                    CreatedDate = DateTime.Today
-                }
-            };
-
-            albums.ForEach(s => context.Albums.Add(s));
             context.SaveChanges();
         }
     }
