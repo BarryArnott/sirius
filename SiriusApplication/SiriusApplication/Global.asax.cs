@@ -19,7 +19,7 @@ namespace SiriusApplication
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             // uncomment to enable re-creation of database
-            //Database.SetInitializer<SiriusApplicationContext>(new SiriusApplicationInitializer());
+            Database.SetInitializer<SiriusApplicationContext>(new SiriusApplicationInitializer());
         }
     }
 }

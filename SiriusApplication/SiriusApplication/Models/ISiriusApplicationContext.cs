@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace SiriusApplication.Models
 {
@@ -10,9 +6,12 @@ namespace SiriusApplication.Models
     {
         IQueryable<Image> Images { get; }
         IQueryable<Comment> Comments { get; }
+        IQueryable<Album> Albums { get; }
 
         int SaveChanges();
         T Add<T>(T entity) where T : class;
+        Album FindAlbumById(int ID);
+        Album FindAlbumByTitle(string Title);
         Image FindImageById(int ID);
         Image FindImageByTitle(string Title);
         Comment FindCommentById(int ID);

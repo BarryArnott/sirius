@@ -12,6 +12,12 @@ namespace SiriusTests.Mocks
         //entity framework context in memory
         SetMap _map = new SetMap();
 
+        public IQueryable<Album> Albums
+        {
+            get { return _map.Get<Album>().AsQueryable(); }
+            set { _map.Use<Album>(value); }
+        }
+
         public IQueryable<Image> Images
         {
             get { return _map.Get<Image>().AsQueryable(); }
@@ -36,6 +42,24 @@ namespace SiriusTests.Mocks
         {
             _map.Get<T>().Add(entity);
             return entity;
+        }
+
+        public Album FindAlbumById(int ID)
+        {
+            Album item = (from p in this.Albums
+                          where p.AlbumID == ID
+                          select p).First();
+
+            return item;
+        }
+
+        public Album FindAlbumByTitle(string Title)
+        {
+            Album item = (from p in this.Albums
+                          where p.Title == Title
+                          select p).FirstOrDefault();
+
+            return item;
         }
 
         public Image FindImageById(int ID)

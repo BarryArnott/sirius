@@ -20,6 +20,12 @@ namespace SiriusApplication.Models
 
         public DbSet<Image> Images { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Album> Albums { get; set; }
+
+        IQueryable<Album> ISiriusApplicationContext.Albums
+        {
+            get { return Albums; }
+        }
 
         IQueryable<Image> ISiriusApplicationContext.Images
         {
@@ -39,6 +45,19 @@ namespace SiriusApplication.Models
         T ISiriusApplicationContext.Add<T>(T entity)
         {
             return Set<T>().Add(entity);
+        }
+
+        Album ISiriusApplicationContext.FindAlbumById(int ID)
+        {
+            return Set<Album>().Find(ID);
+        }
+
+        Album ISiriusApplicationContext.FindAlbumByTitle(string Title)
+        {
+            Album album = (from p in Set<Album>()
+                           where p.Title == Title
+                           select p).FirstOrDefault();
+            return album;
         }
 
         Image ISiriusApplicationContext.FindImageById(int ID)

@@ -29,6 +29,7 @@ namespace SiriusApplication.Models
             var images = new List<Image>
             {
                 new Image {
+                    AlbumID = 1,
                     Title = "Yosemite",
                     Description = "Yosemite 2011",
                     ImageFile = getFileBytes ("\\Content\\Images\\01.jpg"),
@@ -36,6 +37,7 @@ namespace SiriusApplication.Models
                     CreatedDate = DateTime.Today
                 },
                 new Image {
+                    AlbumID = 1,
                     Title = "Space Shuttle",
                     Description = "Launch of the space shuttle",
                     ImageFile = getFileBytes ("\\Content\\Images\\02.jpg"),
@@ -43,6 +45,7 @@ namespace SiriusApplication.Models
                     CreatedDate = DateTime.Today
                 },
                 new Image {
+                    AlbumID = 2,
                     Title = "Opportunity",
                     Description = "Opportunity rover on Mars",
                     ImageFile = getFileBytes ("\\Content\\Images\\03.jpg"),
@@ -50,6 +53,7 @@ namespace SiriusApplication.Models
                     CreatedDate = DateTime.Today
                 },
                 new Image {
+                    AlbumID = 2,
                     Title = "Hubble",
                     Description = "Hubble deep field",
                     ImageFile = getFileBytes ("\\Content\\Images\\04.jpg"),
@@ -91,6 +95,25 @@ namespace SiriusApplication.Models
             };
 
             comments.ForEach(s => context.Comments.Add(s));
+            context.SaveChanges();
+
+            var albums = new List<Album>
+            {
+                new Album {
+                    AlbumID = 1,
+                    Title = "Album 1",
+                    Description = "Yosemite and Space Shuttle",
+                    CreatedDate = DateTime.Today
+                },
+                new Album {
+                    AlbumID = 2,
+                    Title = "Album 2",
+                    Description = "Opportunity and Hubble",
+                    CreatedDate = DateTime.Today
+                }
+            };
+
+            albums.ForEach(s => context.Albums.Add(s));
             context.SaveChanges();
         }
     }

@@ -7,33 +7,37 @@ namespace SiriusApplication.Migrations
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.Images",
-                c => new
-                    {
-                        ImageID = c.Int(nullable: false, identity: true),
-                        Title = c.String(nullable: false),
-                        ImageFile = c.Binary(),
-                        ImageMimeType = c.String(),
-                        Description = c.String(),
-                        CreatedDate = c.DateTime(nullable: false),
-                    })
-                .PrimaryKey(t => t.ImageID);
-            
-            CreateTable(
-                "dbo.Comments",
-                c => new
-                    {
-                        CommentID = c.Int(nullable: false, identity: true),
-                        ImageID = c.Int(nullable: false),
-                        Subject = c.String(nullable: false, maxLength: 250),
-                        Body = c.String(),
-                    })
-                .PrimaryKey(t => t.CommentID)
-                .ForeignKey("dbo.Images", t => t.ImageID, cascadeDelete: true)
-                .Index(t => t.ImageID);
-            
         }
+
+        //public override void Up()
+        //{
+        //    CreateTable(
+        //        "dbo.Images",
+        //        c => new
+        //            {
+        //                ImageID = c.Int(nullable: false, identity: true),
+        //                Title = c.String(nullable: false),
+        //                ImageFile = c.Binary(),
+        //                ImageMimeType = c.String(),
+        //                Description = c.String(),
+        //                CreatedDate = c.DateTime(nullable: false),
+        //            })
+        //        .PrimaryKey(t => t.ImageID);
+            
+        //    CreateTable(
+        //        "dbo.Comments",
+        //        c => new
+        //            {
+        //                CommentID = c.Int(nullable: false, identity: true),
+        //                ImageID = c.Int(nullable: false),
+        //                Subject = c.String(nullable: false, maxLength: 250),
+        //                Body = c.String(),
+        //            })
+        //        .PrimaryKey(t => t.CommentID)
+        //        .ForeignKey("dbo.Images", t => t.ImageID, cascadeDelete: true)
+        //        .Index(t => t.ImageID);
+            
+        //}
         
         public override void Down()
         {
