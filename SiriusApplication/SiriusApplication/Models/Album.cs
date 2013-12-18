@@ -17,6 +17,9 @@ namespace SiriusApplication.Models
         [StringLength(250, ErrorMessage = "Maximum of 250 characters.")]
         public string Description { get; set; }
 
+        public byte[] AlbumCoverFile { get; set; }
+        public string AlbumCoverMimeType { get; set; }
+
         [DataType(DataType.DateTime)]
         [DisplayName("Created Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yy}")]

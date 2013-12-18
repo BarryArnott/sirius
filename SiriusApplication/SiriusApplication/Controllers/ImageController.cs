@@ -31,23 +31,42 @@ namespace SiriusApplication.Controllers
             return View("Index");
         }
 
+        //[ChildActionOnly]
+        //public ActionResult _ImageGallery(int number = 0)
+        //{
+        //    List<Image> images;
+        //    if (number == 0)
+        //    {
+        //        images = context.Images.ToList();
+        //    }
+        //    else
+        //    {
+        //        images = (
+        //        from p in context.Images
+        //        orderby p.CreatedDate descending
+        //        select p).Take(number).ToList();
+        //    }
+
+        //    return PartialView("_ImageGallery", images);
+        //}
+
         [ChildActionOnly]
-        public ActionResult _ImageGallery(int number = 0)
+        public ActionResult _AlbumGallery(int number = 0)
         {
-            List<Image> images;
+            List<Album> albums;
             if (number == 0)
             {
-                images = context.Images.ToList();
+                albums = context.Albums.ToList();
             }
             else
             {
-                images = (
-                from p in context.Images
+                albums = (
+                from p in context.Albums
                 orderby p.CreatedDate descending
                 select p).Take(number).ToList();
             }
 
-            return PartialView("_ImageGallery", images);
+            return PartialView("_AlbumGallery", albums);
         }
 
         public ActionResult DisplayAll()
@@ -141,6 +160,20 @@ namespace SiriusApplication.Controllers
             if (image != null)
             {
                 return File(image.ImageFile, image.ImageMimeType);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public FileContentResult GetAlbumCoverImage(int id)
+        {
+            Album album = context.FindAlbumCoverImageById(id);
+
+            if (album != null)
+            {
+                return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
             }
             else
             {

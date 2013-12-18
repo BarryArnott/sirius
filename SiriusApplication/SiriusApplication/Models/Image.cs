@@ -26,7 +26,6 @@ namespace SiriusApplication.Models
         [DisplayName("Created Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yy}")]
         public DateTime CreatedDate { get; set; }
-
         
         // relationship property
         public virtual ICollection<Comment> Comments { get; set; }

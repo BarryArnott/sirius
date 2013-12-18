@@ -8,16 +8,20 @@
             <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#imageCarousel" data-slide-to="1"></li>
             <li data-target="#imageCarousel" data-slide-to="2"></li>
+            <li data-target="#imageCarousel" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner">
             <div class="item active">
-                <img src="../../Content/Images/01.jpg" class="img-responsive" />
+                <img src="../../Content/Images/Carousel/60_RedBull_14072013.jpg" class="img-responsive" />
             </div>
             <div class="item">
-                <img src="../../Content/Images/02.jpg" class="img-responsive" />
+                <img src="../../Content/Images/Carousel/26_Greenwich_08062013.jpg" class="img-responsive" />
             </div>
             <div class="item">
-                <img src="../../Content/Images/03.jpg" class="img-responsive" />
+                <img src="../../Content/Images/Carousel/39_HeathrowWestTakeOff_12052013.jpg" class="img-responsive" />
+            </div>
+            <div class="item">
+                <img src="../../Content/Images/Carousel/01_LondonNightShoot_07122012-90.jpg" class="img-responsive" />
             </div>
         </div>
         <!-- next and prev navigation -->
@@ -29,11 +33,5 @@
         </a>
     </div>
 
-    <p>
-        Welcome to Barry's Images.
-    </p>
-
-    <h2>Latest Images</h2>
-
-    @Html.Action("_ImageGallery", "Image", new { number = 3 })
+    @Html.Action("_AlbumGallery", "Image", new { number = 3 })
 </div>

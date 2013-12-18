@@ -5,13 +5,18 @@ namespace SiriusApplication.Migrations
     
     public partial class AddedAlbumIDtoimagemodel : DbMigration
     {
+        //public override void Up()
+        //{
+        //    DropForeignKey("dbo.Images", "Album_AlbumID", "dbo.Albums");
+        //    DropIndex("dbo.Images", new[] { "Album_AlbumID" });
+        //    RenameColumn(table: "dbo.Images", name: "Album_AlbumID", newName: "AlbumID");
+        //    AddForeignKey("dbo.Images", "AlbumID", "dbo.Albums", "AlbumID", cascadeDelete: true);
+        //    CreateIndex("dbo.Images", "AlbumID");
+        //}
+
         public override void Up()
         {
-            DropForeignKey("dbo.Images", "Album_AlbumID", "dbo.Albums");
-            DropIndex("dbo.Images", new[] { "Album_AlbumID" });
-            RenameColumn(table: "dbo.Images", name: "Album_AlbumID", newName: "AlbumID");
-            AddForeignKey("dbo.Images", "AlbumID", "dbo.Albums", "AlbumID", cascadeDelete: true);
-            CreateIndex("dbo.Images", "AlbumID");
+            
         }
         
         public override void Down()

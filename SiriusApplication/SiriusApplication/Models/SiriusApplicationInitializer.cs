@@ -32,12 +32,16 @@ namespace SiriusApplication.Models
                     AlbumID = 1,
                     Title = "Album 1",
                     Description = "Yosemite and Space Shuttle",
+                    AlbumCoverFile = getFileBytes ("\\Content\\Images\\01.jpg"),
+                    AlbumCoverMimeType = "image/jpeg",
                     CreatedDate = DateTime.Today
                 },
                 new Album {
                     AlbumID = 2,
                     Title = "Album 2",
                     Description = "Opportunity and Hubble",
+                    AlbumCoverFile = getFileBytes ("\\Content\\Images\\02.jpg"),
+                    AlbumCoverMimeType = "image/jpeg",
                     CreatedDate = DateTime.Today
                 }
             };

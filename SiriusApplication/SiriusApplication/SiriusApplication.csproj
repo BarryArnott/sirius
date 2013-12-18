@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201312042114307_Added AlbumID to image model.Designer.cs">
       <DependentUpon>201312042114307_Added AlbumID to image model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312182202486_Updated Album Model.cs" />
+    <Compile Include="Migrations\201312182202486_Updated Album Model.Designer.cs">
+      <DependentUpon>201312182202486_Updated Album Model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -167,6 +171,10 @@
     <Content Include="Content\Images\02.jpg" />
     <Content Include="Content\Images\03.jpg" />
     <Content Include="Content\Images\04.jpg" />
+    <Content Include="Content\Images\Carousel\01_LondonNightShoot_07122012-90.jpg" />
+    <Content Include="Content\Images\Carousel\26_Greenwich_08062013.jpg" />
+    <Content Include="Content\Images\Carousel\39_HeathrowWestTakeOff_12052013.jpg" />
+    <Content Include="Content\Images\Carousel\60_RedBull_14072013.jpg" />
     <Content Include="Error.html" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -214,6 +222,7 @@
     <Content Include="Views\Shared\_MainLayout.cshtml" />
     <Content Include="Views\Image\DisplayAll.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_AlbumGallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201311222112254_InitialCreate.resx">
@@ -227,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312042114307_Added AlbumID to image model.resx">
       <DependentUpon>201312042114307_Added AlbumID to image model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312182202486_Updated Album Model.resx">
+      <DependentUpon>201312182202486_Updated Album Model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

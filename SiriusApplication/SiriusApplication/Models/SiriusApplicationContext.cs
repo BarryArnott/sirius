@@ -73,6 +73,11 @@ namespace SiriusApplication.Models
             return image;
         }
 
+        Album ISiriusApplicationContext.FindAlbumCoverImageById(int ID)
+        {
+            return Set<Album>().Find(ID);
+        }
+
         Comment ISiriusApplicationContext.FindCommentById(int ID)
         {
             return Set<Comment>().Find(ID);
