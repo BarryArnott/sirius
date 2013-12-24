@@ -22,69 +22,69 @@ namespace SiriusTests
             Assert.AreEqual("Index", result.ViewName);
         }
         
-        [TestMethod]
-        public void Test_ImageGallery_Model_Type()
-        {
-            var context = new FakeSiriusContext
-                {
-                    Images = new[]
-                        {
-                            new Image(),
-                            new Image(),
-                            new Image(),
-                            new Image()
-                        }.AsQueryable()
-                };
+        //[TestMethod]
+        //public void Test_ImageGallery_Model_Type()
+        //{
+        //    var context = new FakeSiriusContext
+        //        {
+        //            Images = new[]
+        //                {
+        //                    new Image(),
+        //                    new Image(),
+        //                    new Image(),
+        //                    new Image()
+        //                }.AsQueryable()
+        //        };
 
-            var controller = new ImageController(context);
-            var result = controller._ImageGallery() as PartialViewResult;
+        //    var controller = new ImageController(context);
+        //    var result = controller._ImageGallery() as PartialViewResult;
 
-            Assert.AreEqual(typeof(List<Image>), result.Model.GetType());
-        }
+        //    Assert.AreEqual(typeof(List<Image>), result.Model.GetType());
+        //}
 
-        [TestMethod]
-        public void Test_ImageGallery_No_Parameter()
-        {
-            var context = new FakeSiriusContext
-                {
-                    Images = new[]
-                        {
-                            new Image(),
-                            new Image(),
-                            new Image(),
-                            new Image(),
-                            new Image()
-                        }.AsQueryable()
-                };
+        //[TestMethod]
+        //public void Test_ImageGallery_No_Parameter()
+        //{
+        //    var context = new FakeSiriusContext
+        //        {
+        //            Images = new[]
+        //                {
+        //                    new Image(),
+        //                    new Image(),
+        //                    new Image(),
+        //                    new Image(),
+        //                    new Image()
+        //                }.AsQueryable()
+        //        };
 
-            var controller = new ImageController(context);
-            var result = controller._ImageGallery() as PartialViewResult;
-            var modelPhotos = (IEnumerable<Image>)result.Model;
+        //    var controller = new ImageController(context);
+        //    var result = controller._ImageGallery() as PartialViewResult;
+        //    var modelPhotos = (IEnumerable<Image>)result.Model;
 
-            Assert.AreEqual(5, modelPhotos.Count());
-        }
+        //    Assert.AreEqual(5, modelPhotos.Count());
+        //}
 
-        [TestMethod]
-        public void Test_ImageGallery_Int_Parameter()
-        {
-            var context = new FakeSiriusContext
-                {
-                    Images = new[]
-                        {
-                            new Image(),
-                            new Image(),
-                            new Image(),
-                            new Image(),
-                            new Image()
-                        }.AsQueryable()
-                };
+        //[TestMethod]
+        //public void Test_ImageGallery_Int_Parameter()
+        //{
+        //    var context = new FakeSiriusContext
+        //        {
+        //            Images = new[]
+        //                {
+        //                    new Image(),
+        //                    new Image(),
+        //                    new Image(),
+        //                    new Image(),
+        //                    new Image()
+        //                }.AsQueryable()
+        //        };
 
-            var controller = new ImageController(context);
-            var result = controller._ImageGallery(3) as PartialViewResult;
-            var modelImages = (IEnumerable<Image>)result.Model;
+        //    var controller = new ImageController(context);
+        //    var result = controller._ImageGallery(3) as PartialViewResult;
+        //    var modelImages = (IEnumerable<Image>)result.Model;
 
-            Assert.AreEqual(3, modelImages.Count());
-        }
+        //    Assert.AreEqual(3, modelImages.Count());
+        //}
 
         [TestMethod]
         public void Test_DisplayAll_Return_View()

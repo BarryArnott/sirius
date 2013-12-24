@@ -167,6 +167,7 @@ namespace SiriusApplication.Controllers
             }
         }
 
+        //Required to retrieve album cover image for album display
         public FileContentResult GetAlbumCoverImage(int id)
         {
             Album album = context.FindAlbumCoverImageById(id);

@@ -71,6 +71,15 @@ namespace SiriusTests.Mocks
             return item;
         }
 
+        public Album FindAlbumCoverImageById(int ID)
+        {
+            Album item = (from p in this.Albums
+                          where p.AlbumID == ID
+                          select p).First();
+
+            return item;
+        }
+
         public Image FindImageByTitle(string Title)
         {
             Image item = (from p in this.Images
