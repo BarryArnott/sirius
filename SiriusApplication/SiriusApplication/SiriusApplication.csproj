@@ -223,6 +223,7 @@
     <Content Include="Views\Image\DisplayAll.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_AlbumGallery.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\BootstrapNavBarHelperModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201311222112254_InitialCreate.resx">

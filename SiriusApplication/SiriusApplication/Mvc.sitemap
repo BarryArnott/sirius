@@ -3,9 +3,13 @@
             xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
             xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
 
-  <mvcSiteMapNode title="Home" controller="Home" action="Index">
-    <mvcSiteMapNode title="All Images" controller="Image" action="Index" key="AllImages"/>
-    <mvcSiteMapNode title="Create Image" controller="Image" action="Create" key="CreateImage" />
+  <mvcSiteMapNode title="Home" controller="Home" action="Index" key="Home">
+    <mvcSiteMapNode title="About" controller="About" action="Index" key="About"/>
+    <mvcSiteMapNode title="Contact" controller="Contact" action="Index" key="Contact"/>
+    <mvcSiteMapNode title="Hobbies &amp; Interests" clickable="false">
+      <mvcSiteMapNode title="Cycling" controller="Interests" action="Index" key="Cycling"/>
+      <mvcSiteMapNode title="Photography" controller="Image" action="Index" key="Photography"/>
+      <mvcSiteMapNode title="Technology" controller="Interests" action="Index" key="Technology"/>
+    </mvcSiteMapNode>
   </mvcSiteMapNode>
-  
 </mvcSiteMap>
