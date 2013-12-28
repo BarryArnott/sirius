@@ -21,70 +21,70 @@ namespace SiriusTests
 
             Assert.AreEqual("Index", result.ViewName);
         }
-        
-        //[TestMethod]
-        //public void Test_ImageGallery_Model_Type()
-        //{
-        //    var context = new FakeSiriusContext
-        //        {
-        //            Images = new[]
-        //                {
-        //                    new Image(),
-        //                    new Image(),
-        //                    new Image(),
-        //                    new Image()
-        //                }.AsQueryable()
-        //        };
 
-        //    var controller = new ImageController(context);
-        //    var result = controller._ImageGallery() as PartialViewResult;
+        [TestMethod]
+        public void Test_AlbumGallery_Model_Type()
+        {
+            var context = new FakeSiriusContext
+                {
+                    Albums = new[]
+                        {
+                            new Album(),
+                            new Album(),
+                            new Album(),
+                            new Album(),
+                        }.AsQueryable()
+                };
 
-        //    Assert.AreEqual(typeof(List<Image>), result.Model.GetType());
-        //}
+            var controller = new ImageController(context);
+            var result = controller._AlbumGallery() as PartialViewResult;
 
-        //[TestMethod]
-        //public void Test_ImageGallery_No_Parameter()
-        //{
-        //    var context = new FakeSiriusContext
-        //        {
-        //            Images = new[]
-        //                {
-        //                    new Image(),
-        //                    new Image(),
-        //                    new Image(),
-        //                    new Image(),
-        //                    new Image()
-        //                }.AsQueryable()
-        //        };
+            Assert.AreEqual(typeof(List<Album>), result.Model.GetType());
+        }
 
-        //    var controller = new ImageController(context);
-        //    var result = controller._ImageGallery() as PartialViewResult;
-        //    var modelPhotos = (IEnumerable<Image>)result.Model;
+        [TestMethod]
+        public void Test_AlbumGallery_No_Parameter()
+        {
+            var context = new FakeSiriusContext
+                {
+                    Albums = new[]
+                        {
+                            new Album(),
+                            new Album(),
+                            new Album(),
+                            new Album(),
+                            new Album()
+                        }.AsQueryable()
+                };
 
-        //    Assert.AreEqual(5, modelPhotos.Count());
-        //}
+            var controller = new ImageController(context);
+            var result = controller._AlbumGallery() as PartialViewResult;
+            var modelAlbums = (IEnumerable<Album>)result.Model;
 
-        //[TestMethod]
-        //public void Test_ImageGallery_Int_Parameter()
-        //{
-        //    var context = new FakeSiriusContext
-        //        {
-        //            Images = new[]
-        //                {
-        //                    new Image(),
-        //                    new Image(),
-        //                    new Image(),
-        //                    new Image(),
-        //                    new Image()
-        //                }.AsQueryable()
-        //        };
+            Assert.AreEqual(5, modelAlbums.Count());
+        }
 
-        //    var controller = new ImageController(context);
-        //    var result = controller._ImageGallery(3) as PartialViewResult;
-        //    var modelImages = (IEnumerable<Image>)result.Model;
+        [TestMethod]
+        public void Test_AlbumGaller_Int_Parameter()
+        {
+            var context = new FakeSiriusContext
+                {
+                    Albums = new[]
+                        {
+                            new Album(),
+                            new Album(),
+                            new Album(),
+                            new Album(),
+                            new Album()
+                        }.AsQueryable()
+                };
 
-        //    Assert.AreEqual(3, modelImages.Count());
-        //}
+            var controller = new ImageController(context);
+            var result = controller._AlbumGallery(3) as PartialViewResult;
+            var modelAlbums = (IEnumerable<Album>)result.Model;
+
+            Assert.AreEqual(3, modelAlbums.Count());
+        }
 
         [TestMethod]
         public void Test_DisplayAll_Return_View()
@@ -288,9 +288,64 @@ namespace SiriusTests
             }.AsQueryable();
 
             var controller = new ImageController(context);
-            var result = controller.GetImage(1) as ActionResult;
+            var result = controller.GetImage(1);
 
             Assert.AreEqual(typeof(FileContentResult), result.GetType());
+        }
+
+        [TestMethod]
+        public void Test_GetImage()
+        {
+            var context = new FakeSiriusContext();
+
+            context.Images = new[] {
+                new Image{ ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/raw" },
+                new Image{ ImageID = 2, ImageFile = new byte[1], ImageMimeType = "image/png" },
+                new Image{ ImageID = 3, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
+                new Image{ ImageID = 4, ImageFile = new byte[1], ImageMimeType = "image/bmp" },
+            }.AsQueryable();
+
+            var controller = new ImageController(context);
+            var result = controller.GetImage(3);
+
+            Assert.AreEqual("image/jpeg", result.ContentType);
+        }
+
+        [TestMethod]
+        public void Test_GetAlbumCoverImage_Return_Type()
+        {
+            var context = new FakeSiriusContext();
+
+            context.Albums = new[] {
+                new Album{ AlbumID = 1, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/raw"},
+                new Album{ AlbumID = 2, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/png"},
+                new Album{ AlbumID = 3, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/jpeg"},
+                new Album{ AlbumID = 4, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/bmp"}
+
+            }.AsQueryable();
+
+            var controller = new ImageController(context);
+            var result = controller.GetAlbumCoverImage(1);
+
+            Assert.AreEqual(typeof(FileContentResult), result.GetType());
+        }
+
+        [TestMethod]
+        public void Test_GetAlbumCoverImage()
+        {
+            var context = new FakeSiriusContext();
+
+            context.Albums = new[] {
+                new Album{ AlbumID = 1, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/raw"},
+                new Album{ AlbumID = 2, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/png"},
+                new Album{ AlbumID = 3, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/jpeg"},
+                new Album{ AlbumID = 4, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/bmp"}
+            }.AsQueryable();
+
+            var controller = new ImageController(context);
+            var result = controller.GetAlbumCoverImage(1);
+
+            Assert.AreEqual("image/raw", result.ContentType);
         }
     }
 }

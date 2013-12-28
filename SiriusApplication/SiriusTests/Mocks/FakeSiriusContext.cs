@@ -97,7 +97,6 @@ namespace SiriusTests.Mocks
             return item;
         }
 
-
         public T Delete<T>(T entity) where T : class
         {
             _map.Get<T>().Remove(entity);
