@@ -50,25 +50,6 @@ namespace SiriusApplication.Controllers
         //    return PartialView("_ImageGallery", images);
         //}
 
-        [ChildActionOnly]
-        public ActionResult _AlbumGallery(int number = 0)
-        {
-            List<Album> albums;
-            if (number == 0)
-            {
-                albums = context.Albums.ToList();
-            }
-            else
-            {
-                albums = (
-                from p in context.Albums
-                orderby p.CreatedDate descending
-                select p).Take(number).ToList();
-            }
-
-            return PartialView("_AlbumGallery", albums);
-        }
-
         public ActionResult DisplayAll()
         {
             return View("Index");
@@ -160,21 +141,6 @@ namespace SiriusApplication.Controllers
             if (image != null)
             {
                 return File(image.ImageFile, image.ImageMimeType);
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        //Required to retrieve album cover image for album display
-        public FileContentResult GetAlbumCoverImage(int id)
-        {
-            Album album = context.FindAlbumCoverImageById(id);
-
-            if (album != null)
-            {
-                return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
             }
             else
             {

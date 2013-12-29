@@ -13,18 +13,26 @@ namespace SiriusApplication
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //This route means we can access photos like this: /Photography/3
             routes.MapRoute(
                 name: "ImageIdRoute",
-                url: "Image/{id}",
+                url: "Photography/{id}",
                 defaults: new { controller = "Image", action = "DisplayById" },
                 constraints: new { id = "[0-9]+" }
             );
 
-            //This route means we can access photos like this: /photo/title/my%20photo%20title
+            //This route means we can access photos like this: /Photography/title/my%20photo%20title
             routes.MapRoute(
                 name: "ImageTitleRoute",
-                url: "Image/title/{title}",
+                url: "Photography/title/{title}",
                 defaults: new { controller = "Image", action = "DisplayByTitle" }
+            );
+
+            //This route means we can access photos like this: /Photography/title/my%20photo%20title
+            routes.MapRoute(
+                name: "ImageIndexRoute",
+                url: "Photography/",
+                defaults: new { controller = "Image", action = "Index" }
             );
 
             routes.MapRoute(

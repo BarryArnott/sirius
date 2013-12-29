@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using SiriusApplication.Models;
@@ -36,7 +35,7 @@ namespace SiriusTests
                         }.AsQueryable()
                 };
 
-            var controller = new ImageController(context);
+            var controller = new AlbumController(context);
             var result = controller._AlbumGallery() as PartialViewResult;
 
             Assert.AreEqual(typeof(List<Album>), result.Model.GetType());
@@ -57,7 +56,7 @@ namespace SiriusTests
                         }.AsQueryable()
                 };
 
-            var controller = new ImageController(context);
+            var controller = new AlbumController(context);
             var result = controller._AlbumGallery() as PartialViewResult;
             var modelAlbums = (IEnumerable<Album>)result.Model;
 
@@ -79,7 +78,7 @@ namespace SiriusTests
                         }.AsQueryable()
                 };
 
-            var controller = new ImageController(context);
+            var controller = new AlbumController(context);
             var result = controller._AlbumGallery(3) as PartialViewResult;
             var modelAlbums = (IEnumerable<Album>)result.Model;
 
@@ -324,7 +323,7 @@ namespace SiriusTests
 
             }.AsQueryable();
 
-            var controller = new ImageController(context);
+            var controller = new AlbumController(context);
             var result = controller.GetAlbumCoverImage(1);
 
             Assert.AreEqual(typeof(FileContentResult), result.GetType());
@@ -342,7 +341,7 @@ namespace SiriusTests
                 new Album{ AlbumID = 4, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/bmp"}
             }.AsQueryable();
 
-            var controller = new ImageController(context);
+            var controller = new AlbumController(context);
             var result = controller.GetAlbumCoverImage(1);
 
             Assert.AreEqual("image/raw", result.ContentType);

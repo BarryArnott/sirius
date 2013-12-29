@@ -120,6 +120,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -171,7 +172,7 @@
     <Content Include="Content\Images\02.jpg" />
     <Content Include="Content\Images\03.jpg" />
     <Content Include="Content\Images\04.jpg" />
-    <Content Include="Content\Images\Carousel\01_LondonNightShoot_07122012-90.jpg" />
+    <Content Include="Content\Images\Carousel\17_untitled_27072011.jpg" />
     <Content Include="Content\Images\Carousel\26_Greenwich_08062013.jpg" />
     <Content Include="Content\Images\Carousel\39_HeathrowWestTakeOff_12052013.jpg" />
     <Content Include="Content\Images\Carousel\60_RedBull_14072013.jpg" />
@@ -224,6 +225,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_AlbumGallery.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\BootstrapNavBarHelperModel.cshtml" />
+    <Content Include="Views\Album\Index.cshtml" />
+    <Content Include="Views\Album\Details.cshtml" />
+    <Content Include="Views\Album\Create.cshtml" />
+    <Content Include="Views\Album\Edit.cshtml" />
+    <Content Include="Views\Album\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201311222112254_InitialCreate.resx">
