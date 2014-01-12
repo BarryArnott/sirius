@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using SiriusApplication.Models;
 using SiriusApplication.Utils;
@@ -56,13 +53,22 @@ namespace SiriusApplication.Controllers
         //Required to retrieve album cover image for album display
         public FileContentResult GetAlbumCoverImage(int id)
         {
-            Album album = context.FindAlbumCoverImageById(id);
-
-            if (album != null)
+            try
             {
-                return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
+                Album album = context.FindAlbumCoverImageById(id);
+
+                if (album != null)
+                {
+                    return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
+                }
+                else
+                {
+                    Image image = context.FindDefaultImageWhenNoImageFound();
+
+                    return File(image.ImageFile, image.ImageMimeType);
+                }
             }
-            else
+            catch (Exception e)
             {
                 return null;
             }

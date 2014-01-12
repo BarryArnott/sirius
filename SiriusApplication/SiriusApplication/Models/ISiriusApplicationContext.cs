@@ -14,6 +14,7 @@ namespace SiriusApplication.Models
         Album FindAlbumByTitle(string Title);
         Image FindImageById(int ID);
         Image FindImageByTitle(string Title);
+        Image FindDefaultImageWhenNoImageFound();
         Album FindAlbumCoverImageById(int ID);
         Comment FindCommentById(int ID);
         T Delete<T>(T entity) where T : class;

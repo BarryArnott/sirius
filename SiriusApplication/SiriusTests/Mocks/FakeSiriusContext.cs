@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using SiriusApplication.Models;
+using SiriusApplication.Utils;
 
 namespace SiriusTests.Mocks
 {
@@ -78,6 +79,7 @@ namespace SiriusTests.Mocks
                           select p).First();
 
             return item;
+
         }
 
         public Image FindImageByTitle(string Title)
@@ -85,6 +87,17 @@ namespace SiriusTests.Mocks
             Image item = (from p in this.Images
                           where p.Title == Title
                           select p).FirstOrDefault();
+
+            return item;
+        }
+
+        public Image FindDefaultImageWhenNoImageFound()
+        {
+            const int noImageFound = 1;
+
+            Image item = (from p in this.Images
+                          where p.ImageID == noImageFound
+                          select p).First();
 
             return item;
         }

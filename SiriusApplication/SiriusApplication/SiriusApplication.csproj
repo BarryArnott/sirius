@@ -160,22 +160,24 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="Content\CSS\Bootstrap\css\bootstrap-theme.css" />
-    <Content Include="Content\CSS\Bootstrap\css\bootstrap-theme.min.css" />
-    <Content Include="Content\CSS\Bootstrap\css\bootstrap.css" />
-    <Content Include="Content\CSS\Bootstrap\css\bootstrap.min.css" />
-    <Content Include="Content\CSS\Bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\CSS\Bootstrap\js\bootstrap.js" />
-    <Content Include="Content\CSS\Bootstrap\js\bootstrap.min.js" />
-    <Content Include="Content\CSS\Extended\Main.css" />
-    <Content Include="Content\Images\01.jpg" />
-    <Content Include="Content\Images\02.jpg" />
-    <Content Include="Content\Images\03.jpg" />
-    <Content Include="Content\Images\04.jpg" />
-    <Content Include="Content\Images\Carousel\17_untitled_27072011.jpg" />
-    <Content Include="Content\Images\Carousel\26_Greenwich_08062013.jpg" />
-    <Content Include="Content\Images\Carousel\39_HeathrowWestTakeOff_12052013.jpg" />
-    <Content Include="Content\Images\Carousel\60_RedBull_14072013.jpg" />
+    <Content Include="content\css\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="content\css\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="content\css\bootstrap\css\bootstrap.css" />
+    <Content Include="content\css\bootstrap\css\bootstrap.min.css" />
+    <Content Include="content\css\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="content\css\bootstrap\js\bootstrap.js" />
+    <Content Include="content\css\bootstrap\js\bootstrap.min.js" />
+    <Content Include="content\css\extended\main.css" />
+    <Content Include="content\images\carousel\17_untitled_27072011.jpg" />
+    <Content Include="content\images\carousel\26_Greenwich_08062013.jpg" />
+    <Content Include="content\images\carousel\39_HeathrowWestTakeOff_12052013.jpg" />
+    <Content Include="content\images\carousel\60_RedBull_14072013.jpg" />
+    <Content Include="content\images\common-images\no_album_image.jpg" />
+    <Content Include="content\images\photography\01.jpg" />
+    <Content Include="content\images\photography\02.jpg" />
+    <Content Include="content\images\photography\03.jpg" />
+    <Content Include="content\images\photography\04.jpg" />
+    <Content Include="content\images\photography\05.jpg" />
     <Content Include="Error.html" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -197,9 +199,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Mvc.sitemap" />
-    <Content Include="Content\CSS\Bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\CSS\Bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\CSS\Bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="content\css\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="content\css\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="content\css\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <None Include="MvcSiteMapSchema.xsd">
       <SubType>Designer</SubType>
     </None>

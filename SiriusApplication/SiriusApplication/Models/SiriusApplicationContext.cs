@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Linq;
+using SiriusApplication.Utils;
 
 namespace SiriusApplication.Models
 {
@@ -71,6 +72,14 @@ namespace SiriusApplication.Models
                            where p.Title == Title
                            select p).FirstOrDefault();
             return image;
+        }
+
+        Image ISiriusApplicationContext.FindDefaultImageWhenNoImageFound()
+        {
+            //The default image id
+            const int noImageFound = 1;
+
+            return Set<Image>().Find(noImageFound);
         }
 
         Album ISiriusApplicationContext.FindAlbumCoverImageById(int ID)

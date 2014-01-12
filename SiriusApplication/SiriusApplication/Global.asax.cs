@@ -1,6 +1,8 @@
-﻿using System.Web.Http;
+﻿using System.Data.Entity;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
+using SiriusApplication.Models;
 
 namespace SiriusApplication
 {
