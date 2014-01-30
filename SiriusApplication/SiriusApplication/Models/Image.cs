@@ -8,7 +8,8 @@ namespace SiriusApplication.Models
     public class Image
     {
         public int ImageID { get; set; }
-        public int AlbumID { get; set; }
+
+        public int? AlbumID { get; set; }
 
         [Required(ErrorMessage = "The title is required.")]
         [StringLength(50, ErrorMessage = "Maximum of 50 characters.")]

@@ -8,7 +8,7 @@
 
 .bottom {
   padding: 0;
-  background-color: #e6e6fa;
+  background-color:#eeeeee;
 }
 
 .footer {
@@ -17,7 +17,7 @@
   border-width: thin;
   border-top-color:#708090;
   font-size: 80%;
-  background-color: #eeeeee;
+  background-color:#D8D8D8;
 }
 
 .footer a {

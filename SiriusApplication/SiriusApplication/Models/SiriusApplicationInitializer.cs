@@ -30,14 +30,6 @@ namespace SiriusApplication.Models
             {
                 new Album {
                     AlbumID = 1,
-                    Title = "Default Images",
-                    Description = "Default Images",
-                    AlbumCoverFile = getFileBytes ("\\content\\images\\common-images\\no_album_image.jpg"),
-                    AlbumCoverMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Today
-                },
-                new Album {
-                    AlbumID = 2,
                     Title = "Album 2",
                     Description = "Yosemite",
                     AlbumCoverFile = getFileBytes ("\\content\\images\\photography\\01.jpg"),
@@ -45,7 +37,7 @@ namespace SiriusApplication.Models
                     CreatedDate = DateTime.Today
                 },
                 new Album {
-                    AlbumID = 3,
+                    AlbumID = 2,
                     Title = "Album 3",
                     Description = "Space",
                     AlbumCoverFile = getFileBytes ("\\content\\images\\photography\\02.jpg"),
@@ -53,7 +45,7 @@ namespace SiriusApplication.Models
                     CreatedDate = DateTime.Today
                 },
                 new Album {
-                    AlbumID = 4,
+                    AlbumID = 3,
                     Title = "Album 4",
                     Description = "Storms",
                     AlbumCoverFile = getFileBytes ("\\content\\images\\photography\\05.jpg"),
@@ -68,7 +60,6 @@ namespace SiriusApplication.Models
             var images = new List<Image>
             {
                 new Image {
-                    AlbumID = 1,
                     Title = "No Image Found",
                     Description = "No Image Found",
                     ImageFile = getFileBytes ("\\content\\images\\common-images\\no_album_image.jpg"),
@@ -76,7 +67,7 @@ namespace SiriusApplication.Models
                     CreatedDate = DateTime.Today
                 },
                 new Image {
-                    AlbumID = 2,
+                    AlbumID = 1,
                     Title = "Yosemite",
                     Description = "Yosemite 2011",
                     ImageFile = getFileBytes ("\\content\\images\\photography\\01.jpg"),
@@ -84,7 +75,7 @@ namespace SiriusApplication.Models
                     CreatedDate = DateTime.Today
                 },
                 new Image {
-                    AlbumID = 3,
+                    AlbumID = 2,
                     Title = "Space Shuttle",
                     Description = "Launch of the space shuttle",
                     ImageFile = getFileBytes ("\\content\\images\\photography\\02.jpg"),
@@ -92,7 +83,7 @@ namespace SiriusApplication.Models
                     CreatedDate = DateTime.Today
                 },
                 new Image {
-                    AlbumID = 3,
+                    AlbumID = 2,
                     Title = "Opportunity",
                     Description = "Opportunity rover on Mars",
                     ImageFile = getFileBytes ("\\content\\images\\photography\\03.jpg"),
@@ -100,7 +91,7 @@ namespace SiriusApplication.Models
                     CreatedDate = DateTime.Today
                 },
                 new Image {
-                    AlbumID = 3,
+                    AlbumID = 2,
                     Title = "Hubble",
                     Description = "Hubble Deep Field",
                     ImageFile = getFileBytes ("\\content\\images\\photography\\04.jpg"),
@@ -108,7 +99,7 @@ namespace SiriusApplication.Models
                     CreatedDate = DateTime.Today
                 },
                 new Image {
-                    AlbumID = 4,
+                    AlbumID = 3,
                     Title = "Twister",
                     Description = "Twister in USA",
                     ImageFile = getFileBytes ("\\content\\images\\photography\\05.jpg"),

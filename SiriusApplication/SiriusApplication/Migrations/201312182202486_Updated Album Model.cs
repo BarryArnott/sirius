@@ -5,10 +5,14 @@ namespace SiriusApplication.Migrations
     
     public partial class UpdatedAlbumModel : DbMigration
     {
+        //public override void Up()
+        //{
+        //    AddColumn("dbo.Albums", "AlbumCoverFile", c => c.Binary());
+        //    AddColumn("dbo.Albums", "AlbumCoverMimeType", c => c.String());
+        //}
+
         public override void Up()
         {
-            AddColumn("dbo.Albums", "AlbumCoverFile", c => c.Binary());
-            AddColumn("dbo.Albums", "AlbumCoverMimeType", c => c.String());
         }
         
         public override void Down()
