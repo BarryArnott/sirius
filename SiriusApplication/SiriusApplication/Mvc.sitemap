@@ -7,9 +7,9 @@
     <mvcSiteMapNode title="About" controller="About" action="Index" key="About"/>
     <mvcSiteMapNode title="Contact" controller="Contact" action="Index" key="Contact"/>
     <mvcSiteMapNode title="Hobbies &amp; Interests" clickable="false">
-      <mvcSiteMapNode title="Cycling" controller="Interests" action="Index" key="Cycling"/>
-      <mvcSiteMapNode title="Photography" controller="Image" action="Index" key="Photography"/>
-      <mvcSiteMapNode title="Technology" controller="Interests" action="Index" key="Technology"/>
+      <mvcSiteMapNode title="Cycling" controller="Cycling" action="Index" key="Cycling"/>
+      <mvcSiteMapNode title="Photography" controller="Photography" action="Index" key="Photography"/>
+      <mvcSiteMapNode title="Technology" controller="Technology" action="Index" key="Technology"/>
     </mvcSiteMapNode>
   </mvcSiteMapNode>
 </mvcSiteMap>

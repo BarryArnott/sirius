@@ -40,8 +40,7 @@ namespace SiriusApplication
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 //Register the namespace so default route hits ~Controllers/HomeController
-                namespaces: new[] {"SiriusApplication.Controllers"}                
-            );
+                namespaces: new[] { "SiriusApplication.Controllers" });
         }
     }
 }

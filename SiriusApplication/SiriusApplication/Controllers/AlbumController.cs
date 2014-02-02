@@ -7,7 +7,6 @@ using SiriusApplication.Utils;
 
 namespace SiriusApplication.Controllers
 {
-
     [ValueReporter]
     [HandleError(View = "Error")]
     public class AlbumController : Controller
@@ -73,17 +72,6 @@ namespace SiriusApplication.Controllers
                 return null;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
         //
         // GET: /Album/Details/5
 

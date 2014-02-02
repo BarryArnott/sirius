@@ -14,9 +14,11 @@
     <title>@ViewBag.Title</title>
 
     <!-- CSS extended from Bootstrap -->
-    <link href="../../Content/CSS/Extended/Main.css" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
-    <link href="../../Content/CSS/Bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="~/content/css/extended/main.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS-DEV -->
+    <link href="~/content/bootstrap-less/dist/css/bootstrap.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS-PRODUCTION -->
+    @*<link href="~/content/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" />*@
 </head>
 
 <body>
@@ -29,7 +31,7 @@
             <div class="row">
                 <div class="col-md-4">this is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column</div>
                 <div class="col-md-4">this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column</div>
-                <div class="col-md-4">this is some text in the third columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column</div>
+                <div class="col-md-4"><img class="pull-right" src="../../content/images/common-images/twitter-32.png" alt=""/><img class="pull-right" src="../../content/images/common-images/linkedin-3-32.png" alt="" /></div>
             </div>
         </div>
     </div>
@@ -44,7 +46,7 @@
         </div>
     </div>
     <!-- Scripts at end of document so page loads quicker -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="../../Content/CSS/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-2.1.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
