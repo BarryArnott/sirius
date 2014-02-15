@@ -147,29 +147,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201311222112254_InitialCreate.cs" />
-    <Compile Include="Migrations\201311222112254_InitialCreate.Designer.cs">
-      <DependentUpon>201311222112254_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201311222119135_Initial.cs" />
-    <Compile Include="Migrations\201311222119135_Initial.Designer.cs">
-      <DependentUpon>201311222119135_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312042108077_Added Album model.cs" />
-    <Compile Include="Migrations\201312042108077_Added Album model.Designer.cs">
-      <DependentUpon>201312042108077_Added Album model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312042114307_Added AlbumID to image model.cs" />
-    <Compile Include="Migrations\201312042114307_Added AlbumID to image model.Designer.cs">
-      <DependentUpon>201312042114307_Added AlbumID to image model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201312182202486_Updated Album Model.cs" />
-    <Compile Include="Migrations\201312182202486_Updated Album Model.Designer.cs">
-      <DependentUpon>201312182202486_Updated Album Model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201401122208416_Amended AlbumID on Image to allow null.cs" />
-    <Compile Include="Migrations\201401122208416_Amended AlbumID on Image to allow null.Designer.cs">
-      <DependentUpon>201401122208416_Amended AlbumID on Image to allow null.cs</DependentUpon>
+    <Compile Include="Migrations\201402152132497_Initial.cs" />
+    <Compile Include="Migrations\201402152132497_Initial.Designer.cs">
+      <DependentUpon>201402152132497_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
@@ -527,23 +507,8 @@
     <Content Include="Views\Album\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201311222112254_InitialCreate.resx">
-      <DependentUpon>201311222112254_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311222119135_Initial.resx">
-      <DependentUpon>201311222119135_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312042108077_Added Album model.resx">
-      <DependentUpon>201312042108077_Added Album model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312042114307_Added AlbumID to image model.resx">
-      <DependentUpon>201312042114307_Added AlbumID to image model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312182202486_Updated Album Model.resx">
-      <DependentUpon>201312182202486_Updated Album Model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201401122208416_Amended AlbumID on Image to allow null.resx">
-      <DependentUpon>201401122208416_Amended AlbumID on Image to allow null.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201402152132497_Initial.resx">
+      <DependentUpon>201402152132497_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
