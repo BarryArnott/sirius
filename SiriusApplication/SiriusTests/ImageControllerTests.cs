@@ -38,7 +38,7 @@ namespace SiriusTests
                 {
                     Images = new[]
                         {
-                            new Image {ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg"}
+                            new Image {ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg"}
                         }.AsQueryable()
                 };
             var controller = new ImageController(context);
@@ -54,8 +54,8 @@ namespace SiriusTests
             {
                 Images = new[]
                         {
-                            new Image{ ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
-                            new Image{ ImageID = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg" }
+                            new Image{ ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
+                            new Image{ ImageId = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg" }
                         }.AsQueryable()
             };
 
@@ -72,8 +72,8 @@ namespace SiriusTests
             {
                 Images = new[]
                         {
-                            new Image{ ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" },
-                            new Image{ ImageID = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test2" }
+                            new Image{ ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" },
+                            new Image{ ImageId = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test2" }
                         }.AsQueryable()
             };
 
@@ -91,7 +91,7 @@ namespace SiriusTests
             {
                 Images = new[]
                         {
-                            new Image {ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1"}
+                            new Image {ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1"}
                         }.AsQueryable()
             };
             var controller = new ImageController(context);
@@ -108,8 +108,8 @@ namespace SiriusTests
             {
                 Images = new[]
                         {
-                            new Image{ ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" },
-                            new Image{ ImageID = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" }
+                            new Image{ ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" },
+                            new Image{ ImageId = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" }
                         }.AsQueryable()
             };
 
@@ -127,8 +127,8 @@ namespace SiriusTests
             {
                 Images = new[]
                         {
-                            new Image{ ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" },
-                            new Image{ ImageID = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test2" }
+                            new Image{ ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" },
+                            new Image{ ImageId = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test2" }
                         }.AsQueryable()
             };
 
@@ -147,7 +147,7 @@ namespace SiriusTests
             {
                 Images = new[]
                         {
-                            new Image {ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1"}
+                            new Image {ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1"}
                         }.AsQueryable()
             };
             var controller = new ImageController(context);
@@ -163,8 +163,8 @@ namespace SiriusTests
             {
                 Images = new[]
                         {
-                            new Image{ ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" },
-                            new Image{ ImageID = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" }
+                            new Image{ ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" },
+                            new Image{ ImageId = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" }
                         }.AsQueryable()
             };
 
@@ -181,8 +181,8 @@ namespace SiriusTests
             {
                 Images = new[]
                         {
-                            new Image{ ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" },
-                            new Image{ ImageID = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test2" }
+                            new Image{ ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1" },
+                            new Image{ ImageId = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test2" }
                         }.AsQueryable()
             };
 
@@ -200,8 +200,8 @@ namespace SiriusTests
             {
                 Images = new[]
                         {
-                            new Image {ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1"},
-                            new Image {ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test2"}
+                            new Image {ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test1"},
+                            new Image {ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg", Title = "Test2"}
                         }.AsQueryable()
             };
             var controller = new ImageController(context);
@@ -216,10 +216,10 @@ namespace SiriusTests
             var context = new FakeSiriusContext();
 
             context.Images = new[] {
-                new Image{ ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
-                new Image{ ImageID = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
-                new Image{ ImageID = 3, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
-                new Image{ ImageID = 4, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
+                new Image{ ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
+                new Image{ ImageId = 2, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
+                new Image{ ImageId = 3, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
+                new Image{ ImageId = 4, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
             }.AsQueryable();
 
             var controller = new ImageController(context);
@@ -234,10 +234,10 @@ namespace SiriusTests
             var context = new FakeSiriusContext();
 
             context.Images = new[] {
-                new Image{ ImageID = 1, ImageFile = new byte[1], ImageMimeType = "image/raw" },
-                new Image{ ImageID = 2, ImageFile = new byte[1], ImageMimeType = "image/png" },
-                new Image{ ImageID = 3, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
-                new Image{ ImageID = 4, ImageFile = new byte[1], ImageMimeType = "image/bmp" },
+                new Image{ ImageId = 1, ImageFile = new byte[1], ImageMimeType = "image/raw" },
+                new Image{ ImageId = 2, ImageFile = new byte[1], ImageMimeType = "image/png" },
+                new Image{ ImageId = 3, ImageFile = new byte[1], ImageMimeType = "image/jpeg" },
+                new Image{ ImageId = 4, ImageFile = new byte[1], ImageMimeType = "image/bmp" },
             }.AsQueryable();
 
             var controller = new ImageController(context);

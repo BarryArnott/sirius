@@ -80,7 +80,7 @@ namespace SiriusApplication.Controllers
         public ActionResult Create()
         {
             Image newPhoto = new Image();
-            newPhoto.CreatedDate = DateTime.Today;
+            newPhoto.UploadedDate = DateTime.Today;
 
             return View("Create", newPhoto);
         }
@@ -88,7 +88,7 @@ namespace SiriusApplication.Controllers
         [HttpPost]
         public ActionResult Create(Image photo, HttpPostedFileBase image)
         {
-            photo.CreatedDate = DateTime.Today;
+            photo.UploadedDate = DateTime.Today;
 
             if (!ModelState.IsValid)
             {

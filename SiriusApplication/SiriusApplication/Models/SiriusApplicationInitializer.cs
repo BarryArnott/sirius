@@ -19,6 +19,7 @@ namespace SiriusApplication.Models
             {
                 fileBytes = br.ReadBytes((int)fileOnDisk.Length);
             }
+
             return fileBytes;
         }
 
@@ -29,26 +30,26 @@ namespace SiriusApplication.Models
             var albums = new List<Album>
             {
                 new Album {
-                    AlbumID = 1,
+                    AlbumId = 1,
                     Title = "Album 2",
                     Description = "Yosemite",
-                    AlbumCoverFile = getFileBytes ("\\content\\images\\photography\\01.jpg"),
+                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
                     AlbumCoverMimeType = "image/jpeg",
                     CreatedDate = DateTime.Today
                 },
                 new Album {
-                    AlbumID = 2,
+                    AlbumId = 2,
                     Title = "Album 3",
                     Description = "Space",
-                    AlbumCoverFile = getFileBytes ("\\content\\images\\photography\\02.jpg"),
+                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
                     AlbumCoverMimeType = "image/jpeg",
                     CreatedDate = DateTime.Today
                 },
                 new Album {
-                    AlbumID = 3,
+                    AlbumId = 3,
                     Title = "Album 4",
                     Description = "Storms",
-                    AlbumCoverFile = getFileBytes ("\\content\\images\\photography\\05.jpg"),
+                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\05.jpg"),
                     AlbumCoverMimeType = "image/jpeg",
                     CreatedDate = DateTime.Today
                 }
@@ -62,49 +63,55 @@ namespace SiriusApplication.Models
                 new Image {
                     Title = "No Image Found",
                     Description = "No Image Found",
-                    ImageFile = getFileBytes ("\\content\\images\\common-images\\no_album_image.jpg"),
-                    ImageMimeType ="image/gif",
-                    CreatedDate = DateTime.Today
+                    ImageFile = getFileBytes("\\Content\\Images\\SharedImages\\no_album_image.jpg"),
+                    ImageMimeType = "image/gif",
+                    UploadedDate = DateTime.Today,
+                    ImageTakenOnDate = DateTime.Today
                 },
                 new Image {
-                    AlbumID = 1,
+                    AlbumId = 1,
                     Title = "Yosemite",
                     Description = "Yosemite 2011",
-                    ImageFile = getFileBytes ("\\content\\images\\photography\\01.jpg"),
-                    ImageMimeType ="image/jpeg",
-                    CreatedDate = DateTime.Today
+                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Today,
+                    ImageTakenOnDate = DateTime.Today
                 },
                 new Image {
-                    AlbumID = 2,
+                    AlbumId = 2,
                     Title = "Space Shuttle",
                     Description = "Launch of the space shuttle",
-                    ImageFile = getFileBytes ("\\content\\images\\photography\\02.jpg"),
-                    ImageMimeType ="image/jpeg",
-                    CreatedDate = DateTime.Today
+                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Today,
+                    ImageTakenOnDate = DateTime.Today
                 },
                 new Image {
-                    AlbumID = 2,
+                    AlbumId = 2,
                     Title = "Opportunity",
                     Description = "Opportunity rover on Mars",
-                    ImageFile = getFileBytes ("\\content\\images\\photography\\03.jpg"),
-                    ImageMimeType ="image/jpeg",
-                    CreatedDate = DateTime.Today
+                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Today,
+                    ImageTakenOnDate = DateTime.Today
                 },
                 new Image {
-                    AlbumID = 2,
+                    AlbumId = 2,
                     Title = "Hubble",
                     Description = "Hubble Deep Field",
-                    ImageFile = getFileBytes ("\\content\\images\\photography\\04.jpg"),
-                    ImageMimeType ="image/jpeg",
-                    CreatedDate = DateTime.Today
+                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Today,
+                    ImageTakenOnDate = DateTime.Today
                 },
                 new Image {
-                    AlbumID = 3,
+                    AlbumId = 3,
                     Title = "Twister",
                     Description = "Twister in USA",
-                    ImageFile = getFileBytes ("\\content\\images\\photography\\05.jpg"),
-                    ImageMimeType ="image/jpeg",
-                    CreatedDate = DateTime.Today
+                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\05.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Today,
+                    ImageTakenOnDate = DateTime.Today
                 }
             };
 

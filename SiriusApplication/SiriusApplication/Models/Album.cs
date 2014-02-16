@@ -7,7 +7,7 @@ namespace SiriusApplication.Models
 {
     public class Album
     {
-        public int AlbumID { get; set; }
+        public int AlbumId { get; set; }
 
         [Required(ErrorMessage = "The title is required.")]
         [StringLength(50, ErrorMessage = "Maximum of 50 characters.")]
@@ -18,6 +18,7 @@ namespace SiriusApplication.Models
         public string Description { get; set; }
 
         public byte[] AlbumCoverFile { get; set; }
+
         public string AlbumCoverMimeType { get; set; }
 
         [DataType(DataType.DateTime)]
@@ -26,6 +27,6 @@ namespace SiriusApplication.Models
         public DateTime CreatedDate { get; set; }
 
         // relationship property
-        public virtual ICollection<Image> Images{ get; set; }
+        public virtual ICollection<Image> Images { get; set; }
     }
 }

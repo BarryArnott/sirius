@@ -48,7 +48,7 @@ namespace SiriusTests.Mocks
         public Album FindAlbumById(int ID)
         {
             Album item = (from p in this.Albums
-                          where p.AlbumID == ID
+                          where p.AlbumId == ID
                           select p).First();
 
             return item;
@@ -66,7 +66,7 @@ namespace SiriusTests.Mocks
         public Image FindImageById(int ID)
         {
             Image item = (from p in this.Images
-                    where p.ImageID == ID
+                    where p.ImageId == ID
                     select p).First();
  
             return item;
@@ -75,7 +75,7 @@ namespace SiriusTests.Mocks
         public Album FindAlbumCoverImageById(int ID)
         {
             Album item = (from p in this.Albums
-                          where p.AlbumID == ID
+                          where p.AlbumId == ID
                           select p).First();
 
             return item;
@@ -96,7 +96,7 @@ namespace SiriusTests.Mocks
             const int noImageFound = 1;
 
             Image item = (from p in this.Images
-                          where p.ImageID == noImageFound
+                          where p.ImageId == noImageFound
                           select p).First();
 
             return item;

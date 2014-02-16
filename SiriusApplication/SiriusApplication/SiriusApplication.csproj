@@ -137,7 +137,7 @@
     <Compile Include="Areas\Contact\Controllers\HomeController.cs" />
     <Compile Include="Areas\Cycling\Controllers\HomeController.cs" />
     <Compile Include="Areas\Cycling\CyclingAreaRegistration.cs" />
-    <Compile Include="Areas\Photography\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Photography\Controllers\PhotographyController.cs" />
     <Compile Include="Areas\Photography\PhotographyAreaRegistration.cs" />
     <Compile Include="Areas\Technology\Controllers\HomeController.cs" />
     <Compile Include="Areas\Technology\TechnologyAreaRegistration.cs" />
@@ -147,9 +147,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201402152132497_Initial.cs" />
-    <Compile Include="Migrations\201402152132497_Initial.Designer.cs">
-      <DependentUpon>201402152132497_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201401302304267_InitialCreate.cs" />
+    <Compile Include="Migrations\201401302304267_InitialCreate.Designer.cs">
+      <DependentUpon>201401302304267_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402152327051_Initial.cs" />
+    <Compile Include="Migrations\201402152327051_Initial.Designer.cs">
+      <DependentUpon>201402152327051_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
@@ -347,6 +351,7 @@
     <Content Include="Content\CSS\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\CSS\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\CSS\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Photography\Views\Shared\_PhotographyGallery.cshtml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
@@ -392,7 +397,7 @@
     <Content Include="Areas\Photography\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Photography\Views\Web.config" />
     <Content Include="Areas\Photography\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Photography\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Photography\Views\Photography\Index.cshtml" />
     <Content Include="Areas\Technology\Views\Web.config" />
     <Content Include="Areas\Technology\Views\Home\Index.cshtml" />
     <Content Include="Areas\Technology\Views\_ViewStart.cshtml" />
@@ -507,8 +512,11 @@
     <Content Include="Views\Album\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201402152132497_Initial.resx">
-      <DependentUpon>201402152132497_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201401302304267_InitialCreate.resx">
+      <DependentUpon>201401302304267_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402152327051_Initial.resx">
+      <DependentUpon>201402152327051_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

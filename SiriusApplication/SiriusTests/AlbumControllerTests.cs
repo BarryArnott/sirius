@@ -91,10 +91,10 @@ namespace SiriusTests
             var context = new FakeSiriusContext();
 
             context.Albums = new[] {
-                new Album{ AlbumID = 1, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/raw"},
-                new Album{ AlbumID = 2, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/png"},
-                new Album{ AlbumID = 3, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/jpeg"},
-                new Album{ AlbumID = 4, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/bmp"}
+                new Album{ AlbumId = 1, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/raw"},
+                new Album{ AlbumId = 2, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/png"},
+                new Album{ AlbumId = 3, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/jpeg"},
+                new Album{ AlbumId = 4, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/bmp"}
 
             }.AsQueryable();
 
@@ -110,10 +110,10 @@ namespace SiriusTests
             var context = new FakeSiriusContext();
 
             context.Albums = new[] {
-                new Album{ AlbumID = 1, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/raw"},
-                new Album{ AlbumID = 2, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/png"},
-                new Album{ AlbumID = 3, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/jpeg"},
-                new Album{ AlbumID = 4, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/bmp"}
+                new Album{ AlbumId = 1, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/raw"},
+                new Album{ AlbumId = 2, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/png"},
+                new Album{ AlbumId = 3, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/jpeg"},
+                new Album{ AlbumId = 4, AlbumCoverFile = new byte[1], AlbumCoverMimeType = "image/bmp"}
             }.AsQueryable();
 
             var controller = new AlbumController(context);

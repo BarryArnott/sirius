@@ -10,7 +10,7 @@
     @if (Model.ImageFile != null)
     {
         <div class="photo-display">
-            <img width="800" src="@Url.Action("GetImage", "Image", new { id = Model.ImageID })" />
+            <img width="800" src="@Url.Action("GetImage", "Image", new { id = Model.ImageId })" />
         </div>
     }
 
@@ -33,6 +33,6 @@
 
     <p>
         @Html.ActionLink("Back to List", "Index") |
-    @Html.ActionLink("Delete This Photo", "Delete", new { id = Model.ImageID })
+    @Html.ActionLink("Delete This Photo", "Delete", new { id = Model.ImageId })
     </p>
 </div>

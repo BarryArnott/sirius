@@ -17,7 +17,7 @@ namespace SiriusApplication.Areas.Photography
             context.MapRoute(
                 "Photography_default",
                 "Photography/{controller}/{action}/{id}",
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                new { controller = "Photography", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
