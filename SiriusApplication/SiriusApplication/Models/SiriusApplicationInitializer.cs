@@ -31,27 +31,35 @@ namespace SiriusApplication.Models
             {
                 new Album {
                     AlbumId = 1,
-                    Title = "Album 2",
-                    Description = "Yosemite",
+                    Title = "Album 1",
+                    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
                     AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
                     AlbumCoverMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Today
+                    CreatedDate = DateTime.Now.AddDays(-1)
                 },
                 new Album {
                     AlbumId = 2,
-                    Title = "Album 3",
-                    Description = "Space",
+                    Title = "Album 2",
+                    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
                     AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
                     AlbumCoverMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Today
+                    CreatedDate = DateTime.Now.AddDays(-2)
                 },
                 new Album {
                     AlbumId = 3,
-                    Title = "Album 4",
-                    Description = "Storms",
-                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\05.jpg"),
+                    Title = "Album 3",
+                    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
+                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
                     AlbumCoverMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Today
+                    CreatedDate = DateTime.Now.AddDays(-3)
+                },
+                new Album {
+                    AlbumId = 4,
+                    Title = "Album 4",
+                    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
+                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
+                    AlbumCoverMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Now.AddDays(-4)
                 }
             };
 

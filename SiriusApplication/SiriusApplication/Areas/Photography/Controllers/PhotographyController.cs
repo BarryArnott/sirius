@@ -1,8 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+
 using SiriusApplication.Models;
 using SiriusApplication.Utils;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace SiriusApplication.Areas.Photography.Controllers
 {
@@ -32,7 +33,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult _PhotographyGallery(int number = 0)
+        public ActionResult _AlbumGallery(int number = 0)
         {
             List<Album> albums;
             if (number == 0)
@@ -47,7 +48,26 @@ namespace SiriusApplication.Areas.Photography.Controllers
                 select p).Take(number).ToList();
             }
 
-            return PartialView("_PhotographyGallery", albums);
+            return PartialView("_AlbumGallery", albums);
+        }
+
+        [ChildActionOnly]
+        public ActionResult _ImageGallery(int number = 0)
+        {
+            List<Image> images;
+            if (number == 0)
+            {
+                images = context.Images.ToList();
+            }
+            else
+            {
+                images = (
+                from p in context.Images
+                orderby p.UploadedDate descending
+                select p).Take(number).ToList();
+            }
+
+            return PartialView("_ImageGallery", images);
         }
 
         //Required to retrieve album cover image for album display
