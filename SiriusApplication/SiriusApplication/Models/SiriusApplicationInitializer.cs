@@ -126,37 +126,37 @@ namespace SiriusApplication.Models
             images.ForEach(s => context.Images.Add(s));
             context.SaveChanges();
 
-            var comments = new List<Comment>
-            {
-                new Comment {
-                    ImageID = 1,
-                    Subject = "Glacier point",
-                    Body = "On a cold morning on top of Glacier point at Yosemite."
-                },
-                new Comment {
-                    ImageID = 1,
-                    Subject = "Brrrrr",
-                    Body = "Yeah, it was cold!"
-                },
-                new Comment {
-                    ImageID = 2,
-                    Subject = "Awesome",
-                    Body = "Completely inspiring."
-                },
-                new Comment {
-                    ImageID = 3,
-                    Subject = "Exploration",
-                    Body = "Mankinds curiosity holds no bounds."
-                },
-                new Comment {
-                    ImageID = 4,
-                    Subject = "In a galaxy, far far away....",
-                    Body = "Amazing to think we are seeing something as it was billions of years ago!"
-                }
-            };
+            //var comments = new List<Comment>
+            //{
+            //    new Comment {
+            //        ImageID = 1,
+            //        Subject = "Glacier point",
+            //        Body = "On a cold morning on top of Glacier point at Yosemite."
+            //    },
+            //    new Comment {
+            //        ImageID = 1,
+            //        Subject = "Brrrrr",
+            //        Body = "Yeah, it was cold!"
+            //    },
+            //    new Comment {
+            //        ImageID = 2,
+            //        Subject = "Awesome",
+            //        Body = "Completely inspiring."
+            //    },
+            //    new Comment {
+            //        ImageID = 3,
+            //        Subject = "Exploration",
+            //        Body = "Mankinds curiosity holds no bounds."
+            //    },
+            //    new Comment {
+            //        ImageID = 4,
+            //        Subject = "In a galaxy, far far away....",
+            //        Body = "Amazing to think we are seeing something as it was billions of years ago!"
+            //    }
+            //};
 
-            comments.ForEach(s => context.Comments.Add(s));
-            context.SaveChanges();
+            //comments.ForEach(s => context.Comments.Add(s));
+            //context.SaveChanges();
         }
     }
 }

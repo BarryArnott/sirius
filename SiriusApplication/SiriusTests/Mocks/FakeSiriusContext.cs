@@ -1,144 +1,146 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using SiriusApplication.Models;
-using SiriusApplication.Utils;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Collections.ObjectModel;
+//using System.Linq;
+//using SiriusApplication.Models;
+//using SiriusApplication.Utils;
 
-namespace SiriusTests.Mocks
-{
-    class FakeSiriusContext : ISiriusApplicationContext
-    {
-        //This object is a keyed collection we use to mock an 
-        //entity framework context in memory
-        SetMap _map = new SetMap();
+//namespace SiriusTests.Mocks
+//{
+//    using System.Data.Entity;
 
-        public IQueryable<Album> Albums
-        {
-            get { return _map.Get<Album>().AsQueryable(); }
-            set { _map.Use<Album>(value); }
-        }
+//    class FakeSiriusContext : ISiriusApplicationContext
+//    {
+//        //This object is a keyed collection we use to mock an 
+//        //entity framework context in memory
+//        SetMap _map = new SetMap();
 
-        public IQueryable<Image> Images
-        {
-            get { return _map.Get<Image>().AsQueryable(); }
-            set { _map.Use<Image>(value); }
-        }
+//        public DbSet<Album> Albums
+//        {
+//            get { return _map.Get<Album>().AsQueryable(); }
+//            set { _map.Use<Album>(value); }
+//        }
 
-        public IQueryable<Comment> Comments
-        {
-            get { return _map.Get<Comment>().AsQueryable(); }
-            set { _map.Use<Comment>(value); }
-        }
+//        public IQueryable<Image> Images
+//        {
+//            get { return _map.Get<Image>().AsQueryable(); }
+//            set { _map.Use<Image>(value); }
+//        }
 
-        public bool ChangesSaved { get; set; }
+//        public IQueryable<Comment> Comments
+//        {
+//            get { return _map.Get<Comment>().AsQueryable(); }
+//            set { _map.Use<Comment>(value); }
+//        }
 
-        public int SaveChanges()
-        {
-            ChangesSaved = true;
-            return 0;
-        }
+//        public bool ChangesSaved { get; set; }
 
-        public T Add<T>(T entity) where T : class
-        {
-            _map.Get<T>().Add(entity);
-            return entity;
-        }
+//        public int SaveChanges()
+//        {
+//            ChangesSaved = true;
+//            return 0;
+//        }
 
-        public Album FindAlbumById(int ID)
-        {
-            Album item = (from p in this.Albums
-                          where p.AlbumId == ID
-                          select p).First();
+//        public T Add<T>(T entity) where T : class
+//        {
+//            _map.Get<T>().Add(entity);
+//            return entity;
+//        }
 
-            return item;
-        }
+//        public Album FindAlbumById(int ID)
+//        {
+//            Album item = (from p in this.Albums
+//                          where p.AlbumId == ID
+//                          select p).First();
 
-        public Album FindAlbumByTitle(string Title)
-        {
-            Album item = (from p in this.Albums
-                          where p.Title == Title
-                          select p).FirstOrDefault();
+//            return item;
+//        }
 
-            return item;
-        }
+//        public Album FindAlbumByTitle(string Title)
+//        {
+//            Album item = (from p in this.Albums
+//                          where p.Title == Title
+//                          select p).FirstOrDefault();
 
-        public Image FindImageById(int ID)
-        {
-            Image item = (from p in this.Images
-                    where p.ImageId == ID
-                    select p).First();
- 
-            return item;
-        }
+//            return item;
+//        }
 
-        public Album FindAlbumCoverImageById(int ID)
-        {
-            Album item = (from p in this.Albums
-                          where p.AlbumId == ID
-                          select p).First();
+//        public Image FindImageById(int ID)
+//        {
+//            Image item = (from p in this.Images
+//                          where p.ImageId == ID
+//                          select p).First();
 
-            return item;
+//            return item;
+//        }
 
-        }
+//        public Album FindAlbumCoverImageById(int ID)
+//        {
+//            Album item = (from p in this.Albums
+//                          where p.AlbumId == ID
+//                          select p).First();
 
-        public Image FindImageByTitle(string Title)
-        {
-            Image item = (from p in this.Images
-                          where p.Title == Title
-                          select p).FirstOrDefault();
+//            return item;
 
-            return item;
-        }
+//        }
 
-        public Image FindDefaultImageWhenNoImageFound()
-        {
-            const int noImageFound = 1;
+//        public Image FindImageByTitle(string Title)
+//        {
+//            Image item = (from p in this.Images
+//                          where p.Title == Title
+//                          select p).FirstOrDefault();
 
-            Image item = (from p in this.Images
-                          where p.ImageId == noImageFound
-                          select p).First();
+//            return item;
+//        }
 
-            return item;
-        }
+//        public Image FindDefaultImageWhenNoImageFound()
+//        {
+//            const int noImageFound = 1;
 
-        public Comment FindCommentById(int ID)
-        {
-            Comment item = (from c in this.Comments
-                          where c.CommentID == ID
-                          select c).First();
-            return item;
-        }
+//            Image item = (from p in this.Images
+//                          where p.ImageId == noImageFound
+//                          select p).First();
 
-        public T Delete<T>(T entity) where T : class
-        {
-            _map.Get<T>().Remove(entity);
-            return entity;
-        }
+//            return item;
+//        }
 
-        class SetMap : KeyedCollection<Type, object>
-        {
+//        public Comment FindCommentById(int ID)
+//        {
+//            Comment item = (from c in this.Comments
+//                            where c.CommentID == ID
+//                            select c).First();
+//            return item;
+//        }
 
-            public HashSet<T> Use<T>(IEnumerable<T> sourceData)
-            {
-                var set = new HashSet<T>(sourceData);
-                if (Contains(typeof(T)))
-                {
-                    Remove(typeof(T));
-                }
-                Add(set);
-                return set;
-            }
+//        public T Delete<T>(T entity) where T : class
+//        {
+//            _map.Get<T>().Remove(entity);
+//            return entity;
+//        }
 
-            public HashSet<T> Get<T>()
-            {
-                return (HashSet<T>) this[typeof(T)];
-            }
+//        class SetMap : KeyedCollection<Type, object>
+//        {
 
-            protected override Type GetKeyForItem(object item)
-            {
-                return item.GetType().GetGenericArguments().Single();
-            }
-        }
-    }
-}
+//            public HashSet<T> Use<T>(IEnumerable<T> sourceData)
+//            {
+//                var set = new HashSet<T>(sourceData);
+//                if (Contains(typeof(T)))
+//                {
+//                    Remove(typeof(T));
+//                }
+//                Add(set);
+//                return set;
+//            }
+
+//            public HashSet<T> Get<T>()
+//            {
+//                return (HashSet<T>)this[typeof(T)];
+//            }
+
+//            protected override Type GetKeyForItem(object item)
+//            {
+//                return item.GetType().GetGenericArguments().Single();
+//            }
+//        }
+//    }
+//}

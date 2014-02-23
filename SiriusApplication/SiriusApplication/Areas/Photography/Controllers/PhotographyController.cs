@@ -13,19 +13,18 @@ namespace SiriusApplication.Areas.Photography.Controllers
     [HandleError(View = "Error")]
     public class PhotographyController : Controller
     {
-        private ISiriusApplicationContext context;
+        private IAlbumRepository _albumRepository;
 
-        // constructor
         public PhotographyController()
         {
-            context = new SiriusApplicationContext();
+            _albumRepository = new AlbumRepository();
         }
 
-        // constructor. only used for testing or when a context is passed in
-        public PhotographyController(ISiriusApplicationContext Context)
+        public PhotographyController(IAlbumRepository albumRepository)
         {
-            context = Context;
+            _albumRepository = albumRepository;
         }
+
 
         public ActionResult Index()
         {
@@ -38,12 +37,12 @@ namespace SiriusApplication.Areas.Photography.Controllers
             List<Album> albums;
             if (number == 0)
             {
-                albums = context.Albums.ToList();
+                albums = _albumRepository.Albums.ToList();
             }
             else
             {
                 albums = (
-                from p in context.Albums
+                from p in _albumRepository.Albums
                 orderby p.CreatedDate descending
                 select p).Take(number).ToList();
             }
@@ -57,12 +56,12 @@ namespace SiriusApplication.Areas.Photography.Controllers
             List<Image> images;
             if (number == 0)
             {
-                images = context.Images.ToList();
+                images = _albumRepository.Images.ToList();
             }
             else
             {
                 images = (
-                from p in context.Images
+                from p in _albumRepository.Images
                 orderby p.UploadedDate descending
                 select p).Take(number).ToList();
             }
@@ -75,7 +74,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
         {
             try
             {
-                Album album = context.FindAlbumCoverImageById(id);
+                Album album = _albumRepository.FindAlbumCoverImageById(id);
 
                 if (album != null)
                 {
@@ -83,7 +82,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
                 }
                 else
                 {
-                    Image image = context.FindDefaultImageWhenNoImageFound();
+                    Image image = _albumRepository.FindDefaultImageWhenNoImageFound();
 
                     return File(image.ImageFile, image.ImageMimeType);
                 }

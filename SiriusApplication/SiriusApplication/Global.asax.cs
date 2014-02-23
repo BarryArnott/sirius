@@ -1,8 +1,6 @@
-﻿using System.Data.Entity;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
-using SiriusApplication.Models;
 
 namespace SiriusApplication
 {
@@ -19,7 +17,7 @@ namespace SiriusApplication
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             // uncomment to enable re-creation of database
-            Database.SetInitializer<SiriusApplicationContext>(new SiriusApplicationInitializer());
+            //Database.SetInitializer<SiriusApplicationContext>(new SiriusApplicationInitializer());
         }
     }
 }
