@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SiriusApplication.Models.Image>
+
+<div class="container marketing">
+    <hr class="featurette-divider" />
+    @foreach (var image in Model)
+    {
+
+        <div class="row">
+            <div class="col-md-7">
+                <h2 class="featurette-heading"></h2>
+            </div>
+        </div>
+
+    }
+</div>
+
+
+
+@foreach (var album in Model)
+{
+    <div class="col-lg-4">
+        <img class="img-circle" width="140" height="140"  alt="@album.Description" src="@this.Url.Action("GetAlbumCoverImage", "Photography", new { id = album.AlbumId })"/>
+        <h2>@album.Title</h2>
+        <p>@album.Description</p>
+    </div>
+}

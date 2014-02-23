@@ -351,7 +351,7 @@
     <Content Include="Content\CSS\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\CSS\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\Photography\Views\Shared\_AlbumGallery.cshtml" />
-    <Content Include="Areas\Photography\Views\Photography\_ImageGallery.cshtml" />
+    <Content Include="Areas\Photography\Views\Shared\_ImageGallery.cshtml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
