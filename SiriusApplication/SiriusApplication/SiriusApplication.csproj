@@ -132,14 +132,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\About\AboutAreaRegistration.cs" />
-    <Compile Include="Areas\About\Controllers\HomeController.cs" />
+    <Compile Include="Areas\About\Controllers\AboutController.cs" />
     <Compile Include="Areas\Contact\ContactAreaRegistration.cs" />
-    <Compile Include="Areas\Contact\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Cycling\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Contact\Controllers\ContactController.cs" />
+    <Compile Include="Areas\Cycling\Controllers\CyclingController.cs" />
     <Compile Include="Areas\Cycling\CyclingAreaRegistration.cs" />
     <Compile Include="Areas\Photography\Controllers\PhotographyController.cs" />
     <Compile Include="Areas\Photography\PhotographyAreaRegistration.cs" />
-    <Compile Include="Areas\Technology\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Technology\Controllers\TechnologyController.cs" />
     <Compile Include="Areas\Technology\TechnologyAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
@@ -166,6 +166,7 @@
     <Compile Include="Models\SiriusApplicationContext.cs" />
     <Compile Include="Models\SiriusApplicationInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\HtmlHelpers.cs" />
     <Compile Include="Utils\ValueReporter.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -389,13 +390,13 @@
     <Content Include="Areas\About\Views\Web.config" />
     <Content Include="Areas\About\Views\_ViewStart.cshtml" />
     <Content Include="Areas\About\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\About\Views\Home\Index.cshtml" />
+    <Content Include="Areas\About\Views\About\Index.cshtml" />
     <Content Include="Areas\Contact\Views\Web.config" />
-    <Content Include="Areas\Contact\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Contact\Views\Contact\Index.cshtml" />
     <Content Include="Areas\Contact\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Contact\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Cycling\Views\Web.config" />
-    <Content Include="Areas\Cycling\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Cycling\Views\Cycling\Index.cshtml" />
     <Content Include="Areas\Cycling\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Cycling\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Photography\Views\Shared\_Layout.cshtml" />
@@ -403,7 +404,7 @@
     <Content Include="Areas\Photography\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Photography\Views\Photography\Index.cshtml" />
     <Content Include="Areas\Technology\Views\Web.config" />
-    <Content Include="Areas\Technology\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Technology\Views\Technology\Index.cshtml" />
     <Content Include="Areas\Technology\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Technology\Views\Shared\_Layout.cshtml" />
     <Content Include="Content\bootstrap-less\.editorconfig" />

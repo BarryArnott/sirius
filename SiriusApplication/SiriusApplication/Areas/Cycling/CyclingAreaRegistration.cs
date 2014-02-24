@@ -17,7 +17,7 @@ namespace SiriusApplication.Areas.Cycling
             context.MapRoute(
                 "Cycling_default",
                 "Cycling/{controller}/{action}/{id}",
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                new { controller = "Cycling", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

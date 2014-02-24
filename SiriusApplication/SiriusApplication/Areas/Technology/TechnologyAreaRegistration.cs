@@ -17,7 +17,7 @@ namespace SiriusApplication.Areas.Technology
             context.MapRoute(
                 "Technology_default",
                 "Technology/{controller}/{action}/{id}",
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                new { controller = "Technology", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

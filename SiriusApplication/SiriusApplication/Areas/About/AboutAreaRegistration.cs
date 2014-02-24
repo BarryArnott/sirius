@@ -17,7 +17,7 @@ namespace SiriusApplication.Areas.About
             context.MapRoute(
                 "About_default",
                 "About/{controller}/{action}/{id}",
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                new { controller = "About", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

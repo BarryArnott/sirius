@@ -17,7 +17,7 @@ namespace SiriusApplication.Areas.Contact
             context.MapRoute(
                 "Contact_default",
                 "Contact/{controller}/{action}/{id}",
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                new { controller = "Contact", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
