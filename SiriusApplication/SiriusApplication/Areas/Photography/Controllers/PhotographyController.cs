@@ -41,6 +41,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
             }
             else
             {
+                //TODO move out into albumrepository
                 albums = (
                 from p in _albumRepository.Albums
                 orderby p.CreatedDate descending
@@ -60,6 +61,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
             }
             else
             {
+                //TODO move out into imagerepository
                 images = (
                 from p in _albumRepository.Images
                 orderby p.UploadedDate descending

@@ -11,8 +11,6 @@ namespace SiriusApplication.Utils
             logValues(filterContext.RouteData);
         }
 
-
-
         private void logValues(RouteData routeData)
         {
             var controller = routeData.Values["controller"];

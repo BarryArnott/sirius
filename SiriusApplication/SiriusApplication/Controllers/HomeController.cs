@@ -11,6 +11,5 @@ namespace SiriusApplication.Controllers
         {
             return View("Index");
         }
-
     }
 }

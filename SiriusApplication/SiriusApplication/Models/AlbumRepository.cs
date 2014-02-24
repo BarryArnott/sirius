@@ -29,7 +29,7 @@
         }
 
         [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1306:FieldNamesMustBeginWithLowerCaseLetter", Justification = "Reviewed. Suppression is OK here.")]
-        Album IAlbumRepository.FindAlbumCoverImageById(int id)
+        public Album FindAlbumCoverImageById(int id)
         {
             return this._context.Albums.Find(id);
         }
