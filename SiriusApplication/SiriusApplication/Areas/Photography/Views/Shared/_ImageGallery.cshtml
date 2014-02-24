@@ -2,23 +2,18 @@
 
 <div class="container marketing">
     <hr class="featurette-divider" />
+    <h2 class="featurette-heading">Latest Photos</h2>
     @foreach (var image in Model)
     {
-
         <div class="row">
             <div class="col-md-7">
-                <h2 class="featurette-heading"></h2>
+                <h2 class="featurette-heading">@image.Title</h2>
+                <p class="lead">@image.Description</p>
+            </div>
+            <div class="col-md-5">
+                <img class="img-responsive" width=500 height=500  alt="@image.Description" src="@this.Url.Action("GetImage", "Photography", new { id = image.ImageId })"/>
             </div>
         </div>
-
+        <hr class="featurette-divider" />
     }
 </div>
-
-@foreach (var album in Model)
-{
-    <div class="col-lg-4">
-        <img class="img-circle" width="140" height="140"  alt="@album.Description" src="@this.Url.Action("GetAlbumCoverImage", "Photography", new { id = album.AlbumId })"/>
-        <h2>@album.Title</h2>
-        <p>@album.Description</p>
-    </div>
-}

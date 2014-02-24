@@ -159,7 +159,9 @@
     <Compile Include="Models\AlbumRepository.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IAlbumRepository.cs" />
+    <Compile Include="Models\IImageRepository.cs" />
     <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\ImageRepository.cs" />
     <Compile Include="Models\ISiriusApplicationContext.cs" />
     <Compile Include="Models\SiriusApplicationContext.cs" />
     <Compile Include="Models\SiriusApplicationInitializer.cs" />

@@ -1,6 +1,5 @@
 ﻿namespace SiriusApplication.Models
 {
-    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
 
     public class AlbumRepository : IAlbumRepository
@@ -17,24 +16,22 @@
             this._context = new SiriusApplicationContext();
         }
 
-
-        IQueryable<Album> IAlbumRepository.Albums
+        public IQueryable<Album> Albums
         {
             get { return this._context.Albums; }
         }
 
-        IQueryable<Image> IAlbumRepository.Images
+        public IQueryable<Image> Images
         {
             get { return this._context.Images; }
         }
 
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1306:FieldNamesMustBeginWithLowerCaseLetter", Justification = "Reviewed. Suppression is OK here.")]
         public Album FindAlbumCoverImageById(int id)
         {
             return this._context.Albums.Find(id);
         }
 
-        Image IAlbumRepository.FindDefaultImageWhenNoImageFound()
+        public Image FindDefaultImageWhenNoImageFound()
         {
             //The default image id
             const int noImageFound = 1;

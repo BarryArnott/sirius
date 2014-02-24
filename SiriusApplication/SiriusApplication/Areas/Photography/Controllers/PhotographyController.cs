@@ -15,16 +15,19 @@ namespace SiriusApplication.Areas.Photography.Controllers
     {
         private IAlbumRepository _albumRepository;
 
+        private IImageRepository _imageRepository;
+
         public PhotographyController()
         {
             _albumRepository = new AlbumRepository();
+            _imageRepository = new ImageRepository();
         }
 
-        public PhotographyController(IAlbumRepository albumRepository)
+        public PhotographyController(IAlbumRepository albumRepository, IImageRepository imageRepository)
         {
             _albumRepository = albumRepository;
+            _imageRepository = imageRepository;
         }
-
 
         public ActionResult Index()
         {
@@ -90,6 +93,20 @@ namespace SiriusApplication.Areas.Photography.Controllers
                 }
             }
             catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public FileContentResult GetImage(int id)
+        {
+            Image image = _imageRepository.FindImageById(id);
+
+            if (image != null)
+            {
+                return File(image.ImageFile, image.ImageMimeType);
+            }
+            else
             {
                 return null;
             }
