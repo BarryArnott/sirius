@@ -21,11 +21,8 @@
  
                 if (!node.Children.Any())
                 {
-        
-                    //TODO: Add active class to current li
                     @*<li><a href="@url">@node.Title</a></li>*@
                     @:@Html.MenuLink(@node.Title, @node.Action, @node.Controller)
-                var test = @Html.MenuLink(@node.Title, @node.Action, @node.Controller);
                 }
                 else
                 {
