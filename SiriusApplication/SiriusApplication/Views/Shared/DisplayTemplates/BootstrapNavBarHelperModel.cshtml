@@ -21,7 +21,6 @@
  
                 if (!node.Children.Any())
                 {
-                    @*<li><a href="@url">@node.Title</a></li>*@
                     @:@Html.MenuLink(@node.Title, @node.Action, @node.Controller)
                 }
                 else

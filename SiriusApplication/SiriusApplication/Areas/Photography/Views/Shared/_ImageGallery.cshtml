@@ -1,4 +1,7 @@
-﻿@model IEnumerable<SiriusApplication.Models.Image>
+﻿@using System.Globalization
+@model IEnumerable<SiriusApplication.Models.Image>
+
+@{ int i = 0; }
 
 <div class="container marketing">
     <hr class="featurette-divider" />
@@ -9,11 +12,48 @@
             <div class="col-md-7">
                 <h2 class="featurette-heading">@image.Title</h2>
                 <p class="lead">@image.Description</p>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseDetails@(i)">Details</a>
+                            </h4>
+                        </div>
+                        <div id="collapseDetails@(i)" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                @Html.LabelFor(model => model.FirstOrDefault().ImageTakenOnDate)
+                                <p>@image.ImageTakenOnDate</p>
+                                @Html.LabelFor(model => model.FirstOrDefault().Aperture)
+                                <p>@image.Aperture</p>
+                                @Html.LabelFor(model => model.FirstOrDefault().IsoRating)
+                                <p>@image.IsoRating</p>
+                                @Html.LabelFor(model => model.FirstOrDefault().FocalLength)
+                                <p>@image.FocalLength</p>
+                                @Html.LabelFor(model => model.FirstOrDefault().ShutterSpeed)
+                                <p>@image.ShutterSpeed</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseLocation@(i)">Location</a>
+                            </h4>
+                        </div>
+                        <div id="collapseLocation@(i)" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-5">
                 <img class="img-responsive" width=500 height=500  alt="@image.Description" src="@this.Url.Action("GetImage", "Photography", new { id = image.ImageId })"/>
             </div>
         </div>
         <hr class="featurette-divider" />
+
+        i++;
     }
 </div>

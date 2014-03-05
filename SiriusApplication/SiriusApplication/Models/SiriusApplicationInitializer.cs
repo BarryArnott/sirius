@@ -74,8 +74,13 @@ namespace SiriusApplication.Models
                     ImageFile = getFileBytes("\\Content\\Images\\SharedImages\\no_album_image.jpg"),
                     ImageMimeType = "image/gif",
                     UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today
+                    ImageTakenOnDate = DateTime.Today,
+                    Aperture = "f4",
+                    FocalLength = "200mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/250"
                 },
+
                 new Image {
                     AlbumId = 1,
                     Title = "Yosemite",
@@ -83,8 +88,13 @@ namespace SiriusApplication.Models
                     ImageFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today
+                    ImageTakenOnDate = DateTime.Today,
+                    Aperture = "f4",
+                    FocalLength = "200mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/250"
                 },
+
                 new Image {
                     AlbumId = 2,
                     Title = "Space Shuttle",
@@ -92,8 +102,13 @@ namespace SiriusApplication.Models
                     ImageFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today
+                    ImageTakenOnDate = DateTime.Today,
+                    Aperture = "f4",
+                    FocalLength = "200mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/250"
                 },
+
                 new Image {
                     AlbumId = 2,
                     Title = "Opportunity",
@@ -101,8 +116,13 @@ namespace SiriusApplication.Models
                     ImageFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today
+                    ImageTakenOnDate = DateTime.Today,
+                    Aperture = "f4",
+                    FocalLength = "200mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/250"
                 },
+
                 new Image {
                     AlbumId = 2,
                     Title = "Hubble",
@@ -110,8 +130,13 @@ namespace SiriusApplication.Models
                     ImageFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today
+                    ImageTakenOnDate = DateTime.Today,
+                    Aperture = "f4",
+                    FocalLength = "200mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/250"
                 },
+
                 new Image {
                     AlbumId = 3,
                     Title = "Twister",
@@ -119,7 +144,11 @@ namespace SiriusApplication.Models
                     ImageFile = getFileBytes("\\Content\\Images\\Photography\\05.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today
+                    ImageTakenOnDate = DateTime.Today,
+                    Aperture = "f4",
+                    FocalLength = "200mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/250"
                 }
             };
 
