@@ -1,5 +1,6 @@
-﻿@using System.Globalization
-@model IEnumerable<SiriusApplication.Models.Image>
+﻿@model IEnumerable<SiriusApplication.Models.Image>
+
+
 
 @{ int i = 0; }
 
@@ -49,7 +50,7 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <img class="img-responsive" width=500 height=500  alt="@image.Description" src="@this.Url.Action("GetImage", "Photography", new { id = image.ImageId })"/>
+                <img class="img-responsive thumbnail" width=500 height=500  alt="@image.Description" src="@this.Url.Action("GetImage", "Photography", new { id = image.ImageId })"/>
             </div>
         </div>
         <hr class="featurette-divider" />
