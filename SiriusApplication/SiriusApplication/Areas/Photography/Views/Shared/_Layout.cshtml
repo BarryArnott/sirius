@@ -4,4 +4,8 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
+@*included here, and not in _MainLayout as this hides any sections from the _MainLayout*@
+@RenderSection("collabsibleChevrons", false);
+
+
 @RenderBody()
