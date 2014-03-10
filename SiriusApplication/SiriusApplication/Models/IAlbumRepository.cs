@@ -10,6 +10,6 @@
 
         Album FindAlbumCoverImageById(int ID);
 
-        Image FindDefaultImageWhenNoImageFound();
+        //Image GetDefaultImageWhenNoImageFound();
     }
 }

@@ -7,5 +7,7 @@
         IQueryable<Image> Images { get; }
 
         Image FindImageById(int id);
+
+        Image GetDefaultImageWhenNoImageFound();
     }
 }

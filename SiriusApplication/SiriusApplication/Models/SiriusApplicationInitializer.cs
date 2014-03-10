@@ -81,75 +81,75 @@ namespace SiriusApplication.Models
                     ShutterSpeed = "1/250"
                 },
 
-                new Image {
-                    AlbumId = 1,
-                    Title = "Yosemite",
-                    Description = "Yosemite 2011",
-                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today,
-                    Aperture = "f4",
-                    FocalLength = "200mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/250"
-                },
+                //new Image {
+                //    AlbumId = 1,
+                //    Title = "Yosemite",
+                //    Description = "Yosemite 2011",
+                //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Today,
+                //    ImageTakenOnDate = DateTime.Today,
+                //    Aperture = "f4",
+                //    FocalLength = "200mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/250"
+                //},
 
-                new Image {
-                    AlbumId = 2,
-                    Title = "Space Shuttle",
-                    Description = "Launch of the space shuttle",
-                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today,
-                    Aperture = "f4",
-                    FocalLength = "200mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/250"
-                },
+                //new Image {
+                //    AlbumId = 2,
+                //    Title = "Space Shuttle",
+                //    Description = "Launch of the space shuttle",
+                //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Today,
+                //    ImageTakenOnDate = DateTime.Today,
+                //    Aperture = "f4",
+                //    FocalLength = "200mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/250"
+                //},
 
-                new Image {
-                    AlbumId = 2,
-                    Title = "Opportunity",
-                    Description = "Opportunity rover on Mars",
-                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today,
-                    Aperture = "f4",
-                    FocalLength = "200mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/250"
-                },
+                //new Image {
+                //    AlbumId = 2,
+                //    Title = "Opportunity",
+                //    Description = "Opportunity rover on Mars",
+                //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Today,
+                //    ImageTakenOnDate = DateTime.Today,
+                //    Aperture = "f4",
+                //    FocalLength = "200mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/250"
+                //},
 
-                new Image {
-                    AlbumId = 2,
-                    Title = "Hubble",
-                    Description = "Hubble Deep Field",
-                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today,
-                    Aperture = "f4",
-                    FocalLength = "200mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/250"
-                },
+                //new Image {
+                //    AlbumId = 2,
+                //    Title = "Hubble",
+                //    Description = "Hubble Deep Field",
+                //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Today,
+                //    ImageTakenOnDate = DateTime.Today,
+                //    Aperture = "f4",
+                //    FocalLength = "200mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/250"
+                //},
 
-                new Image {
-                    AlbumId = 3,
-                    Title = "Twister",
-                    Description = "Twister in USA",
-                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\05.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today,
-                    Aperture = "f4",
-                    FocalLength = "200mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/250"
-                }
+                //new Image {
+                //    AlbumId = 3,
+                //    Title = "Twister",
+                //    Description = "Twister in USA",
+                //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\05.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Today,
+                //    ImageTakenOnDate = DateTime.Today,
+                //    Aperture = "f4",
+                //    FocalLength = "200mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/250"
+                //}
             };
 
             images.ForEach(s => context.Images.Add(s));

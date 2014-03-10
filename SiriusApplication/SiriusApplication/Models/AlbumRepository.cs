@@ -31,12 +31,12 @@
             return this._context.Albums.Find(id);
         }
 
-        public Image FindDefaultImageWhenNoImageFound()
-        {
-            //The default image id
-            const int noImageFound = 1;
+        //public Image GetDefaultImageWhenNoImageFound()
+        //{
+        //    //The default image id
+        //    const int noImageFound = 1;
 
-            return _context.Images.Find(noImageFound);
-        }
+        //    return _context.Images.Find(noImageFound);
+        //}
     }
 }

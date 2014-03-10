@@ -25,5 +25,13 @@
         {
             return this._context.Images.Find(id);
         }
+
+        public Image GetDefaultImageWhenNoImageFound()
+        {
+            //The default image id
+            const int NoImageFound = 1;
+
+            return this._context.Images.Find(NoImageFound);
+        }
     }
 }

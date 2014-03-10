@@ -77,38 +77,33 @@ namespace SiriusApplication.Areas.Photography.Controllers
         //Required to retrieve album cover image for album display
         public FileContentResult GetAlbumCoverImage(int id)
         {
-            try
-            {
-                Album album = _albumRepository.FindAlbumCoverImageById(id);
+            Album album = _albumRepository.FindAlbumCoverImageById(id);
 
-                if (album != null)
-                {
-                    return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
-                }
-                else
-                {
-                    Image image = _albumRepository.FindDefaultImageWhenNoImageFound();
 
-                    return File(image.ImageFile, image.ImageMimeType);
-                }
-            }
-            catch (Exception e)
+
+
+
+
+            if (album == null)
             {
-                return null;
+                Image image = this._imageRepository.GetDefaultImageWhenNoImageFound();
+                return File(image.ImageFile, image.ImageMimeType);
             }
+
+            return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
         }
 
         public FileContentResult GetImage(int id)
         {
-            Image image = _imageRepository.FindImageById(id);
-
-            if (image != null)
+            try
             {
+                Image image = _imageRepository.FindImageById(id);
                 return File(image.ImageFile, image.ImageMimeType);
             }
-            else
+            catch (Exception)
             {
-                return null;
+                Image image = this._imageRepository.GetDefaultImageWhenNoImageFound();
+                return this.File(image.ImageFile, image.ImageMimeType);
             }
         }
     }
