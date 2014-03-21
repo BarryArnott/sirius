@@ -9,12 +9,12 @@
 
         Album GetAlbumCoverImageById(int ID);
 
-        List<Album> GetOrderedAlbumsDescending(int number);
+        List<Album> GetAllAlbumsOrderedDescending();
+
+        List<Album> GetAlbumsOrderedDescending(int number);
 
         Album GetAlbumByTitle(string Title);
 
         Album GetDefaultAlbumWhenNoAlbumFound();
-
-        //Image GetDefaultImageWhenNoImageFound();
     }
 }

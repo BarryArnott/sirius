@@ -40,11 +40,11 @@ namespace SiriusApplication.Areas.Photography.Controllers
             if (number == 0)
             {
                 // list all albums
-                albums = _albumRepository.Albums.ToList();
+                albums = _albumRepository.GetAllAlbumsOrderedDescending();
             }
             else
             {
-                albums = _albumRepository.GetOrderedAlbumsDescending(number);
+                albums = _albumRepository.GetAlbumsOrderedDescending(number);
             }
 
             return PartialView("_AlbumGallery", albums);
@@ -56,11 +56,11 @@ namespace SiriusApplication.Areas.Photography.Controllers
             List<Image> images;
             if (number == 0)
             {
-                images = _imageRepository.Images.ToList();
+                images = _imageRepository.GetAllImagesOrderedDescending();
             }
             else
             {
-                images = _imageRepository.GetOrderedImagesDescending(number);
+                images = _imageRepository.GetImagesOrderedDescending(number);
             }
 
             return PartialView("_ImageGallery", images);
@@ -73,6 +73,8 @@ namespace SiriusApplication.Areas.Photography.Controllers
 
             if (album == null)
             {
+                //TODO Do I really need this? Would it not be better to just pass an int and then get the view to handle the 
+                // display of null albums
                 album = _albumRepository.GetDefaultAlbumWhenNoAlbumFound();
                 return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
             }

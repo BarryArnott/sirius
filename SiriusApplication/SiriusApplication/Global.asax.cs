@@ -19,7 +19,6 @@ namespace SiriusApplication
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            // uncomment to enable re-creation of database
             Database.SetInitializer<SiriusApplicationContext>(new SiriusApplicationInitializer());
         }
     }

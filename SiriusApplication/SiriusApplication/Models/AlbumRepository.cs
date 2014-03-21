@@ -27,7 +27,20 @@
             return this._context.Albums.Find(id);
         }
 
-        public List<Album> GetOrderedAlbumsDescending(int number)
+        public List<Album> GetAllAlbumsOrderedDescending()
+        {
+            List<Album> albums;
+
+            albums = (
+                from p in this._context.Albums
+                where p.Title != "No Album Found"
+                orderby p.CreatedDate descending
+                select p).ToList();
+
+            return albums;
+        }
+
+        public List<Album> GetAlbumsOrderedDescending(int number)
         {
             List<Album> albums;
 

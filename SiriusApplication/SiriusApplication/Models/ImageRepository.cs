@@ -43,14 +43,28 @@
             return GetImageByTitle(defaultImageTitle);
         }
 
-        public List<Image> GetOrderedImagesDescending(int number)
+        public List<Image> GetAllImagesOrderedDescending(int number)
+        {
+            List<Image> images;
+
+            images = (
+                from p in this._context.Images
+                where p.Title != "No Image Found"
+                orderby p.UploadedDate descending
+                select p).Take(number).ToList();
+
+            return images;
+        }
+
+        public List<Image> GetImagesOrderedDescending()
         {
             List<Image> images;
             
             images = (
                 from p in this._context.Images
+                where p.Title != "No Image Found"
                 orderby p.UploadedDate descending
-                select p).Take(number).ToList();
+                select p).ToList();
 
             return images;
         }

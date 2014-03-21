@@ -13,6 +13,8 @@
 
         Image GetDefaultImageWhenNoImageFound();
 
-        List<Image> GetOrderedImagesDescending(int number);
+        List<Image> GetAllImagesOrderedDescending();
+
+        List<Image> GetImagesOrderedDescending(int number);
     }
 }
