@@ -1,5 +1,6 @@
 ﻿namespace SiriusApplication.Models
 {
+    using System.Collections.Generic;
     using System.Linq;
 
     public class AlbumRepository : IAlbumRepository
@@ -21,22 +22,37 @@
             get { return this._context.Albums; }
         }
 
-        public IQueryable<Image> Images
-        {
-            get { return this._context.Images; }
-        }
-
-        public Album FindAlbumCoverImageById(int id)
+        public Album GetAlbumCoverImageById(int id)
         {
             return this._context.Albums.Find(id);
         }
 
-        //public Image GetDefaultImageWhenNoImageFound()
-        //{
-        //    //The default image id
-        //    const int noImageFound = 1;
+        public List<Album> GetOrderedAlbumsDescending(int number)
+        {
+            List<Album> albums;
 
-        //    return _context.Images.Find(noImageFound);
-        //}
+            albums = (
+                from p in this._context.Albums
+                where p.Title != "No Album Found"
+                orderby p.CreatedDate descending
+                select p).Take(number).ToList();
+
+            return albums;
+        }
+
+        public Album GetAlbumByTitle(string Title)
+        {
+            Album album = (from p in _context.Albums
+                           where p.Title == Title
+                           select p).FirstOrDefault();
+            return album;
+        }
+
+        public Album GetDefaultAlbumWhenNoAlbumFound()
+        {
+            string defaultAlbumTitle = "No Album Found";
+
+            return GetAlbumByTitle(defaultAlbumTitle);
+        }
     }
 }

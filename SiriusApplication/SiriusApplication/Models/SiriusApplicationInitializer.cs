@@ -31,36 +31,45 @@ namespace SiriusApplication.Models
             {
                 new Album {
                     AlbumId = 1,
-                    Title = "Album 1",
-                    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
-                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
+                    Title = "No Album Found",
+                    Description = "Woops! There appears to have been no album found",
+                    AlbumCoverFile = getFileBytes("\\Content\\Images\\SharedImages\\no_image.jpg"),
                     AlbumCoverMimeType = "image/jpeg",
                     CreatedDate = DateTime.Now.AddDays(-1)
-                },
-                new Album {
-                    AlbumId = 2,
-                    Title = "Album 2",
-                    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
-                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
-                    AlbumCoverMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Now.AddDays(-2)
-                },
-                new Album {
-                    AlbumId = 3,
-                    Title = "Album 3",
-                    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
-                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
-                    AlbumCoverMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Now.AddDays(-3)
-                },
-                new Album {
-                    AlbumId = 4,
-                    Title = "Album 4",
-                    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
-                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
-                    AlbumCoverMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Now.AddDays(-4)
                 }
+
+                //new Album {
+                //    AlbumId = 2,
+                //    Title = "Album 2",
+                //    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
+                //    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
+                //    AlbumCoverMimeType = "image/jpeg",
+                //    CreatedDate = DateTime.Now.AddDays(-1)
+                //},
+                //new Album {
+                //    AlbumId = 3,
+                //    Title = "Album 3",
+                //    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
+                //    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
+                //    AlbumCoverMimeType = "image/jpeg",
+                //    CreatedDate = DateTime.Now.AddDays(-2)
+                //},
+                //new Album {
+                //    AlbumId = 4,
+                //    Title = "Album 4",
+                //    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
+                //    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
+                //    AlbumCoverMimeType = "image/jpeg",
+                //    CreatedDate = DateTime.Now.AddDays(-3)
+                //},
+                //new Album {
+                //    AlbumId = 5,
+                //    Title = "Album 5",
+                //    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
+                //    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
+                //    AlbumCoverMimeType = "image/jpeg",
+                //    CreatedDate = DateTime.Now.AddDays(-4)
+                //}
             };
 
             albums.ForEach(s => context.Albums.Add(s));
@@ -71,7 +80,7 @@ namespace SiriusApplication.Models
                 new Image {
                     Title = "No Image Found",
                     Description = "No Image Found",
-                    ImageFile = getFileBytes("\\Content\\Images\\SharedImages\\no_album_image.jpg"),
+                    ImageFile = getFileBytes("\\Content\\Images\\SharedImages\\no_image.jpg"),
                     ImageMimeType = "image/gif",
                     UploadedDate = DateTime.Today,
                     ImageTakenOnDate = DateTime.Today,
@@ -82,7 +91,7 @@ namespace SiriusApplication.Models
                 },
 
                 //new Image {
-                //    AlbumId = 1,
+                //    AlbumId = 2,
                 //    Title = "Yosemite",
                 //    Description = "Yosemite 2011",
                 //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
@@ -96,7 +105,7 @@ namespace SiriusApplication.Models
                 //},
 
                 //new Image {
-                //    AlbumId = 2,
+                //    AlbumId = 3,
                 //    Title = "Space Shuttle",
                 //    Description = "Launch of the space shuttle",
                 //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
@@ -110,7 +119,7 @@ namespace SiriusApplication.Models
                 //},
 
                 //new Image {
-                //    AlbumId = 2,
+                //    AlbumId = 3,
                 //    Title = "Opportunity",
                 //    Description = "Opportunity rover on Mars",
                 //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
@@ -124,7 +133,7 @@ namespace SiriusApplication.Models
                 //},
 
                 //new Image {
-                //    AlbumId = 2,
+                //    AlbumId = 3,
                 //    Title = "Hubble",
                 //    Description = "Hubble Deep Field",
                 //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
@@ -138,7 +147,7 @@ namespace SiriusApplication.Models
                 //},
 
                 //new Image {
-                //    AlbumId = 3,
+                //    AlbumId = 4,
                 //    Title = "Twister",
                 //    Description = "Twister in USA",
                 //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\05.jpg"),

@@ -338,7 +338,7 @@
     <Content Include="Content\Images\SharedImages\email.png" />
     <Content Include="Content\Images\SharedImages\flickr.png" />
     <Content Include="Content\Images\SharedImages\linkedin.png" />
-    <Content Include="Content\Images\SharedImages\no_album_image.jpg" />
+    <Content Include="Content\Images\SharedImages\no_image.jpg" />
     <Content Include="Content\Images\Photography\01.jpg" />
     <Content Include="Content\Images\Photography\02.jpg" />
     <Content Include="Content\Images\Photography\03.jpg" />

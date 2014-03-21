@@ -1,5 +1,7 @@
 ﻿namespace SiriusApplication.Models
 {
+    using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     public class ImageRepository : IImageRepository
@@ -21,17 +23,36 @@
             get { return this._context.Images; }
         }
 
-        public Image FindImageById(int id)
+        public Image GetImageById(int id)
         {
             return this._context.Images.Find(id);
         }
 
+        public Image GetImageByTitle(string title)
+        {
+            Image image = (from p in _context.Images
+                           where p.Title == title
+                           select p).FirstOrDefault();
+            return image;
+        }
+
         public Image GetDefaultImageWhenNoImageFound()
         {
-            //The default image id
-            const int NoImageFound = 1;
+            string defaultImageTitle = "No Image Found";
 
-            return this._context.Images.Find(NoImageFound);
+            return GetImageByTitle(defaultImageTitle);
+        }
+
+        public List<Image> GetOrderedImagesDescending(int number)
+        {
+            List<Image> images;
+            
+            images = (
+                from p in this._context.Images
+                orderby p.UploadedDate descending
+                select p).Take(number).ToList();
+
+            return images;
         }
     }
 }

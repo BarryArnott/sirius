@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-
 using SiriusApplication.Models;
 using SiriusApplication.Utils;
 
@@ -40,15 +39,12 @@ namespace SiriusApplication.Areas.Photography.Controllers
             List<Album> albums;
             if (number == 0)
             {
+                // list all albums
                 albums = _albumRepository.Albums.ToList();
             }
             else
             {
-                //TODO move out into albumrepository
-                albums = (
-                from p in _albumRepository.Albums
-                orderby p.CreatedDate descending
-                select p).Take(number).ToList();
+                albums = _albumRepository.GetOrderedAlbumsDescending(number);
             }
 
             return PartialView("_AlbumGallery", albums);
@@ -60,34 +56,35 @@ namespace SiriusApplication.Areas.Photography.Controllers
             List<Image> images;
             if (number == 0)
             {
-                images = _albumRepository.Images.ToList();
+                images = _imageRepository.Images.ToList();
             }
             else
             {
-                //TODO move out into imagerepository
-                images = (
-                from p in _albumRepository.Images
-                orderby p.UploadedDate descending
-                select p).Take(number).ToList();
+                images = _imageRepository.GetOrderedImagesDescending(number);
             }
 
             return PartialView("_ImageGallery", images);
         }
 
         //Required to retrieve album cover image for album display
-        public FileContentResult GetAlbumCoverImage(int id)
+        public FileContentResult GetAlbumCoverImageById(int id)
         {
-            Album album = _albumRepository.FindAlbumCoverImageById(id);
-
-
-
-
-
+            Album album = _albumRepository.GetAlbumCoverImageById(id);
 
             if (album == null)
             {
+                album = _albumRepository.GetDefaultAlbumWhenNoAlbumFound();
+                return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
+            }
+            
+            if (album.AlbumCoverFile == null)
+            {
                 Image image = this._imageRepository.GetDefaultImageWhenNoImageFound();
-                return File(image.ImageFile, image.ImageMimeType);
+
+                album.AlbumCoverFile = image.ImageFile;
+                album.AlbumCoverMimeType = image.ImageMimeType;
+
+                return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
             }
 
             return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
@@ -97,7 +94,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
         {
             try
             {
-                Image image = _imageRepository.FindImageById(id);
+                Image image = _imageRepository.GetImageById(id);
                 return File(image.ImageFile, image.ImageMimeType);
             }
             catch (Exception)

@@ -1,14 +1,19 @@
 ﻿namespace SiriusApplication.Models
 {
+    using System.Collections.Generic;
     using System.Linq;
 
     public interface IAlbumRepository
     {
         IQueryable<Album> Albums { get; }
 
-        IQueryable<Image> Images { get; }
+        Album GetAlbumCoverImageById(int ID);
 
-        Album FindAlbumCoverImageById(int ID);
+        List<Album> GetOrderedAlbumsDescending(int number);
+
+        Album GetAlbumByTitle(string Title);
+
+        Album GetDefaultAlbumWhenNoAlbumFound();
 
         //Image GetDefaultImageWhenNoImageFound();
     }
