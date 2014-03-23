@@ -355,8 +355,10 @@
     <Content Include="Content\CSS\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\CSS\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\CSS\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Areas\Photography\Views\Shared\_AlbumGallery.cshtml" />
-    <Content Include="Areas\Photography\Views\Shared\_ImageGallery.cshtml" />
+    <Content Include="Areas\Photography\Views\Shared\_AlbumShowcase.cshtml" />
+    <Content Include="Areas\Photography\Views\Shared\_ImageShowcase.cshtml" />
+    <Content Include="Areas\Photography\Views\Photography\Image.cshtml" />
+    <Content Include="Areas\Photography\Views\Photography\Album.cshtml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />

@@ -36,40 +36,41 @@ namespace SiriusApplication.Models
                     AlbumCoverFile = getFileBytes("\\Content\\Images\\SharedImages\\no_image.jpg"),
                     AlbumCoverMimeType = "image/jpeg",
                     CreatedDate = DateTime.Now.AddDays(-1)
-                }
+                },
 
-                //new Album {
-                //    AlbumId = 2,
-                //    Title = "Album 2",
-                //    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
-                //    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
-                //    AlbumCoverMimeType = "image/jpeg",
-                //    CreatedDate = DateTime.Now.AddDays(-1)
-                //},
-                //new Album {
-                //    AlbumId = 3,
-                //    Title = "Album 3",
-                //    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
-                //    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
-                //    AlbumCoverMimeType = "image/jpeg",
-                //    CreatedDate = DateTime.Now.AddDays(-2)
-                //},
-                //new Album {
-                //    AlbumId = 4,
-                //    Title = "Album 4",
-                //    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
-                //    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
-                //    AlbumCoverMimeType = "image/jpeg",
-                //    CreatedDate = DateTime.Now.AddDays(-3)
-                //},
-                //new Album {
-                //    AlbumId = 5,
-                //    Title = "Album 5",
-                //    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
-                //    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
-                //    AlbumCoverMimeType = "image/jpeg",
-                //    CreatedDate = DateTime.Now.AddDays(-4)
-                //}
+                new Album {
+                    AlbumId = 2,
+                    Title = "Album 2",
+                    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
+                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
+                    AlbumCoverMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Now.AddDays(-1)
+                },
+
+                new Album {
+                    AlbumId = 3,
+                    Title = "Album 3",
+                    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
+                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
+                    AlbumCoverMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Now.AddDays(-2)
+                },
+                new Album {
+                    AlbumId = 4,
+                    Title = "Album 4",
+                    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
+                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
+                    AlbumCoverMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Now.AddDays(-3)
+                },
+                new Album {
+                    AlbumId = 5,
+                    Title = "Album 5",
+                    Description = "this is some text in the second columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first columnthis is some text in the first column",
+                    AlbumCoverFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
+                    AlbumCoverMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Now.AddDays(-4)
+                }
             };
 
             albums.ForEach(s => context.Albums.Add(s));
@@ -90,75 +91,75 @@ namespace SiriusApplication.Models
                     ShutterSpeed = "1/250"
                 },
 
-                //new Image {
-                //    AlbumId = 2,
-                //    Title = "Yosemite",
-                //    Description = "Yosemite 2011",
-                //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
-                //    ImageMimeType = "image/jpeg",
-                //    UploadedDate = DateTime.Today,
-                //    ImageTakenOnDate = DateTime.Today,
-                //    Aperture = "f4",
-                //    FocalLength = "200mm",
-                //    IsoRating = "100",
-                //    ShutterSpeed = "1/250"
-                //},
+                new Image {
+                    AlbumId = 2,
+                    Title = "Yosemite",
+                    Description = "Yosemite 2011",
+                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Today,
+                    ImageTakenOnDate = DateTime.Today,
+                    Aperture = "f4",
+                    FocalLength = "200mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/250"
+                },
 
-                //new Image {
-                //    AlbumId = 3,
-                //    Title = "Space Shuttle",
-                //    Description = "Launch of the space shuttle",
-                //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
-                //    ImageMimeType = "image/jpeg",
-                //    UploadedDate = DateTime.Today,
-                //    ImageTakenOnDate = DateTime.Today,
-                //    Aperture = "f4",
-                //    FocalLength = "200mm",
-                //    IsoRating = "100",
-                //    ShutterSpeed = "1/250"
-                //},
+                new Image {
+                    AlbumId = 3,
+                    Title = "Space Shuttle",
+                    Description = "Launch of the space shuttle",
+                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Today,
+                    ImageTakenOnDate = DateTime.Today,
+                    Aperture = "f4",
+                    FocalLength = "200mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/250"
+                },
 
-                //new Image {
-                //    AlbumId = 3,
-                //    Title = "Opportunity",
-                //    Description = "Opportunity rover on Mars",
-                //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
-                //    ImageMimeType = "image/jpeg",
-                //    UploadedDate = DateTime.Today,
-                //    ImageTakenOnDate = DateTime.Today,
-                //    Aperture = "f4",
-                //    FocalLength = "200mm",
-                //    IsoRating = "100",
-                //    ShutterSpeed = "1/250"
-                //},
+                new Image {
+                    AlbumId = 3,
+                    Title = "Opportunity",
+                    Description = "Opportunity rover on Mars",
+                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Today,
+                    ImageTakenOnDate = DateTime.Today,
+                    Aperture = "f4",
+                    FocalLength = "200mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/250"
+                },
 
-                //new Image {
-                //    AlbumId = 3,
-                //    Title = "Hubble",
-                //    Description = "Hubble Deep Field",
-                //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
-                //    ImageMimeType = "image/jpeg",
-                //    UploadedDate = DateTime.Today,
-                //    ImageTakenOnDate = DateTime.Today,
-                //    Aperture = "f4",
-                //    FocalLength = "200mm",
-                //    IsoRating = "100",
-                //    ShutterSpeed = "1/250"
-                //},
+                new Image {
+                    AlbumId = 3,
+                    Title = "Hubble",
+                    Description = "Hubble Deep Field",
+                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Today,
+                    ImageTakenOnDate = DateTime.Today,
+                    Aperture = "f4",
+                    FocalLength = "200mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/250"
+                },
 
-                //new Image {
-                //    AlbumId = 4,
-                //    Title = "Twister",
-                //    Description = "Twister in USA",
-                //    ImageFile = getFileBytes("\\Content\\Images\\Photography\\05.jpg"),
-                //    ImageMimeType = "image/jpeg",
-                //    UploadedDate = DateTime.Today,
-                //    ImageTakenOnDate = DateTime.Today,
-                //    Aperture = "f4",
-                //    FocalLength = "200mm",
-                //    IsoRating = "100",
-                //    ShutterSpeed = "1/250"
-                //}
+                new Image {
+                    AlbumId = 4,
+                    Title = "Twister",
+                    Description = "Twister in USA",
+                    ImageFile = getFileBytes("\\Content\\Images\\Photography\\05.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Today,
+                    ImageTakenOnDate = DateTime.Today,
+                    Aperture = "f4",
+                    FocalLength = "200mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/250"
+                }
             };
 
             images.ForEach(s => context.Images.Add(s));

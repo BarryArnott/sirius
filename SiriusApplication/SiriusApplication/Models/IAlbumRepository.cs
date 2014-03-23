@@ -7,7 +7,7 @@
     {
         IQueryable<Album> Albums { get; }
 
-        Album GetAlbumCoverImageById(int ID);
+        Album GetAlbumById(int ID);
 
         List<Album> GetAllAlbumsOrderedDescending();
 

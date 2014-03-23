@@ -34,7 +34,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult _AlbumGallery(int number = 0)
+        public ActionResult _AlbumShowcase(int number = 0)
         {
             List<Album> albums;
             if (number == 0)
@@ -47,11 +47,11 @@ namespace SiriusApplication.Areas.Photography.Controllers
                 albums = _albumRepository.GetAlbumsOrderedDescending(number);
             }
 
-            return PartialView("_AlbumGallery", albums);
+            return PartialView("_AlbumShowcase", albums);
         }
 
         [ChildActionOnly]
-        public ActionResult _ImageGallery(int number = 0)
+        public ActionResult _ImageShowcase(int number = 0)
         {
             List<Image> images;
             if (number == 0)
@@ -63,28 +63,20 @@ namespace SiriusApplication.Areas.Photography.Controllers
                 images = _imageRepository.GetImagesOrderedDescending(number);
             }
 
-            return PartialView("_ImageGallery", images);
+            return PartialView("_ImageShowcase", images);
         }
 
         //Required to retrieve album cover image for album display
-        public FileContentResult GetAlbumCoverImageById(int id)
+        public FileContentResult DisplayAlbumCoverImageFileById(int id)
         {
-            Album album = _albumRepository.GetAlbumCoverImageById(id);
+            Album album = _albumRepository.GetAlbumById(id);
 
-            if (album == null)
-            {
-                //TODO Do I really need this? Would it not be better to just pass an int and then get the view to handle the 
-                // display of null albums
-                album = _albumRepository.GetDefaultAlbumWhenNoAlbumFound();
-                return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
-            }
-            
             if (album.AlbumCoverFile == null)
             {
-                Image image = this._imageRepository.GetDefaultImageWhenNoImageFound();
+                Image defaultImage = this._imageRepository.GetDefaultImageWhenNoImageFound();
 
-                album.AlbumCoverFile = image.ImageFile;
-                album.AlbumCoverMimeType = image.ImageMimeType;
+                album.AlbumCoverFile = defaultImage.ImageFile;
+                album.AlbumCoverMimeType = defaultImage.ImageMimeType;
 
                 return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
             }
@@ -92,18 +84,36 @@ namespace SiriusApplication.Areas.Photography.Controllers
             return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
         }
 
-        public FileContentResult GetImage(int id)
+        public FileContentResult DisplayImageFileById(int id)
         {
-            try
+            Image image = _imageRepository.GetImageById(id);
+
+            // image can be found but no associated photo
+            if (image.ImageFile == null)
             {
-                Image image = _imageRepository.GetImageById(id);
+                Image defaultImage = _imageRepository.GetDefaultImageWhenNoImageFound();
+
+                image.ImageFile = defaultImage.ImageFile;
+                image.ImageMimeType = defaultImage.ImageMimeType;
+
                 return File(image.ImageFile, image.ImageMimeType);
             }
-            catch (Exception)
-            {
-                Image image = this._imageRepository.GetDefaultImageWhenNoImageFound();
-                return this.File(image.ImageFile, image.ImageMimeType);
-            }
+
+            return File(image.ImageFile, image.ImageMimeType);
+        }
+
+        public ActionResult DisplayImageById(int id)
+        {
+            Image image = _imageRepository.GetImageById(id);
+
+            return View("Image", image);
+        }
+
+        public ActionResult DisplayAlbumById(int id)
+        {
+            Album album = _albumRepository.GetAlbumById(id);
+
+            return View("Album", album);
         }
     }
 }

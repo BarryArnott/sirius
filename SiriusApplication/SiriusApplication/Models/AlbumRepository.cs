@@ -22,7 +22,7 @@
             get { return this._context.Albums; }
         }
 
-        public Album GetAlbumCoverImageById(int id)
+        public Album GetAlbumById(int id)
         {
             return this._context.Albums.Find(id);
         }

@@ -1,6 +1,5 @@
 ﻿namespace SiriusApplication.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -43,7 +42,7 @@
             return GetImageByTitle(defaultImageTitle);
         }
 
-        public List<Image> GetAllImagesOrderedDescending(int number)
+        public List<Image> GetAllImagesOrderedDescending()
         {
             List<Image> images;
 
@@ -51,12 +50,12 @@
                 from p in this._context.Images
                 where p.Title != "No Image Found"
                 orderby p.UploadedDate descending
-                select p).Take(number).ToList();
+                select p).ToList();
 
             return images;
         }
 
-        public List<Image> GetImagesOrderedDescending()
+        public List<Image> GetImagesOrderedDescending(int number)
         {
             List<Image> images;
             
@@ -64,7 +63,7 @@
                 from p in this._context.Images
                 where p.Title != "No Image Found"
                 orderby p.UploadedDate descending
-                select p).ToList();
+                select p).Take(number).ToList();
 
             return images;
         }

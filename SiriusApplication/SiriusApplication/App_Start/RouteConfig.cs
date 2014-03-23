@@ -8,12 +8,13 @@ namespace SiriusApplication
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            AreaRegistration.RegisterAllAreas();
 
             ////This route means we can access photos like this: /Photography/3
             //routes.MapRoute(
             //    name: "ImageIdRoute",
             //    url: "Photography/{id}",
-            //    defaults: new { controller = "Image", action = "DisplayById" },
+            //    defaults: new { controller = "Photography", action = "DisplayImageById" },
             //    constraints: new { id = "[0-9]+" }
             //);
 
