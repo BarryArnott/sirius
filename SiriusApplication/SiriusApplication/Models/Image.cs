@@ -46,6 +46,10 @@ namespace SiriusApplication.Models
         [StringLength(12, ErrorMessage = "Maximum of 12 characters.")]
         public string ShutterSpeed { get; set; }
 
+        public double Latitude { get; set; }
+
+        public double Longitude { get; set; }
+
         // relationship property
         public virtual ICollection<Comment> Comments { get; set; }
     }

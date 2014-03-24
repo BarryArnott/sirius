@@ -154,6 +154,10 @@
     <Compile Include="Migrations\201402152327051_Initial.Designer.cs">
       <DependentUpon>201402152327051_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201403242056279_Added longitude and latitude to Image model.cs" />
+    <Compile Include="Migrations\201403242056279_Added longitude and latitude to Image model.Designer.cs">
+      <DependentUpon>201403242056279_Added longitude and latitude to Image model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\AlbumRepository.cs" />
@@ -359,6 +363,7 @@
     <Content Include="Areas\Photography\Views\Shared\_ImageShowcase.cshtml" />
     <Content Include="Areas\Photography\Views\Photography\Image.cshtml" />
     <Content Include="Areas\Photography\Views\Photography\Album.cshtml" />
+    <Content Include="Areas\Photography\Views\Photography\_GoogleMaps.cshtml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
@@ -517,6 +522,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201402152327051_Initial.resx">
       <DependentUpon>201402152327051_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403242056279_Added longitude and latitude to Image model.resx">
+      <DependentUpon>201403242056279_Added longitude and latitude to Image model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

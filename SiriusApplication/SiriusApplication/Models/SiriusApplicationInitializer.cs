@@ -88,7 +88,9 @@ namespace SiriusApplication.Models
                     Aperture = "f4",
                     FocalLength = "200mm",
                     IsoRating = "100",
-                    ShutterSpeed = "1/250"
+                    ShutterSpeed = "1/250",
+                    Latitude = 53.408841,
+                    Longitude = -2.981397
                 },
 
                 new Image {
