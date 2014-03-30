@@ -67,9 +67,11 @@ namespace SiriusApplication.Areas.Photography.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult _GoogleMaps(int id)
+        public ActionResult _GoogleMaps(int id, int count)
         {
             Image image = _imageRepository.GetImageById(id);
+
+            ViewBag.Count = count;
 
             return PartialView("_GoogleMaps", image);
         }
