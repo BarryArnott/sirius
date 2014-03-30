@@ -71,7 +71,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
         {
             Image image = _imageRepository.GetImageById(id);
 
-            ViewBag.Count = count;
+            ViewBag.Increment = count;
 
             return PartialView("_GoogleMaps", image);
         }
