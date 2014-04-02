@@ -365,6 +365,7 @@
     <Content Include="Areas\Photography\Views\Photography\Album.cshtml" />
     <Content Include="Areas\Photography\Views\Photography\_GoogleMaps.cshtml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\googleMaps.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
     <Content Include="Scripts\collapsibleChevrons.js" />
