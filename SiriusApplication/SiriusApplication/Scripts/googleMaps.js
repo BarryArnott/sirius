@@ -3,7 +3,15 @@ $(document).ready(function () {
     Initialize();
 });
 
-$('barry').click(function () {
+$('#barry0').click(function () {
+    Initialize();
+});
+
+$('#barry1').click(function () {
+    Initialize();
+});
+
+$('#barry2').click(function () {
     Initialize();
 });
 
@@ -25,8 +33,8 @@ function Initialize() {
 
     // This makes the div with id "map_canvas" a google map
     var map0 = new window.google.maps.Map(document.getElementById('map_canvas0'), mapOptions);
-
+    
     var map1 = new window.google.maps.Map(document.getElementById('map_canvas1'), mapOptions);
-
+    
     var map2 = new window.google.maps.Map(document.getElementById('map_canvas2'), mapOptions);
 }
