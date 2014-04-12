@@ -1,40 +1,58 @@
-﻿// This code tells the browser to execute the "Initialize" method only when the complete document model has been loaded
-$(document).ready(function () {
-    Initialize();
+﻿// TODO: This is a horrible, hacky and static implementation. Complete refactor required to be more dynamic.
+
+// Initialise map when collapse location div is shown
+$('#collapseLocation0').on('shown.bs.collapse', function () {
+    var count = 0;
+    
+    GoogleMapInitialise(count);
 });
 
-$('#barry0').click(function () {
-    Initialize();
+// Resize map when collapse location div is shown
+$('#collapseLocation1').on('shown.bs.collapse', function () {
+    var count = 1;
+    
+    GoogleMapInitialise(count);
 });
 
-$('#barry1').click(function () {
-    Initialize();
+// Resize map when collapse location div is shown
+$('#collapseLocation2').on('shown.bs.collapse', function () {
+    var count = 2;
+
+    GoogleMapInitialise(count);
 });
 
-$('#barry2').click(function () {
-    Initialize();
-});
 
-// Where all the fun happens 
-function Initialize() {
+function Resize() {
 
-    alert("Initialize Called.");
+    alert("Resize");
+    
+    window.google.maps.event.trigger(map, 'resize');
+}
+ 
+function GoogleMapInitialise(collapseLocation) {
 
-    // Google has tweaked their interface somewhat - this tells the api to use that new UI
+    // Tell the api to use the new UI
     window.google.maps.visualRefresh = true;
-    var Liverpool = new window.google.maps.LatLng(53.408841, -2.981397);
+    var latitudeLongitude = new window.google.maps.LatLng(window.latitude, window.longitude);
 
     // These are options that set initial zoom level, where the map is centered globally to start, and the type of map to show
     var mapOptions = {
         zoom: 14,
-        center: Liverpool,
+        center: latitudeLongitude,
         mapTypeId: window.google.maps.MapTypeId.G_NORMAL_MAP
     };
 
     // This makes the div with id "map_canvas" a google map
-    var map0 = new window.google.maps.Map(document.getElementById('map_canvas0'), mapOptions);
+
+    if (collapseLocation === 0) {
+        var map0 = new window.google.maps.Map(document.getElementById('map_canvas0'), mapOptions);
+    }
     
-    var map1 = new window.google.maps.Map(document.getElementById('map_canvas1'), mapOptions);
-    
-    var map2 = new window.google.maps.Map(document.getElementById('map_canvas2'), mapOptions);
+    if (collapseLocation === 1) {
+        var map1 = new window.google.maps.Map(document.getElementById('map_canvas1'), mapOptions);
+    }
+
+    if (collapseLocation === 2) {
+        var map2 = new window.google.maps.Map(document.getElementById('map_canvas2'), mapOptions);
+    }
 }

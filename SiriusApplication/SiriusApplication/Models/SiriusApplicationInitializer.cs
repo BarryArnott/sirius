@@ -83,14 +83,13 @@ namespace SiriusApplication.Models
                     Description = "No Image Found",
                     ImageFile = getFileBytes("\\Content\\Images\\SharedImages\\no_image.jpg"),
                     ImageMimeType = "image/gif",
-                    UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today,
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
                     Aperture = "f4",
                     FocalLength = "200mm",
                     IsoRating = "100",
-                    ShutterSpeed = "1/250",
-                    Latitude = 53.408841,
-                    Longitude = -2.981397
+                    ShutterSpeed = "1/250"
+                    
                 },
 
                 new Image {
@@ -99,12 +98,14 @@ namespace SiriusApplication.Models
                     Description = "Yosemite 2011",
                     ImageFile = getFileBytes("\\Content\\Images\\Photography\\01.jpg"),
                     ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today,
+                    UploadedDate = DateTime.Now.AddDays(-1),
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
                     Aperture = "f4",
                     FocalLength = "200mm",
                     IsoRating = "100",
-                    ShutterSpeed = "1/250"
+                    ShutterSpeed = "1/250",
+                    Latitude = 37.6738966,
+                    Longitude = -119.63785009999998
                 },
 
                 new Image {
@@ -113,12 +114,14 @@ namespace SiriusApplication.Models
                     Description = "Launch of the space shuttle",
                     ImageFile = getFileBytes("\\Content\\Images\\Photography\\02.jpg"),
                     ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today,
+                    UploadedDate = DateTime.Now.AddDays(-2),
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
                     Aperture = "f4",
                     FocalLength = "200mm",
                     IsoRating = "100",
-                    ShutterSpeed = "1/250"
+                    ShutterSpeed = "1/250",
+                    Latitude = 27.664827400000000000,
+                    Longitude = -81.515753500000020000
                 },
 
                 new Image {
@@ -127,12 +130,14 @@ namespace SiriusApplication.Models
                     Description = "Opportunity rover on Mars",
                     ImageFile = getFileBytes("\\Content\\Images\\Photography\\03.jpg"),
                     ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today,
+                    UploadedDate = DateTime.Now.AddDays(-3),
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
                     Aperture = "f4",
                     FocalLength = "200mm",
                     IsoRating = "100",
-                    ShutterSpeed = "1/250"
+                    ShutterSpeed = "1/250",
+                    Latitude = 29.5519914,
+                    Longitude = -95.0882451
                 },
 
                 new Image {
@@ -141,12 +146,14 @@ namespace SiriusApplication.Models
                     Description = "Hubble Deep Field",
                     ImageFile = getFileBytes("\\Content\\Images\\Photography\\04.jpg"),
                     ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today,
+                    UploadedDate = DateTime.Now.AddDays(-4),
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
                     Aperture = "f4",
                     FocalLength = "200mm",
                     IsoRating = "100",
-                    ShutterSpeed = "1/250"
+                    ShutterSpeed = "1/250",
+                    Latitude = 35.2678077,
+                    Longitude = -116.77705040000001
                 },
 
                 new Image {
@@ -155,12 +162,14 @@ namespace SiriusApplication.Models
                     Description = "Twister in USA",
                     ImageFile = getFileBytes("\\Content\\Images\\Photography\\05.jpg"),
                     ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Today,
-                    ImageTakenOnDate = DateTime.Today,
+                    UploadedDate = DateTime.Now.AddDays(-5),
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
                     Aperture = "f4",
                     FocalLength = "200mm",
                     IsoRating = "100",
-                    ShutterSpeed = "1/250"
+                    ShutterSpeed = "1/250",
+                    Latitude = 54.906869000000000000,
+                    Longitude = -1.383800999999948500
                 }
             };
 

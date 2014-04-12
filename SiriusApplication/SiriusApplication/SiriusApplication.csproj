@@ -363,7 +363,7 @@
     <Content Include="Areas\Photography\Views\Shared\_ImageShowcase.cshtml" />
     <Content Include="Areas\Photography\Views\Photography\Image.cshtml" />
     <Content Include="Areas\Photography\Views\Photography\Album.cshtml" />
-    <Content Include="Areas\Photography\Views\Photography\_GoogleMaps.cshtml" />
+    <Content Include="Areas\Photography\Views\Shared\_GoogleMaps.cshtml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\googleMaps.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
