@@ -12,6 +12,5 @@ namespace SiriusApplication.Areas.Cycling.Controllers
         {
             return View();
         }
-
     }
 }

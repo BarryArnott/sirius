@@ -7,27 +7,19 @@ $('#collapseLocation0').on('shown.bs.collapse', function () {
     GoogleMapInitialise(count);
 });
 
-// Resize map when collapse location div is shown
+// RInitialise map when collapse location div is shown
 $('#collapseLocation1').on('shown.bs.collapse', function () {
     var count = 1;
     
     GoogleMapInitialise(count);
 });
 
-// Resize map when collapse location div is shown
+// Initialise map when collapse location div is shown
 $('#collapseLocation2').on('shown.bs.collapse', function () {
     var count = 2;
 
     GoogleMapInitialise(count);
 });
-
-
-function Resize() {
-
-    alert("Resize");
-    
-    window.google.maps.event.trigger(map, 'resize');
-}
  
 function GoogleMapInitialise(collapseLocation) {
 
@@ -44,15 +36,17 @@ function GoogleMapInitialise(collapseLocation) {
 
     // This makes the div with id "map_canvas" a google map
 
-    if (collapseLocation === 0) {
-        var map0 = new window.google.maps.Map(document.getElementById('map_canvas0'), mapOptions);
-    }
-    
-    if (collapseLocation === 1) {
-        var map1 = new window.google.maps.Map(document.getElementById('map_canvas1'), mapOptions);
-    }
-
-    if (collapseLocation === 2) {
-        var map2 = new window.google.maps.Map(document.getElementById('map_canvas2'), mapOptions);
+    switch (collapseLocation) {
+        case 0:
+            var map0 = new window.google.maps.Map(document.getElementById('map_canvas0'), mapOptions);
+            break;
+        case 1:
+            var map1 = new window.google.maps.Map(document.getElementById('map_canvas1'), mapOptions);
+            break;
+        case 2:
+            var map2 = new window.google.maps.Map(document.getElementById('map_canvas2'), mapOptions);
+            break;
+        default:
+            break;
     }
 }

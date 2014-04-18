@@ -1,9 +1,6 @@
 namespace SiriusApplication.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<SiriusApplication.Models.SiriusApplicationContext>
     {
@@ -25,7 +22,6 @@ namespace SiriusApplication.Migrations
             //      new Person { FullName = "Brice Lambson" },
             //      new Person { FullName = "Rowan Miller" }
             //    );
-            //
         }
     }
 }

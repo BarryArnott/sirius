@@ -12,6 +12,5 @@ namespace SiriusApplication.Areas.Technology.Controllers
         {
             return View();
         }
-
     }
 }

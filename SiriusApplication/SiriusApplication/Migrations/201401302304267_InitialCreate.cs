@@ -48,7 +48,6 @@ namespace SiriusApplication.Migrations
                         CreatedDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.AlbumID);
-            
         }
         
         public override void Down()

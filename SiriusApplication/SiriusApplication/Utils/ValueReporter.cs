@@ -8,10 +8,10 @@ namespace SiriusApplication.Utils
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            logValues(filterContext.RouteData);
+            this.LogValues(filterContext.RouteData);
         }
 
-        private void logValues(RouteData routeData)
+        private void LogValues(RouteData routeData)
         {
             var controller = routeData.Values["controller"];
             var action = routeData.Values["action"];
@@ -23,7 +23,5 @@ namespace SiriusApplication.Utils
                 Debug.WriteLine(">> Key: {0}; Value: {1}", item.Key, item.Value);
             }
         }
-
-
     }
 }

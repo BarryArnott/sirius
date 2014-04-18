@@ -5,6 +5,7 @@ namespace SiriusApplication.Models
     public class Comment
     {
         public int CommentID { get; set; }
+
         public int ImageID { get; set; }
 
         [Required(ErrorMessage = "The description is required.")]
