@@ -21,17 +21,35 @@ function GoogleMapInitialise(collapseLocation, latitude, longitude) {
 
     // This makes the div with id "map_canvas" a google map
     // TODO: Need to remove harcoding of 3 cases and refactor to be more dynamic
+    var map;
     switch (collapseLocation) {
         case '0':
             var map0 = new window.google.maps.Map(document.getElementById('map_canvas0'), mapOptions);
+            map = map0;
             break;
         case '1':
             var map1 = new window.google.maps.Map(document.getElementById('map_canvas1'), mapOptions);
+            map = map1;
             break;
         case '2':
             var map2 = new window.google.maps.Map(document.getElementById('map_canvas2'), mapOptions);
+            map = map2;
             break;
         default:
+            map = map0;
             break;
     }
+
+    GoogleMapMarkerInitialise(latitudeLongitude, map);
+}
+
+function GoogleMapMarkerInitialise(latitudeLongitude, map) {
+    
+    //initialise marker based on model latitude and longitude
+    var marker = new window.google.maps.Marker({
+        position: latitudeLongitude,
+        map: map,
+        title: 'Hello World!',
+        animation: window.google.maps.Animation.DROP
+    });
 }
