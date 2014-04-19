@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<SiriusApplication.Models.Image>
 
 @* lat long values for Google Maps*@
-<script>
+@*<script>
     var latitude = 37.865101100000000000;
     var longitude = -119.538329400000010000;
-</script>
+</script>*@
 
 @{ int imageShowcaseIncrement = 0; }
 
@@ -29,22 +29,23 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseDetails@(imageShowcaseIncrement)">Details
-                                        <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseDetails@(imageShowcaseIncrement)">
+                                    Details
+                                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseDetails@(imageShowcaseIncrement)" class="panel-collapse collapse">
                             <div class="panel-body">
-                                @Html.LabelFor(model => model.FirstOrDefault().ImageTakenOnDate)
+                                @Html.LabelFor(x => image.ImageTakenOnDate)
                                 <p>@image.ImageTakenOnDate</p>
-                                @Html.LabelFor(model => model.FirstOrDefault().Aperture)
+                                @Html.LabelFor(x => image.Aperture)
                                 <p>@image.Aperture</p>
-                                @Html.LabelFor(model => model.FirstOrDefault().IsoRating)
+                                @Html.LabelFor(x => image.IsoRating)
                                 <p>@image.IsoRating</p>
-                                @Html.LabelFor(model => model.FirstOrDefault().FocalLength)
+                                @Html.LabelFor(x => image.FocalLength)
                                 <p>@image.FocalLength</p>
-                                @Html.LabelFor(model => model.FirstOrDefault().ShutterSpeed)
+                                @Html.LabelFor(x => image.ShutterSpeed)
                                 <p>@image.ShutterSpeed</p>
                             </div>
                         </div>
@@ -57,9 +58,9 @@
                         </div>
                         <div id="collapseLocation@(imageShowcaseIncrement)" class="panel-collapse collapse">
                             <div class="panel-body">
-
-                                <div id="latitude">@image.Latitude</div>
-                                <div id="longitude">@image.Longitude</div>
+                                @Html.HiddenFor(x => image.Latitude, new { id = "latitude"+imageShowcaseIncrement })
+                                @Html.HiddenFor(x => image.Longitude, new { id = "longitude"+imageShowcaseIncrement })
+                                @Html.Hidden(imageShowcaseIncrement.ToString(), new { id = "longitude"+imageShowcaseIncrement })
 
                                 @Html.Action("_GoogleMaps", "Photography", new { id = image.ImageId, count = imageShowcaseIncrement })
                             </div>
