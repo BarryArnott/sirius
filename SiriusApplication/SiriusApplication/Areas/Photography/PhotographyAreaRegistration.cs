@@ -22,10 +22,10 @@ namespace SiriusApplication.Areas.Photography
                 constraints: new { id = "[0-9]+" }
             );
 
-            // so we can navigate to specific image via /Photography/Image/5
+            // so we can navigate to specific image with a modal form via /Photography/DisplayImageById/5
             context.MapRoute(
                 "ImageIdRoute",
-                "Photography/Image/{id}",
+                "Photography/DisplayImageById/{id}",
                 new { controller = "Photography", action = "DisplayImageById" },
                 constraints: new { id = "[0-9]+" }
             );

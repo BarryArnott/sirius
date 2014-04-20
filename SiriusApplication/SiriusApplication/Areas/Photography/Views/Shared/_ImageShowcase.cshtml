@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<SiriusApplication.Models.Image>
 
+@*include javascript to display modal dialog*@
+<script src="~/Scripts/imageDetails.js"></script>
+
 @{ int imageShowcaseIncrement = 0; }
 
 <div class="container marketing">
@@ -19,12 +22,16 @@
         <div class="row">
             <div class="col-md-7">
                 <h2 class="featurette-heading">@image.Title</h2>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-7">
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseDetails@(imageShowcaseIncrement)">
-                                    Details
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseDetails@(imageShowcaseIncrement)">Details
                                     <span class="glyphicon glyphicon-chevron-right pull-right"></span>
                                 </a>
                             </h4>
@@ -52,9 +59,9 @@
                         </div>
                         <div id="collapseLocation@(imageShowcaseIncrement)" class="panel-collapse collapse">
                             <div class="panel-body">
-                                @Html.HiddenFor(x => image.Latitude, new { id = "latitude"+imageShowcaseIncrement })
-                                @Html.HiddenFor(x => image.Longitude, new { id = "longitude"+imageShowcaseIncrement })
-                                @Html.Hidden(imageShowcaseIncrement.ToString(), new { id = "longitude"+imageShowcaseIncrement })
+                                @Html.HiddenFor(x => image.Latitude, new { id = "latitude" + imageShowcaseIncrement })
+                                @Html.HiddenFor(x => image.Longitude, new { id = "longitude" + imageShowcaseIncrement })
+                                @Html.Hidden(imageShowcaseIncrement.ToString(), new { id = "longitude" + imageShowcaseIncrement })
 
                                 @Html.Action("_GoogleMaps", "Photography", new { id = image.ImageId, count = imageShowcaseIncrement })
                             </div>
@@ -62,7 +69,7 @@
                     </div>
                     <div class="pull-right">
                         <br />
-                        @Html.ActionLink("View image", "DisplayImageById", new { id = image.ImageId }, new { @class = "btn btn-primary" })
+                        <button class="btn btn-primary" data-id="@image.ImageId">View Image</button>
                     </div>
                 </div>
             </div>
@@ -71,9 +78,18 @@
             </div>
         </div>
         <hr class="featurette-divider" />
-
+        
             //increment for next collapse div
             imageShowcaseIncrement++;
         }
     }
+</div>
+
+@*// this is the modal definition*@
+<div class="modal fade" id="imageDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="imageDetailsContainer"></div>
+        </div>
+    </div>
 </div>

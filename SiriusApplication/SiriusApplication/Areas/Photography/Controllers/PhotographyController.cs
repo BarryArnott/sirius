@@ -112,11 +112,12 @@ namespace SiriusApplication.Areas.Photography.Controllers
             return File(image.ImageFile, image.ImageMimeType);
         }
 
+        [HttpGet]
         public ActionResult DisplayImageById(int id)
         {
             Image image = _imageRepository.GetImageById(id);
 
-            return View("Image", image);
+            return PartialView("_ImageDetails", image);
         }
 
         public ActionResult DisplayAlbumById(int id)
