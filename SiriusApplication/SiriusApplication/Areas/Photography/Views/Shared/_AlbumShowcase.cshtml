@@ -13,12 +13,12 @@
         {
             foreach (var album in Model)
             {
-            <div class="col-lg-4 text-center">
-                <img class="img-circle" width="140" height="140"  alt="@album.Description" src="@this.Url.Action("DisplayAlbumCoverImageFileById", "Photography", new { id = album.AlbumId })"/>
-                <h2>@album.Title</h2>
-                <p>@album.Description</p>
-                @Html.ActionLink("View album", "DisplayAlbumById", new {id = album.AlbumId}, new {@class="btn btn-primary"})
-            </div>
+                <div class="col-lg-4 text-center">
+                    <img class="img-circle" width="140" height="140"  alt="@album.Description" src="@this.Url.Action("DisplayAlbumCoverImageFileById", "Photography", new { id = album.AlbumId })"/>
+                    <h2>@album.Title</h2>
+                    <p>@album.Description</p>
+                     @Html.ActionLink("View album", "DisplayAlbumById", new { id = album.AlbumId }, new { @class = "btn btn-primary" })
+                </div>
             }
         }
     </div>

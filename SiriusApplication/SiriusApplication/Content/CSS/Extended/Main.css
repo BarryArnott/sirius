@@ -1,4 +1,36 @@
-﻿.container-content {
+﻿/*ImageDetails modal styling*/
+
+@media screen and (min-width: 768px) {
+    .image-details-modal {
+        width: 80%;
+        height: auto;
+    }
+}
+
+.modal-content {
+    height: 100%;
+}
+
+.modal-header {
+    background-color: #FFFFFF;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-footer {
+    background-color:#D8D8D8;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: left;
+}
+
+/*End of ImageDetails modal styling*/
+
+img.aligncenter {
+    display:block; margin:10px auto;
+}
+
+.container-content {
   padding-top: 60px;
   padding-right: 15px;
   padding-left: 15px;

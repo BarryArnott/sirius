@@ -3,6 +3,9 @@
 @*include javascript to display modal dialog*@
 <script src="~/Scripts/imageDetails.js"></script>
 
+@*include css for ImageDetailsmodal*@
+<link href="~/Content/CSS/extended/main.css" rel="stylesheet" />
+
 @{ int imageShowcaseIncrement = 0; }
 
 <div class="container marketing">
@@ -24,33 +27,13 @@
                 <h2 class="featurette-heading">@image.Title</h2>
             </div>
         </div>
-        
         <div class="row">
+            <div class="col-md-5">
+                <img class="img-responsive thumbnail" width=500 height=500  alt="@image.Description" src="@this.Url.Action("DisplayImageFileById", "Photography", new { id = image.ImageId })"/>
+                <button class="btn btn-primary" data-id="@image.ImageId">Full Image</button>
+            </div>
             <div class="col-md-7">
                 <div class="panel-group" id="accordion">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseDetails@(imageShowcaseIncrement)">Details
-                                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseDetails@(imageShowcaseIncrement)" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                @Html.LabelFor(x => image.ImageTakenOnDate)
-                                <p>@image.ImageTakenOnDate</p>
-                                @Html.LabelFor(x => image.Aperture)
-                                <p>@image.Aperture</p>
-                                @Html.LabelFor(x => image.IsoRating)
-                                <p>@image.IsoRating</p>
-                                @Html.LabelFor(x => image.FocalLength)
-                                <p>@image.FocalLength</p>
-                                @Html.LabelFor(x => image.ShutterSpeed)
-                                <p>@image.ShutterSpeed</p>
-                            </div>
-                        </div>
-                    </div>
                     <div class="panel panel-default">
                         <div id="panelHeading@(imageShowcaseIncrement)" class="panel-heading">
                             <h4 class="panel-title">
@@ -62,19 +45,11 @@
                                 @Html.HiddenFor(x => image.Latitude, new { id = "latitude" + imageShowcaseIncrement })
                                 @Html.HiddenFor(x => image.Longitude, new { id = "longitude" + imageShowcaseIncrement })
                                 @Html.Hidden(imageShowcaseIncrement.ToString(), new { id = "longitude" + imageShowcaseIncrement })
-
                                 @Html.Action("_GoogleMaps", "Photography", new { id = image.ImageId, count = imageShowcaseIncrement })
                             </div>
                         </div>
                     </div>
-                    <div class="pull-right">
-                        <br />
-                        <button class="btn btn-primary" data-id="@image.ImageId">View Image</button>
-                    </div>
                 </div>
-            </div>
-            <div class="col-md-5">
-                <img class="img-responsive thumbnail" width=500 height=500  alt="@image.Description" src="@this.Url.Action("DisplayImageFileById", "Photography", new { id = image.ImageId })"/>
             </div>
         </div>
         <hr class="featurette-divider" />
@@ -87,9 +62,10 @@
 
 @*// this is the modal definition*@
 <div class="modal fade" id="imageDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog image-details-modal">
         <div class="modal-content">
-            <div id="imageDetailsContainer"></div>
+            <div id="imageDetailsContainer">
+            </div>
         </div>
     </div>
 </div>

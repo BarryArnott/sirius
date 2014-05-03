@@ -8,34 +8,38 @@
 
 <fieldset>
     <legend>Album</legend>
-
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Title)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Title)
     </div>
-
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Description)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>
-
     <div class="display-label">
          @Html.DisplayNameFor(model => model.AlbumCoverMimeType)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.AlbumCoverMimeType)
     </div>
-
     <div class="display-label">
          @Html.DisplayNameFor(model => model.CreatedDate)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.CreatedDate)
     </div>
+
+    @foreach (var image in Model.Images)
+    {
+        <div class="col-lg-4 text-center">
+            <h2>@image.Title</h2>
+            <p>@image.Description</p>
+        </div>
+    }
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.AlbumId }) |
