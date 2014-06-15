@@ -23,32 +23,48 @@
         foreach (var image in Model)
         {
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-12">
                 <h2 class="featurette-heading">@image.Title</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-5">
-                <img class="img-responsive thumbnail" width=500 height=500  alt="@image.Description" src="@this.Url.Action("DisplayImageFileById", "Photography", new { id = image.ImageId })"/>
+            <div class="col-md-4">
+                <img class="img-responsive thumbnail" width=400 height=400  alt="@image.Description" src="@this.Url.Action("DisplayImageFileById", "Photography", new { id = image.ImageId })"/>
                 <button class="btn btn-primary" data-id="@image.ImageId">Full Image</button>
             </div>
-            <div class="col-md-7">
-                <div class="panel-group" id="accordion">
-                    <div class="panel panel-default">
-                        <div id="panelHeading@(imageShowcaseIncrement)" class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseLocation@(imageShowcaseIncrement)">Location<span class="glyphicon glyphicon-chevron-right pull-right"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapseLocation@(imageShowcaseIncrement)" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                @Html.HiddenFor(x => image.Latitude, new { id = "latitude" + imageShowcaseIncrement })
-                                @Html.HiddenFor(x => image.Longitude, new { id = "longitude" + imageShowcaseIncrement })
-                                @Html.Hidden(imageShowcaseIncrement.ToString(), new { id = "longitude" + imageShowcaseIncrement })
-                                @Html.Action("_GoogleMaps", "Photography", new { id = image.ImageId, count = imageShowcaseIncrement })
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div id="panelHeading@(imageShowcaseIncrement)" class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseLocation@(imageShowcaseIncrement)">Location<span class="glyphicon glyphicon-chevron-right pull-right"></span></a>
+                                </h4>
+                            </div>
+                            <div id="collapseLocation@(imageShowcaseIncrement)" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    @Html.HiddenFor(x => image.Latitude, new { id = "latitude" + imageShowcaseIncrement })
+                                    @Html.HiddenFor(x => image.Longitude, new { id = "longitude" + imageShowcaseIncrement })
+                                    @Html.Hidden(imageShowcaseIncrement.ToString(), new { id = "longitude" + imageShowcaseIncrement })
+                                    @Html.Action("_GoogleMaps", "Photography", new { id = image.ImageId, count = imageShowcaseIncrement })
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="row">
+                    <p>
+                        @Html.DisplayFor(x => image.Description)
+                    </p>
+                    <hr />
+                    <p>
+                        @Html.LabelFor(x => image.ImageTakenOnDate): @Html.DisplayFor(x => image.ImageTakenOnDate) | 
+                    @Html.LabelFor(x => image.Aperture): @Html.DisplayFor(x => image.Aperture) | 
+                    @Html.LabelFor(x => image.IsoRating): @Html.DisplayFor(x => image.IsoRating) | 
+                    @Html.LabelFor(x => image.FocalLength): @Html.DisplayFor(x => image.FocalLength) | 
+                    @Html.LabelFor(x => image.ShutterSpeed): @Html.DisplayFor(x => image.ShutterSpeed)
+                    </p>
                 </div>
             </div>
         </div>

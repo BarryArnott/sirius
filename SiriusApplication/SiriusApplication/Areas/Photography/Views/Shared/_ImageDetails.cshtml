@@ -10,9 +10,11 @@
     <img class="img-responsive aligncenter" alt="@Model.Description" src="@this.Url.Action("DisplayImageFileById", "Photography", new { id = Model.ImageId })"/>
 </div>
 <div class="modal-footer">
-    <p>@Html.LabelFor(x => x.ImageTakenOnDate): @Model.ImageTakenOnDate | 
-    @Html.LabelFor(x => x.Aperture): @Model.Aperture | 
-    @Html.LabelFor(x => x.IsoRating): @Model.IsoRating | 
-    @Html.LabelFor(x => x.FocalLength): @Model.FocalLength | 
-    @Html.LabelFor(x => x.ShutterSpeed): @Model.ShutterSpeed</p>
+    <p>
+        @Html.LabelFor(x => x.ImageTakenOnDate): @Html.DisplayFor(x => x.ImageTakenOnDate) | 
+        @Html.LabelFor(x => x.Aperture): @Html.DisplayFor(x => x.Aperture) | 
+        @Html.LabelFor(x => x.IsoRating): @Html.DisplayFor(x => x.IsoRating) | 
+        @Html.LabelFor(x => x.FocalLength): @Html.DisplayFor(x => x.FocalLength) | 
+        @Html.LabelFor(x => x.ShutterSpeed): @Html.DisplayFor(x => x.ShutterSpeed)
+    </p>
 </div>
