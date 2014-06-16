@@ -143,7 +143,7 @@ namespace SiriusApplication.Models
 
                 new Image 
                 {
-                    AlbumId = 4,
+                    AlbumId = 3,
                     Title = "Twister",
                     Description = "Twister in USA",
                     ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\05.jpg"),

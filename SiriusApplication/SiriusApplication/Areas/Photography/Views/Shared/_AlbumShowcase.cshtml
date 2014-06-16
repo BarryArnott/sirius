@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<SiriusApplication.Models.Album>
 
 <div class="container marketing">
-    <h2 class="featurette-heading">Latest Albums</h2>
+    <h2 class="featurette-heading">@ViewBag.AlbumShowcaseTitle</h2>
     <div class="row">
         @if (!this.Model.Any())
         {

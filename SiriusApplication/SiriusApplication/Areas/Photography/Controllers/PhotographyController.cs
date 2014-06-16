@@ -36,6 +36,8 @@ namespace SiriusApplication.Areas.Photography.Controllers
         [ChildActionOnly]
         public ActionResult _AlbumShowcase(int number = 0)
         {
+            ViewBag.AlbumShowcaseTitle = "Latest Albums";
+
             List<Album> albums;
             if (number == 0)
             {
@@ -53,6 +55,8 @@ namespace SiriusApplication.Areas.Photography.Controllers
         [ChildActionOnly]
         public ActionResult _ImageShowcase(int number = 0)
         {
+            ViewBag.ImageShowcaseTitle = "Latest Photos";
+
             List<Image> images;
             if (number == 0)
             {
@@ -79,6 +83,9 @@ namespace SiriusApplication.Areas.Photography.Controllers
         [ChildActionOnly]
         public ActionResult _AlbumImageShowcase(int id)
         {
+            Album album = _albumRepository.GetAlbumById(id);
+            ViewBag.ImageShowcaseTitle = "Photos for the album: " + album.Title;
+
             List<Image> images;
             
             images = _imageRepository.GetImagesByAlbumId(id);
