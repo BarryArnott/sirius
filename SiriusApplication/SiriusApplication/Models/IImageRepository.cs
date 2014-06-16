@@ -16,5 +16,7 @@
         List<Image> GetAllImagesOrderedDescending();
 
         List<Image> GetImagesOrderedDescending(int number);
+
+        List<Image> GetImagesByAlbumId(int id);
     }
 }

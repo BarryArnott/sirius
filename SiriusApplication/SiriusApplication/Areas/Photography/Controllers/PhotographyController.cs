@@ -76,6 +76,16 @@ namespace SiriusApplication.Areas.Photography.Controllers
             return PartialView("_GoogleMaps", image);
         }
 
+        [ChildActionOnly]
+        public ActionResult _AlbumImageShowcase(int id)
+        {
+            List<Image> images;
+            
+            images = _imageRepository.GetImagesByAlbumId(id);
+
+            return PartialView("_ImageShowcase", images);
+        }
+
         //Required to retrieve album cover image for album display
         public FileContentResult DisplayAlbumCoverImageFileById(int id)
         {

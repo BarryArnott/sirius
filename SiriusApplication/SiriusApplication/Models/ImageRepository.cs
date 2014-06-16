@@ -44,27 +44,33 @@
 
         public List<Image> GetAllImagesOrderedDescending()
         {
-            List<Image> images;
-
-            images = (
-                from p in this._context.Images
-                where p.Title != "No Image Found"
-                orderby p.UploadedDate descending
-                select p).ToList();
+            List<Image> images = (
+                              from p in this._context.Images
+                              where p.Title != "No Image Found"
+                              orderby p.UploadedDate descending
+                              select p).ToList();
 
             return images;
         }
 
         public List<Image> GetImagesOrderedDescending(int number)
         {
-            List<Image> images;
-            
-            images = (
-                from p in this._context.Images
-                where p.Title != "No Image Found"
-                orderby p.UploadedDate descending
-                select p).Take(number).ToList();
+            List<Image> images = (
+                              from p in this._context.Images
+                              where p.Title != "No Image Found"
+                              orderby p.UploadedDate descending
+                              select p).Take(number).ToList();
 
+            return images;
+        }
+
+        public List<Image> GetImagesByAlbumId(int id)
+        {
+            List<Image> images = (
+                                from p in this._context.Images
+                                where p.AlbumId == id
+                                orderby p.UploadedDate descending
+                                select p).ToList();
             return images;
         }
     }
