@@ -35,6 +35,38 @@ function GoogleMapInitialise(collapseLocation, latitude, longitude) {
             var map2 = new window.google.maps.Map(document.getElementById('map_canvas2'), mapOptions);
             map = map2;
             break;
+        case '3':
+            var map3 = new window.google.maps.Map(document.getElementById('map_canvas3'), mapOptions);
+            map = map3;
+            break;
+        case '4':
+            var map4 = new window.google.maps.Map(document.getElementById('map_canvas4'), mapOptions);
+            map = map4;
+            break;
+        case '5':
+            var map5 = new window.google.maps.Map(document.getElementById('map_canvas5'), mapOptions);
+            map = map5;
+            break;
+        case '6':
+            var map6 = new window.google.maps.Map(document.getElementById('map_canvas6'), mapOptions);
+            map = map6;
+            break;
+        case '7':
+            var map7 = new window.google.maps.Map(document.getElementById('map_canvas7'), mapOptions);
+            map = map7;
+            break;
+        case '8':
+            var map8 = new window.google.maps.Map(document.getElementById('map_canvas8'), mapOptions);
+            map = map8;
+            break;
+        case '9':
+            var map9 = new window.google.maps.Map(document.getElementById('map_canvas9'), mapOptions);
+            map = map9;
+            break;
+        case '10':
+            var map10 = new window.google.maps.Map(document.getElementById('map_canvas10'), mapOptions);
+            map = map10;
+            break;
         default:
             map = map0;
             break;

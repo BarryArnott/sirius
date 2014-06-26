@@ -1,8 +1,3 @@
 ﻿@model SiriusApplication.Models.Album
 
-<div class="container-content">
-    @Html.LabelFor(x => Model.Title): @Html.DisplayFor(x => Model.Title) 
-    @Html.LabelFor(x => Model.Description): @Html.DisplayFor(x => Model.Description)
-</div>
-
 @Html.Action("_AlbumImageShowcase", "Photography", new { id = Model.AlbumId })

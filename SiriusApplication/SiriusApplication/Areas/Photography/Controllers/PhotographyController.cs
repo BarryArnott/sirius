@@ -84,7 +84,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
         public ActionResult _AlbumImageShowcase(int id)
         {
             Album album = _albumRepository.GetAlbumById(id);
-            ViewBag.ImageShowcaseTitle = "Photos for the album: " + album.Title;
+            ViewBag.ImageShowcaseTitle = "All photos for the album: " + album.Title;
 
             List<Image> images;
             

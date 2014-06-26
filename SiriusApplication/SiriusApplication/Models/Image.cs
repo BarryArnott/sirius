@@ -34,16 +34,19 @@ namespace SiriusApplication.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yy}")]
         public DateTime ImageTakenOnDate { get; set; }
 
+        [DisplayName("ISO Rating")]
         [StringLength(7, ErrorMessage = "Maximum of 7 characters.")]
         public string IsoRating { get; set; }
 
         [StringLength(10, ErrorMessage = "Maximum of 10 characters.")]
+        [DisplayName("Focal Length")]
         public string FocalLength { get; set; }
 
         [StringLength(5, ErrorMessage = "Maximum of 5 characters.")]
         public string Aperture { get; set; }
 
         [StringLength(12, ErrorMessage = "Maximum of 12 characters.")]
+        [DisplayName("Shutter Speed")]
         public string ShutterSpeed { get; set; }
 
         public double Latitude { get; set; }
