@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
 using SiriusApplication.Models;
 using SiriusApplication.Utils;
+using PagedList;
+
 
 namespace SiriusApplication.Areas.Photography.Controllers
 {
-    using System;
-
     [ValueReporter]
     [HandleError(View = "Error")]
     public class PhotographyController : Controller
@@ -81,16 +80,20 @@ namespace SiriusApplication.Areas.Photography.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult _AlbumImageShowcase(int id)
+        public ActionResult _AlbumImageShowcase(int id, int? page)
         {
+            int pageSize = 3;
+            int pageNumber = page ?? 1;
+
             Album album = _albumRepository.GetAlbumById(id);
             ViewBag.ImageShowcaseTitle = "All photos for the album: " + album.Title;
+            ViewBag.CurrentAlbumId = id;
 
             List<Image> images;
             
             images = _imageRepository.GetImagesByAlbumId(id);
 
-            return PartialView("_ImageShowcase", images);
+            return PartialView("_AlbumImageShowcase", images.ToPagedList(pageNumber, pageSize));
         }
 
         //Required to retrieve album cover image for album display

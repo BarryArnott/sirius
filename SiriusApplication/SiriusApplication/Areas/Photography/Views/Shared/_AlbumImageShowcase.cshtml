@@ -1,0 +1,95 @@
+﻿@model PagedList.IPagedList<SiriusApplication.Models.Image>
+@using PagedList.Mvc;
+
+@*include javascript to display modal dialog*@
+<script src="~/Scripts/imageDetails.js"></script>
+
+@*include css for ImageDetailsmodal*@
+<link href="~/Content/CSS/extended/main.css" rel="stylesheet" />
+
+@*include css for PagedList*@
+<link href="~/Content/CSS/pagedList/PagedList.css" rel="stylesheet" />
+
+@{ int imageShowcaseIncrement = 0; }
+
+<div class="container marketing">
+    <hr class="featurette-divider" />
+    <h2 class="featurette-heading">@ViewBag.ImageShowcaseTitle</h2>
+    @if (!this.Model.Any())
+    {
+        <div class="col-lg-4 text-center">
+            There are currently no Images to display.
+        </div>
+    }
+    else
+    {
+        foreach (var image in Model)
+        {
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="featurette-heading">@image.Title</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-responsive thumbnail" width=400 height=400  alt="@image.Description" src="@this.Url.Action("DisplayImageFileById", "Photography", new { id = image.ImageId })"/>
+                <button class="btn btn-primary" data-id="@image.ImageId">Full Image</button>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div id="panelHeading@(imageShowcaseIncrement)" class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseLocation@(imageShowcaseIncrement)">Location<span class="glyphicon glyphicon-chevron-right pull-right"></span></a>
+                                </h4>
+                            </div>
+                            <div id="collapseLocation@(imageShowcaseIncrement)" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    @Html.HiddenFor(x => image.Latitude, new { id = "latitude" + imageShowcaseIncrement })
+                                    @Html.HiddenFor(x => image.Longitude, new { id = "longitude" + imageShowcaseIncrement })
+                                    @Html.Hidden(imageShowcaseIncrement.ToString(), new { id = "longitude" + imageShowcaseIncrement })
+                                    @Html.Action("_GoogleMaps", "Photography", new { id = image.ImageId, count = imageShowcaseIncrement })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <p>
+                        @Html.DisplayFor(x => image.Description)
+                    </p>
+                    <hr />
+                    <p>
+                        @Html.LabelFor(x => image.ImageTakenOnDate): @Html.DisplayFor(x => image.ImageTakenOnDate) | 
+                    @Html.LabelFor(x => image.Aperture): @Html.DisplayFor(x => image.Aperture) | 
+                    @Html.LabelFor(x => image.IsoRating): @Html.DisplayFor(x => image.IsoRating) | 
+                    @Html.LabelFor(x => image.FocalLength): @Html.DisplayFor(x => image.FocalLength) | 
+                    @Html.LabelFor(x => image.ShutterSpeed): @Html.DisplayFor(x => image.ShutterSpeed)
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr class="featurette-divider" />
+        
+            //increment for next collapse div
+            imageShowcaseIncrement++;
+        }
+    }
+    
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("_AlbumImageShowcase", "Photography", new { id = ViewBag.CurrentAlbumId, page}))
+
+</div>
+
+@*// this is the modal definition*@
+<div class="modal fade" id="imageDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog image-details-modal">
+        <div class="modal-content">
+            <div id="imageDetailsContainer">
+            </div>
+        </div>
+    </div>
+</div>
