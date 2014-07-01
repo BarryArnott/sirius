@@ -51,6 +51,15 @@ namespace SiriusApplication.Models
                     AlbumCoverFile = this.GetFileBytes("\\Content\\Images\\Photography\\05.jpg"),
                     AlbumCoverMimeType = "image/jpeg",
                     CreatedDate = DateTime.Now.AddDays(-3)
+                },
+                new Album 
+                {
+                    AlbumId = 5,
+                    Title = "Red Bull FlugTag",
+                    Description = "Red Bull FlugTag held at Alexandra Palace",
+                    AlbumCoverFile = this.GetFileBytes("\\Content\\Images\\Photography\\190_RedBull_14072013.jpg"),
+                    AlbumCoverMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Now
                 }
             };
 
@@ -92,7 +101,7 @@ namespace SiriusApplication.Models
 
                 new Image 
                 {
-                    AlbumId = 2,
+                    AlbumId = 3,
                     Title = "Space Shuttle",
                     Description = "Launch of the space shuttle",
                     ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\02.jpg"),
@@ -109,7 +118,7 @@ namespace SiriusApplication.Models
 
                 new Image 
                 {
-                    AlbumId = 2,
+                    AlbumId = 3,
                     Title = "Opportunity",
                     Description = "Opportunity rover on Mars",
                     ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\03.jpg"),
@@ -126,7 +135,7 @@ namespace SiriusApplication.Models
 
                 new Image 
                 {
-                    AlbumId = 2,
+                    AlbumId = 3,
                     Title = "Hubble",
                     Description = "Hubble Deep Field",
                     ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\04.jpg"),
@@ -143,7 +152,7 @@ namespace SiriusApplication.Models
 
                 new Image 
                 {
-                    AlbumId = 2,
+                    AlbumId = 4,
                     Title = "Twister",
                     Description = "Twister in USA",
                     ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\05.jpg"),
@@ -156,6 +165,142 @@ namespace SiriusApplication.Models
                     ShutterSpeed = "1/600",
                     Latitude = 54.906869000000000000,
                     Longitude = -1.383800999999948500
+                },
+
+                new Image 
+                {
+                    AlbumId = 5,
+                    Title = "Bathtime",
+                    Description = "Getting prepared for the big race",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\09_RedBull_14072013.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f5.6",
+                    FocalLength = "18mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/1000",
+                    Latitude = 51.595371,
+                    Longitude = -0.127555
+                },
+
+                new Image 
+                {
+                    AlbumId = 5,
+                    Title = "The chef",
+                    Description = "Looking a bit glum after wiping out on the first jump",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\110_RedBull_14072013.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f5.0",
+                    FocalLength = "131mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/800",
+                    Latitude = 51.595371,
+                    Longitude = -0.127555
+                },
+
+                new Image 
+                {
+                    AlbumId = 5,
+                    Title = "Now then, now then",
+                    Description = "This guy was hilarious. Slapping a fine onto all the soap boxes which wiped out.",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\118_RedBull_14072013.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f4.5",
+                    FocalLength = "55mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/640",
+                    Latitude = 51.595371,
+                    Longitude = -0.127555
+                },
+
+                new Image 
+                {
+                    AlbumId = 5,
+                    Title = "Castlemania",
+                    Description = "The only soap box on the day to use foot steering.",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\127_RedBull_14072013.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f5.0",
+                    FocalLength = "90mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/400",
+                    Latitude = 51.595371,
+                    Longitude = -0.127555
+                },
+
+                new Image 
+                {
+                    AlbumId = 5,
+                    Title = "Peckhams finest",
+                    Description = "Completely fell apart after the first jump.",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\168_RedBull_14072013.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f5.0",
+                    FocalLength = "74mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/500",
+                    Latitude = 51.595371,
+                    Longitude = -0.127555
+                },
+
+                new Image 
+                {
+                    AlbumId = 5,
+                    Title = "A man's best friend",
+                    Description = "These guys actually beat thier soap box to the bottom of the hill",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\189_RedBull_14072013.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f5.0",
+                    FocalLength = "100mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/640",
+                    Latitude = 51.595371,
+                    Longitude = -0.127555
+                },
+
+                new Image 
+                {
+                    AlbumId = 5,
+                    Title = "Finish line?",
+                    Description = "The soap box in the background didn't make it.",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\190_RedBull_14072013.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f4.5",
+                    FocalLength = "79mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/640",
+                    Latitude = 51.595371,
+                    Longitude = -0.127555
+                },
+
+                new Image 
+                {
+                    AlbumId = 5,
+                    Title = "Dinner time!",
+                    Description = "Was hard to get a good shot of these guys as I was laughing so much.",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\211_RedBull_14072013.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f4.0",
+                    FocalLength = "55mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "1/1000",
+                    Latitude = 51.595371,
+                    Longitude = -0.127555
                 }
             };
 

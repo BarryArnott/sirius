@@ -141,8 +141,6 @@ namespace SiriusApplication.Areas.Photography.Controllers
         {
             ViewBag.PageNumber = pageNumber ?? 1;
 
-            int test = ViewBag.PageNumber;
-
             Album album = _albumRepository.GetAlbumById(id);
 
             return View("Album", album);
