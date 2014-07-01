@@ -92,7 +92,7 @@ namespace SiriusApplication.Models
 
                 new Image 
                 {
-                    AlbumId = 3,
+                    AlbumId = 2,
                     Title = "Space Shuttle",
                     Description = "Launch of the space shuttle",
                     ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\02.jpg"),
@@ -109,7 +109,7 @@ namespace SiriusApplication.Models
 
                 new Image 
                 {
-                    AlbumId = 3,
+                    AlbumId = 2,
                     Title = "Opportunity",
                     Description = "Opportunity rover on Mars",
                     ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\03.jpg"),
@@ -126,7 +126,7 @@ namespace SiriusApplication.Models
 
                 new Image 
                 {
-                    AlbumId = 3,
+                    AlbumId = 2,
                     Title = "Hubble",
                     Description = "Hubble Deep Field",
                     ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\04.jpg"),
@@ -143,7 +143,7 @@ namespace SiriusApplication.Models
 
                 new Image 
                 {
-                    AlbumId = 3,
+                    AlbumId = 2,
                     Title = "Twister",
                     Description = "Twister in USA",
                     ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\05.jpg"),

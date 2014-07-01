@@ -355,7 +355,7 @@
     <Content Include="Content\Images\Photography\05.jpg" />
     <Content Include="Content\Images\SharedImages\profile.png" />
     <Content Include="Content\Images\SharedImages\twitter.png" />
-    <Content Include="Content\CSS\pagedList\PagedList.css" />
+    <Content Include="Content\CSS\pagedList\paged-list.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Error.html" />

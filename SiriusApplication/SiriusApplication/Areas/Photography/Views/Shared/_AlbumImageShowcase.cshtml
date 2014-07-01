@@ -8,7 +8,7 @@
 <link href="~/Content/CSS/extended/main.css" rel="stylesheet" />
 
 @*include css for PagedList*@
-<link href="~/Content/CSS/pagedList/PagedList.css" rel="stylesheet" />
+<link href="~/Content/CSS/pagedList/paged-list.css" rel="stylesheet" />
 
 @{ int imageShowcaseIncrement = 0; }
 
@@ -17,8 +17,10 @@
     <h2 class="featurette-heading">@ViewBag.ImageShowcaseTitle</h2>
     @if (!this.Model.Any())
     {
-        <div class="col-lg-4 text-center">
-            There are currently no Images to display.
+        <div class="row">
+            <div class="col-md-12">
+                There are currently no Images to display.
+            </div>
         </div>
     }
     else
@@ -37,6 +39,12 @@
             </div>
             <div class="col-md-8">
                 <div class="row">
+                    <p>
+                        @Html.DisplayFor(x => image.Description)
+                    </p>
+                </div>
+
+                <div class="row">
                     <div class="panel-group" id="accordion">
                         <div class="panel panel-default">
                             <div id="panelHeading@(imageShowcaseIncrement)" class="panel-heading">
@@ -54,19 +62,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <p>
-                        @Html.DisplayFor(x => image.Description)
-                    </p>
                     <hr />
                     <p>
                         @Html.LabelFor(x => image.ImageTakenOnDate): @Html.DisplayFor(x => image.ImageTakenOnDate) | 
-                    @Html.LabelFor(x => image.Aperture): @Html.DisplayFor(x => image.Aperture) | 
-                    @Html.LabelFor(x => image.IsoRating): @Html.DisplayFor(x => image.IsoRating) | 
-                    @Html.LabelFor(x => image.FocalLength): @Html.DisplayFor(x => image.FocalLength) | 
-                    @Html.LabelFor(x => image.ShutterSpeed): @Html.DisplayFor(x => image.ShutterSpeed)
+                        @Html.LabelFor(x => image.Aperture): @Html.DisplayFor(x => image.Aperture) | 
+                        @Html.LabelFor(x => image.IsoRating): @Html.DisplayFor(x => image.IsoRating) | 
+                        @Html.LabelFor(x => image.FocalLength): @Html.DisplayFor(x => image.FocalLength) | 
+                        @Html.LabelFor(x => image.ShutterSpeed): @Html.DisplayFor(x => image.ShutterSpeed)
                     </p>
                 </div>
             </div>
@@ -77,11 +79,13 @@
             imageShowcaseIncrement++;
         }
     }
-    
-    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-    @Html.PagedListPager(Model, page => Url.Action("_AlbumImageShowcase", "Photography", new { id = ViewBag.CurrentAlbumId, page}))
-
+    <div class="col-md-4 pull-right">
+        <div class="pull-right">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            @Html.PagedListPager(Model, page => Url.Action("_AlbumImageShowcase", "Photography", new { id = ViewBag.CurrentAlbumId, page }))
+        </div>
+    </div>
 </div>
 
 @*// this is the modal definition*@

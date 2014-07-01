@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using PagedList;
 using SiriusApplication.Models;
 using SiriusApplication.Utils;
-using PagedList;
-
 
 namespace SiriusApplication.Areas.Photography.Controllers
 {
@@ -82,18 +81,17 @@ namespace SiriusApplication.Areas.Photography.Controllers
         [ChildActionOnly]
         public ActionResult _AlbumImageShowcase(int id, int? page)
         {
-            int pageSize = 3;
+            //This should never be greater than 10 as the _GoogleMaps view can only display 10 Google Map api's
+            int numberOfImagesPerPage = 5;
             int pageNumber = page ?? 1;
 
             Album album = _albumRepository.GetAlbumById(id);
             ViewBag.ImageShowcaseTitle = "All photos for the album: " + album.Title;
             ViewBag.CurrentAlbumId = id;
 
-            List<Image> images;
-            
-            images = _imageRepository.GetImagesByAlbumId(id);
+            List<Image> images = this._imageRepository.GetImagesByAlbumId(id);
 
-            return PartialView("_AlbumImageShowcase", images.ToPagedList(pageNumber, pageSize));
+            return PartialView("_AlbumImageShowcase", images.ToPagedList(pageNumber, numberOfImagesPerPage));
         }
 
         //Required to retrieve album cover image for album display

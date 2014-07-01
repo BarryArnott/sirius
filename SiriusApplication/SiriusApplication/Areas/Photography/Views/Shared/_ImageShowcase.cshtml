@@ -34,6 +34,11 @@
             </div>
             <div class="col-md-8">
                 <div class="row">
+                    <p>
+                        @Html.DisplayFor(x => image.Description)
+                    </p>
+                </div>
+                <div class="row">
                     <div class="panel-group" id="accordion">
                         <div class="panel panel-default">
                             <div id="panelHeading@(imageShowcaseIncrement)" class="panel-heading">
@@ -51,12 +56,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <p>
-                        @Html.DisplayFor(x => image.Description)
-                    </p>
                     <hr />
                     <p>
                         @Html.LabelFor(x => image.ImageTakenOnDate): @Html.DisplayFor(x => image.ImageTakenOnDate) | 
