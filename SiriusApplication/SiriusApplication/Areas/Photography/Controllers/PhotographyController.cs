@@ -79,11 +79,10 @@ namespace SiriusApplication.Areas.Photography.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult _AlbumImageShowcase(int id, int? page)
+        public ActionResult _AlbumImageShowcase(int id, int pageNumber)
         {
             //This should never be greater than 10 as the _GoogleMaps view can only display 10 Google Map api's
-            int numberOfImagesPerPage = 5;
-            int pageNumber = page ?? 1;
+            int numberOfImagesPerPage = 3;
 
             Album album = _albumRepository.GetAlbumById(id);
             ViewBag.ImageShowcaseTitle = "All photos for the album: " + album.Title;
@@ -138,8 +137,12 @@ namespace SiriusApplication.Areas.Photography.Controllers
             return PartialView("_ImageDetails", image);
         }
 
-        public ActionResult DisplayAlbumById(int id)
+        public ActionResult DisplayAlbumById(int id, int? pageNumber)
         {
+            ViewBag.PageNumber = pageNumber ?? 1;
+
+            int test = ViewBag.PageNumber;
+
             Album album = _albumRepository.GetAlbumById(id);
 
             return View("Album", album);

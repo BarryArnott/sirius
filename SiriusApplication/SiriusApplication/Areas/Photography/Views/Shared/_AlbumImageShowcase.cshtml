@@ -28,7 +28,7 @@
         foreach (var image in Model)
         {
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <h2 class="featurette-heading">@image.Title</h2>
             </div>
         </div>
@@ -80,10 +80,12 @@
         }
     }
 
-    <div class="col-md-4 pull-right">
+    <div class="col-md-6 pull-right">
         <div class="pull-right">
             Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-            @Html.PagedListPager(Model, page => Url.Action("_AlbumImageShowcase", "Photography", new { id = ViewBag.CurrentAlbumId, page }))
+            
+            @*The pageNumber variable must match the name of the pageNumber parameter returned in the controller method*@
+            @Html.PagedListPager(Model, pageNumber => Url.Action("DisplayAlbumById", "Photography", new { id = ViewBag.CurrentAlbumId, pageNumber }))
         </div>
     </div>
 </div>
