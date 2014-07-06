@@ -10,6 +10,30 @@
 @*include css for PagedList*@
 <link href="~/Content/CSS/pagedList/paged-list.css" rel="stylesheet" />
 
+
+<style type="text/css">
+    
+       .main-thumbnail {
+        position: relative;
+        overflow: hidden;
+    }
+
+.main-caption {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgba(66, 139, 202, 0.75);
+        width: 100%;
+        height: 100%;
+        padding: 2%;
+        display: none;
+        text-align: center;
+        color: #fff !important;
+        z-index: 2;
+    }
+    
+</style>
+
 @{ int imageShowcaseIncrement = 0; }
 
 <div class="container marketing">
@@ -34,8 +58,19 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <img class="img-responsive thumbnail" width=400 height=400  alt="@image.Description" src="@this.Url.Action("DisplayImageFileById", "Photography", new { id = image.ImageId })"/>
-                <button class="btn btn-primary" data-id="@image.ImageId">Full Image</button>
+
+                <div class="thumbnail main-thumbnail">
+                    <div class="caption main-caption">
+                        <h4>Thumbnail Headline</h4>
+                        <p>short thumbnail description</p>
+                        <p>
+                            <a href="" class="label label-danger" rel="tooltip" title="Zoom">Zoom</a>
+                            <a href="" class="label label-default" rel="tooltip" title="Download now">Download</a>
+                            <button class="btn btn-primary" data-id="@image.ImageId">Full Image</button>
+                        </p>
+                    </div>
+                    <img class="img-responsive" width=400 height=400  alt="@image.Description" src="@this.Url.Action("DisplayImageFileById", "Photography", new { id = image.ImageId })"/>
+                </div>
             </div>
             <div class="col-md-8">
                 <div class="row">
@@ -43,7 +78,6 @@
                         @Html.DisplayFor(x => image.Description)
                     </p>
                 </div>
-
                 <div class="row">
                     <div class="panel-group" id="accordion">
                         <div class="panel panel-default">
@@ -83,7 +117,7 @@
     <div class="col-md-6 pull-right">
         <div class="pull-right">
             Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-            
+
             @*The pageNumber variable must match the name of the pageNumber parameter returned in the controller method*@
             @Html.PagedListPager(Model, pageNumber => Url.Action("DisplayAlbumById", "Photography", new { id = ViewBag.CurrentAlbumId, pageNumber }))
         </div>
