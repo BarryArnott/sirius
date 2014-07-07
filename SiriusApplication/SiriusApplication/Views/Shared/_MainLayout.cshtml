@@ -13,12 +13,12 @@
 
     <title>@ViewBag.Title</title>
 
-    <!-- CSS extended from Bootstrap -->
-    <link href="~/content/css/extended/main.css" rel="stylesheet" />
     <!-- Bootstrap core CSS-DEV -->
     <link href="~/content/bootstrap-less/dist/css/bootstrap.css" rel="stylesheet" />
     <!-- Bootstrap core CSS-PRODUCTION -->
     @*<link href="~/content/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" />*@
+    @*<!-- CSS extended from Bootstrap. Must be placed below reference to bootsrap for order of preference -->*@
+    <link href="~/content/css/extended/main.css" rel="stylesheet" />
     <!-- JQuery script. Not placed at bottom of page as it is needed for a number of page scripts -->
     <script src="~/Scripts/jquery-2.1.0.min.js"></script>
 </head>

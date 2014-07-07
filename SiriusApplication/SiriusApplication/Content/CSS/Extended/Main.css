@@ -26,13 +26,29 @@
 
 /*End of ImageDetails modal styling*/
 
-
 /*Image thumbnail overlay styling*/
- 
+
+           .main-thumbnail {
+        position: relative;
+        overflow: hidden;
+        
+    }
+
+.main-caption {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgba(66, 139, 202, 0.75);
+        width: 100%;
+        height: 100%;
+        padding: 2%;
+        display: none;
+        text-align: center;
+        color: #fff !important;
+        z-index: 2;
+    }
     
-/*Image thumbnail overlay styling*/
-
-
+/*End of Image thumbnail overlay styling*/
 
 img.aligncenter {
     display:block; margin:10px auto;
