@@ -10,10 +10,10 @@
 
     $('.main-thumbnail').hover(
         function () {
-            $(this).find('.main-caption').slideDown(250); //.fadeIn(250)
+            $(this).find('.main-caption').fadeIn(400); //.fadeIn(250)
         },
         function () {
-            $(this).find('.main-caption').slideUp(250); //.fadeOut(205)
+            $(this).find('.main-caption').fadeOut(400); //.fadeOut(205)
         }
     );
 });

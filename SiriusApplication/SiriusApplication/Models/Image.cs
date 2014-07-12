@@ -30,7 +30,7 @@ namespace SiriusApplication.Models
         public DateTime UploadedDate { get; set; }
 
         [DataType(DataType.DateTime)]
-        [DisplayName("Captured Date")]
+        [DisplayName("Capture Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yy}")]
         public DateTime ImageTakenOnDate { get; set; }
 

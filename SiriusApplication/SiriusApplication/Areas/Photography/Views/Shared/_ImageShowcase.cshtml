@@ -29,8 +29,15 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <img class="img-responsive thumbnail" width=400 height=400  alt="@image.Description" src="@this.Url.Action("DisplayImageFileById", "Photography", new { id = image.ImageId })"/>
-                <button class="btn btn-primary" data-id="@image.ImageId">Full Image</button>
+                <div class="thumbnail main-thumbnail">
+                    <div class="caption main-caption">
+                        <h4>@Html.DisplayFor(x => image.Title)</h4>
+                        <p>
+                            <button class="btn btn-primary" data-id="@image.ImageId">Larger image</button>
+                        </p>
+                    </div>
+                    <img class="img-responsive" width=400 height=400  alt="@image.Description" src="@this.Url.Action("DisplayImageFileById", "Photography", new { id = image.ImageId })"/>
+                </div>
             </div>
             <div class="col-md-8">
                 <div class="row">
