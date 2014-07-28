@@ -16,7 +16,10 @@ namespace SiriusApplication.Models
         public string Title { get; set; }
 
         [DisplayName("Picture")]
-        public byte[] ImageFile { get; set; }
+        public byte[] ImageFileThumbnail { get; set; }
+
+        [DisplayName("Picture")]
+        public byte[] ImageFileLarge { get; set; }
 
         public string ImageMimeType { get; set; }
 

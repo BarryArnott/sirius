@@ -163,6 +163,10 @@
     <Compile Include="Migrations\201403242056279_Added longitude and latitude to Image model.Designer.cs">
       <DependentUpon>201403242056279_Added longitude and latitude to Image model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201407282044319_AddLargeAndThumbnail.cs" />
+    <Compile Include="Migrations\201407282044319_AddLargeAndThumbnail.Designer.cs">
+      <DependentUpon>201407282044319_AddLargeAndThumbnail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\AlbumRepository.cs" />
@@ -542,6 +546,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201403242056279_Added longitude and latitude to Image model.resx">
       <DependentUpon>201403242056279_Added longitude and latitude to Image model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407282044319_AddLargeAndThumbnail.resx">
+      <DependentUpon>201407282044319_AddLargeAndThumbnail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

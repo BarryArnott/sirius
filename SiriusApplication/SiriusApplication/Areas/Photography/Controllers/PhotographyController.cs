@@ -94,7 +94,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
         }
 
         //Required to retrieve album cover image for album display
-        public FileContentResult DisplayAlbumCoverImageFileById(int id)
+        public FileContentResult DisplayAlbumCoverThumbnailImageFileById(int id)
         {
             Album album = _albumRepository.GetAlbumById(id);
 
@@ -102,7 +102,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
             {
                 Image defaultImage = this._imageRepository.GetDefaultImageWhenNoImageFound();
 
-                album.AlbumCoverFile = defaultImage.ImageFile;
+                album.AlbumCoverFile = defaultImage.ImageFileThumbnail;
                 album.AlbumCoverMimeType = defaultImage.ImageMimeType;
 
                 return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
@@ -111,22 +111,22 @@ namespace SiriusApplication.Areas.Photography.Controllers
             return File(album.AlbumCoverFile, album.AlbumCoverMimeType);
         }
 
-        public FileContentResult DisplayImageFileById(int id)
+        public FileContentResult DisplayThumbnailImageFileById(int id)
         {
             Image image = _imageRepository.GetImageById(id);
 
             // image can be found but no associated photo
-            if (image.ImageFile == null)
+            if (image.ImageFileThumbnail == null)
             {
                 Image defaultImage = _imageRepository.GetDefaultImageWhenNoImageFound();
 
-                image.ImageFile = defaultImage.ImageFile;
+                image.ImageFileThumbnail = defaultImage.ImageFileThumbnail;
                 image.ImageMimeType = defaultImage.ImageMimeType;
 
-                return File(image.ImageFile, image.ImageMimeType);
+                return File(image.ImageFileThumbnail, image.ImageMimeType);
             }
 
-            return File(image.ImageFile, image.ImageMimeType);
+            return File(image.ImageFileThumbnail, image.ImageMimeType);
         }
 
         [HttpGet]
