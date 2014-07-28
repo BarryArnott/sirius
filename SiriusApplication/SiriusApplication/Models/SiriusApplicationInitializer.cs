@@ -55,12 +55,21 @@ namespace SiriusApplication.Models
                 new Album 
                 {
                     AlbumId = 5,
-                    Title = "Red Bull FlugTag",
+                    Title = "214-Red Bull FlugTag",
                     Description = "Red Bull FlugTag held at Alexandra Palace",
                     AlbumCoverFile = this.GetFileBytes("\\Content\\Images\\Photography\\190_RedBull_14072013.jpg"),
                     AlbumCoverMimeType = "image/jpeg",
                     CreatedDate = DateTime.Now
-                }
+                },
+                new Album 
+                {
+                    AlbumId = 6,
+                    Title = "2014-London Night Shoot",
+                    Description = "London by night",
+                    AlbumCoverFile = this.GetFileBytes("\\Content\\Images\\Photography\\14_untitled_29032014.jpg"),
+                    AlbumCoverMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Now
+                },
             };
 
             albums.ForEach(s => context.Albums.Add(s));
@@ -285,7 +294,6 @@ namespace SiriusApplication.Models
                     Latitude = 51.595371,
                     Longitude = -0.127555
                 },
-
                 new Image 
                 {
                     AlbumId = 5,
@@ -301,6 +309,134 @@ namespace SiriusApplication.Models
                     ShutterSpeed = "1/1000",
                     Latitude = 51.595371,
                     Longitude = -0.127555
+                },
+                new Image 
+                {
+                    AlbumId = 6,
+                    Title = "Wellington Arch",
+                    Description = "My favourite monument in London.",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\02_untitled_29032014.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f7.1",
+                    FocalLength = "25mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "15 sec",
+                    Latitude = 51.502553,
+                    Longitude = -0.150894
+                },
+                new Image 
+                {
+                    AlbumId = 6,
+                    Title = "Trafalgar Square Fountain",
+                    Description = "This place is awe inspiring at night.",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\11_LondonNightShoot_12042014.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f11",
+                    FocalLength = "18mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "20 sec",
+                    Latitude = 51.507956,
+                    Longitude = -0.128713, 
+                },
+                new Image 
+                {
+                    AlbumId = 6,
+                    Title = "National Gallery",
+                    Description = "This place is awe inspiring at night.",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\13_LondonNightShoot_12042014.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f11",
+                    FocalLength = "55mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "2 sec",
+                    Latitude = 51.507956,
+                    Longitude = -0.128713, 
+                },
+                new Image 
+                {
+                    AlbumId = 6,
+                    Title = "Wellington Arch",
+                    Description = "Wellington Arch viewed from the Bomber Command memorial.",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\14_untitled_29032014.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f11",
+                    FocalLength = "42mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "10 sec",
+                    Latitude = 51.502571,
+                    Longitude = -0.151785, 
+                },
+                new Image 
+                {
+                    AlbumId = 6,
+                    Title = "Angel of Peace",
+                    Description = "This beauty sits on top of Wellington Arch.",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\16_untitled_29032014.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f6.3",
+                    FocalLength = "250mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "10 sec",
+                    Latitude = 51.502510,
+                    Longitude = -0.150774,
+                },
+                new Image 
+                {
+                    AlbumId = 6,
+                    Title = "London Skyline",
+                    Description = "Taken from the Golden Jubilee Bridge.",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\32_untitled_29032014.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f9.0",
+                    FocalLength = "41mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "13 sec",
+                    Latitude = 51.505908,
+                    Longitude = -0.120137,
+                },
+                new Image 
+                {
+                    AlbumId = 6,
+                    Title = "Victoria Tower",
+                    Description = "Often overshadowed by Elizabeth Tower.",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\36_LondonNightShoot_12042014.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f4.5",
+                    FocalLength = "84mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "5.0 sec",
+                    Latitude = 51.498334,
+                    Longitude = -0.125596, 
+                },
+                new Image 
+                {
+                    AlbumId = 6,
+                    Title = "St Pauls from the Millenium Bridge",
+                    Description = "The most beautiful building in London (probably).",
+                    ImageFile = this.GetFileBytes("\\Content\\Images\\Photography\\45_untitled_29032014.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f8.0",
+                    FocalLength = "46mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "25.0 sec",
+                    Latitude = 51.508070,
+                    Longitude = -0.098660,
                 }
             };
 
