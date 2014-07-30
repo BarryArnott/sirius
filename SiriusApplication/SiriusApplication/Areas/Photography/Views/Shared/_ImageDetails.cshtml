@@ -7,7 +7,7 @@
     <p>@Html.DisplayFor(x => x.Description)</p>
 </div>
 <div class="modal-body">
-    <img class="img-responsive aligncenter" alt="@Model.Description" src="@this.Url.Action("DisplayImageFileById", "Photography", new { id = Model.ImageId })"/>
+    <img class="img-responsive aligncenter" alt="@Model.Description" src="@this.Url.Action("DisplayLargeImageFileById", "Photography", new { id = Model.ImageId })"/>
 </div>
 <div class="modal-footer">
     <p>

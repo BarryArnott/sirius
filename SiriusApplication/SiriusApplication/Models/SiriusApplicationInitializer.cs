@@ -23,53 +23,24 @@ namespace SiriusApplication.Models
                     AlbumCoverMimeType = "image/jpeg",
                     CreatedDate = DateTime.Now.AddDays(-1)
                 },
-
                 new Album 
                 {
                     AlbumId = 2,
-                    Title = "Album 2",
-                    Description = "Yosemite",
-                    AlbumCoverFile = this.GetFileBytes("\\Content\\Images\\Photography\\01.jpg"),
-                    AlbumCoverMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Now.AddDays(-1)
-                },
-
-                new Album 
-                {
-                    AlbumId = 3,
-                    Title = "Album 3",
-                    Description = "Space",
-                    AlbumCoverFile = this.GetFileBytes("\\Content\\Images\\Photography\\02.jpg"),
-                    AlbumCoverMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Now.AddDays(-2)
-                },
-                new Album 
-                {
-                    AlbumId = 4,
-                    Title = "Album 4",
-                    Description = "Twister",
-                    AlbumCoverFile = this.GetFileBytes("\\Content\\Images\\Photography\\05.jpg"),
-                    AlbumCoverMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Now.AddDays(-3)
-                },
-                new Album 
-                {
-                    AlbumId = 5,
-                    Title = "214-Red Bull FlugTag",
-                    Description = "Red Bull FlugTag held at Alexandra Palace",
-                    AlbumCoverFile = this.GetFileBytes("\\Content\\Images\\Photography\\190_RedBull_14072013.jpg"),
-                    AlbumCoverMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Now
-                },
-                new Album 
-                {
-                    AlbumId = 6,
                     Title = "2014-London Night Shoot",
                     Description = "London by night",
-                    AlbumCoverFile = this.GetFileBytes("\\Content\\Images\\Photography\\14_untitled_29032014.jpg"),
+                    AlbumCoverFile = this.GetFileBytes("\\Content\\Images\\Photography\\02_untitled_29032014_thumbnail.jpg"),
                     AlbumCoverMimeType = "image/jpeg",
                     CreatedDate = DateTime.Now
-                },
+                }
+                //new Album 
+                //{
+                //    AlbumId = 5,
+                //    Title = "214-Red Bull FlugTag",
+                //    Description = "Red Bull FlugTag held at Alexandra Palace",
+                //    AlbumCoverFile = this.GetFileBytes("\\Content\\Images\\Photography\\190_RedBull_14072013.jpg"),
+                //    AlbumCoverMimeType = "image/jpeg",
+                //    CreatedDate = DateTime.Now
+                //}
             };
 
             albums.ForEach(s => context.Albums.Add(s));
@@ -81,6 +52,7 @@ namespace SiriusApplication.Models
                 {
                     Title = "No Image Found",
                     Description = "No Image Found",
+                    ImageFileLarge = this.GetFileBytes("\\Content\\Images\\SharedImages\\no_image.jpg"),
                     ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\SharedImages\\no_image.jpg"),
                     ImageMimeType = "image/gif",
                     UploadedDate = DateTime.Now,
@@ -90,232 +62,141 @@ namespace SiriusApplication.Models
                     IsoRating = "100",
                     ShutterSpeed = "1/250"
                 },
-
+                //new Image 
+                //{
+                //    AlbumId = 5,
+                //    Title = "Bathtime",
+                //    Description = "Getting prepared for the big race",
+                //    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\09_RedBull_14072013.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Now,
+                //    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                //    Aperture = "f5.6",
+                //    FocalLength = "18mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/1000",
+                //    Latitude = 51.595371,
+                //    Longitude = -0.127555
+                //},
+                //new Image 
+                //{
+                //    AlbumId = 5,
+                //    Title = "The chef",
+                //    Description = "Looking a bit glum after wiping out on the first jump",
+                //    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\110_RedBull_14072013.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Now,
+                //    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                //    Aperture = "f5.0",
+                //    FocalLength = "131mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/800",
+                //    Latitude = 51.595371,
+                //    Longitude = -0.127555
+                //},
+                //new Image 
+                //{
+                //    AlbumId = 5,
+                //    Title = "Now then, now then",
+                //    Description = "This guy was hilarious. Slapping a fine onto all the soap boxes which wiped out.",
+                //    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\118_RedBull_14072013.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Now,
+                //    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                //    Aperture = "f4.5",
+                //    FocalLength = "55mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/640",
+                //    Latitude = 51.595371,
+                //    Longitude = -0.127555
+                //},
+                //new Image 
+                //{
+                //    AlbumId = 5,
+                //    Title = "Castlemania",
+                //    Description = "The only soap box on the day to use foot steering.",
+                //    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\127_RedBull_14072013.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Now,
+                //    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                //    Aperture = "f5.0",
+                //    FocalLength = "90mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/400",
+                //    Latitude = 51.595371,
+                //    Longitude = -0.127555
+                //},
+                //new Image 
+                //{
+                //    AlbumId = 5,
+                //    Title = "Peckhams finest",
+                //    Description = "Completely fell apart after the first jump.",
+                //    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\168_RedBull_14072013.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Now,
+                //    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                //    Aperture = "f5.0",
+                //    FocalLength = "74mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/500",
+                //    Latitude = 51.595371,
+                //    Longitude = -0.127555
+                //},
+                //new Image 
+                //{
+                //    AlbumId = 5,
+                //    Title = "A man's best friend",
+                //    Description = "These guys actually beat thier soap box to the bottom of the hill",
+                //    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\189_RedBull_14072013.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Now,
+                //    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                //    Aperture = "f5.0",
+                //    FocalLength = "100mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/640",
+                //    Latitude = 51.595371,
+                //    Longitude = -0.127555
+                //},
+                //new Image 
+                //{
+                //    AlbumId = 5,
+                //    Title = "Finish line?",
+                //    Description = "The soap box in the background didn't make it.",
+                //    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\190_RedBull_14072013.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Now,
+                //    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                //    Aperture = "f4.5",
+                //    FocalLength = "79mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/640",
+                //    Latitude = 51.595371,
+                //    Longitude = -0.127555
+                //},
+                //new Image 
+                //{
+                //    AlbumId = 5,
+                //    Title = "Dinner time!",
+                //    Description = "Was hard to get a good shot of these guys as I was laughing so much.",
+                //    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\211_RedBull_14072013.jpg"),
+                //    ImageMimeType = "image/jpeg",
+                //    UploadedDate = DateTime.Now,
+                //    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                //    Aperture = "f4.0",
+                //    FocalLength = "55mm",
+                //    IsoRating = "100",
+                //    ShutterSpeed = "1/1000",
+                //    Latitude = 51.595371,
+                //    Longitude = -0.127555
+                //},
                 new Image 
                 {
                     AlbumId = 2,
-                    Title = "Yosemite",
-                    Description = "Yosemite 2011",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\01.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now.AddDays(-4),
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f2",
-                    FocalLength = "200mm",
-                    IsoRating = "200",
-                    ShutterSpeed = "1/200",
-                    Latitude = 37.6738966,
-                    Longitude = -119.63785009999998
-                },
-
-                new Image 
-                {
-                    AlbumId = 3,
-                    Title = "Space Shuttle",
-                    Description = "Launch of the space shuttle",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\02.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now.AddDays(-3),
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f3",
-                    FocalLength = "300mm",
-                    IsoRating = "300",
-                    ShutterSpeed = "1/300",
-                    Latitude = 27.664827400000000000,
-                    Longitude = -81.515753500000020000
-                },
-
-                new Image 
-                {
-                    AlbumId = 3,
-                    Title = "Opportunity",
-                    Description = "Opportunity rover on Mars",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\03.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now.AddDays(-2),
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f4",
-                    FocalLength = "400mm",
-                    IsoRating = "400",
-                    ShutterSpeed = "1/400",
-                    Latitude = 29.5519914,
-                    Longitude = -95.0882451
-                },
-
-                new Image 
-                {
-                    AlbumId = 3,
-                    Title = "Hubble",
-                    Description = "Hubble Deep Field",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\04.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now.AddDays(-1),
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f5",
-                    FocalLength = "500mm",
-                    IsoRating = "500",
-                    ShutterSpeed = "1/500",
-                    Latitude = 35.2678077,
-                    Longitude = -116.77705040000001
-                },
-
-                new Image 
-                {
-                    AlbumId = 4,
-                    Title = "Twister",
-                    Description = "Twister in USA",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\05.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now,
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f6",
-                    FocalLength = "600mm",
-                    IsoRating = "600",
-                    ShutterSpeed = "1/600",
-                    Latitude = 54.906869000000000000,
-                    Longitude = -1.383800999999948500
-                },
-
-                new Image 
-                {
-                    AlbumId = 5,
-                    Title = "Bathtime",
-                    Description = "Getting prepared for the big race",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\09_RedBull_14072013.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now,
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f5.6",
-                    FocalLength = "18mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/1000",
-                    Latitude = 51.595371,
-                    Longitude = -0.127555
-                },
-
-                new Image 
-                {
-                    AlbumId = 5,
-                    Title = "The chef",
-                    Description = "Looking a bit glum after wiping out on the first jump",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\110_RedBull_14072013.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now,
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f5.0",
-                    FocalLength = "131mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/800",
-                    Latitude = 51.595371,
-                    Longitude = -0.127555
-                },
-
-                new Image 
-                {
-                    AlbumId = 5,
-                    Title = "Now then, now then",
-                    Description = "This guy was hilarious. Slapping a fine onto all the soap boxes which wiped out.",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\118_RedBull_14072013.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now,
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f4.5",
-                    FocalLength = "55mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/640",
-                    Latitude = 51.595371,
-                    Longitude = -0.127555
-                },
-
-                new Image 
-                {
-                    AlbumId = 5,
-                    Title = "Castlemania",
-                    Description = "The only soap box on the day to use foot steering.",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\127_RedBull_14072013.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now,
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f5.0",
-                    FocalLength = "90mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/400",
-                    Latitude = 51.595371,
-                    Longitude = -0.127555
-                },
-
-                new Image 
-                {
-                    AlbumId = 5,
-                    Title = "Peckhams finest",
-                    Description = "Completely fell apart after the first jump.",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\168_RedBull_14072013.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now,
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f5.0",
-                    FocalLength = "74mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/500",
-                    Latitude = 51.595371,
-                    Longitude = -0.127555
-                },
-
-                new Image 
-                {
-                    AlbumId = 5,
-                    Title = "A man's best friend",
-                    Description = "These guys actually beat thier soap box to the bottom of the hill",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\189_RedBull_14072013.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now,
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f5.0",
-                    FocalLength = "100mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/640",
-                    Latitude = 51.595371,
-                    Longitude = -0.127555
-                },
-
-                new Image 
-                {
-                    AlbumId = 5,
-                    Title = "Finish line?",
-                    Description = "The soap box in the background didn't make it.",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\190_RedBull_14072013.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now,
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f4.5",
-                    FocalLength = "79mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/640",
-                    Latitude = 51.595371,
-                    Longitude = -0.127555
-                },
-                new Image 
-                {
-                    AlbumId = 5,
-                    Title = "Dinner time!",
-                    Description = "Was hard to get a good shot of these guys as I was laughing so much.",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\211_RedBull_14072013.jpg"),
-                    ImageMimeType = "image/jpeg",
-                    UploadedDate = DateTime.Now,
-                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
-                    Aperture = "f4.0",
-                    FocalLength = "55mm",
-                    IsoRating = "100",
-                    ShutterSpeed = "1/1000",
-                    Latitude = 51.595371,
-                    Longitude = -0.127555
-                },
-                new Image 
-                {
-                    AlbumId = 6,
                     Title = "Wellington Arch",
                     Description = "My favourite monument in London.",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\02_untitled_29032014.jpg"),
+                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\02_untitled_29032014_thumbnail.jpg"),
+                    ImageFileLarge = this.GetFileBytes("\\Content\\Images\\Photography\\02_untitled_29032014_large.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Now,
                     ImageTakenOnDate = DateTime.Today.AddDays(-100),
@@ -328,10 +209,11 @@ namespace SiriusApplication.Models
                 },
                 new Image 
                 {
-                    AlbumId = 6,
+                    AlbumId = 2,
                     Title = "Trafalgar Square Fountain",
                     Description = "This place is awe inspiring at night.",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\11_LondonNightShoot_12042014.jpg"),
+                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\11_LondonNightShoot_12042014_thumbnail.jpg"),
+                    ImageFileLarge = this.GetFileBytes("\\Content\\Images\\Photography\\11_LondonNightShoot_12042014_large.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Now,
                     ImageTakenOnDate = DateTime.Today.AddDays(-100),
@@ -344,10 +226,11 @@ namespace SiriusApplication.Models
                 },
                 new Image 
                 {
-                    AlbumId = 6,
+                    AlbumId = 2,
                     Title = "National Gallery",
                     Description = "This place is awe inspiring at night.",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\13_LondonNightShoot_12042014.jpg"),
+                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\13_LondonNightShoot_12042014_thumbnail.jpg"),
+                    ImageFileLarge = this.GetFileBytes("\\Content\\Images\\Photography\\13_LondonNightShoot_12042014_large.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Now,
                     ImageTakenOnDate = DateTime.Today.AddDays(-100),
@@ -360,10 +243,11 @@ namespace SiriusApplication.Models
                 },
                 new Image 
                 {
-                    AlbumId = 6,
+                    AlbumId = 2,
                     Title = "Wellington Arch",
                     Description = "Wellington Arch viewed from the Bomber Command memorial.",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\14_untitled_29032014.jpg"),
+                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\14_untitled_29032014_thumbnail.jpg"),
+                    ImageFileLarge = this.GetFileBytes("\\Content\\Images\\Photography\\14_untitled_29032014_large.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Now,
                     ImageTakenOnDate = DateTime.Today.AddDays(-100),
@@ -376,10 +260,11 @@ namespace SiriusApplication.Models
                 },
                 new Image 
                 {
-                    AlbumId = 6,
+                    AlbumId = 2,
                     Title = "Angel of Peace",
                     Description = "This beauty sits on top of Wellington Arch.",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\16_untitled_29032014.jpg"),
+                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\16_untitled_29032014_thumbnail.jpg"),
+                    ImageFileLarge = this.GetFileBytes("\\Content\\Images\\Photography\\16_untitled_29032014_large.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Now,
                     ImageTakenOnDate = DateTime.Today.AddDays(-100),
@@ -392,10 +277,11 @@ namespace SiriusApplication.Models
                 },
                 new Image 
                 {
-                    AlbumId = 6,
+                    AlbumId = 2,
                     Title = "London Skyline",
                     Description = "Taken from the Golden Jubilee Bridge.",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\32_untitled_29032014.jpg"),
+                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\32_untitled_29032014_thumbnail.jpg"),
+                    ImageFileLarge = this.GetFileBytes("\\Content\\Images\\Photography\\32_untitled_29032014_large.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Now,
                     ImageTakenOnDate = DateTime.Today.AddDays(-100),
@@ -408,10 +294,28 @@ namespace SiriusApplication.Models
                 },
                 new Image 
                 {
-                    AlbumId = 6,
+                    AlbumId = 2,
+                    Title = "London Eye",
+                    Description = "Taken from the Golden Jubilee Bridge.",
+                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\35_untitled_29032014_thumbnail.jpg"),
+                    ImageFileLarge = this.GetFileBytes("\\Content\\Images\\Photography\\35_untitled_29032014_large.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    UploadedDate = DateTime.Now,
+                    ImageTakenOnDate = DateTime.Today.AddDays(-100),
+                    Aperture = "f7.1",
+                    FocalLength = "18mm",
+                    IsoRating = "100",
+                    ShutterSpeed = "25.0 sec",
+                    Latitude = 51.505908,
+                    Longitude = -0.120137, 
+                },
+                new Image 
+                {
+                    AlbumId = 2,
                     Title = "Victoria Tower",
                     Description = "Often overshadowed by Elizabeth Tower.",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\36_LondonNightShoot_12042014.jpg"),
+                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\36_LondonNightShoot_12042014_thumbnail.jpg"),
+                    ImageFileLarge = this.GetFileBytes("\\Content\\Images\\Photography\\36_LondonNightShoot_12042014_large.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Now,
                     ImageTakenOnDate = DateTime.Today.AddDays(-100),
@@ -424,10 +328,11 @@ namespace SiriusApplication.Models
                 },
                 new Image 
                 {
-                    AlbumId = 6,
+                    AlbumId = 2,
                     Title = "St Pauls from the Millenium Bridge",
                     Description = "The most beautiful building in London (probably).",
-                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\45_untitled_29032014.jpg"),
+                    ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\45_untitled_29032014_thumbnail.jpg"),
+                    ImageFileLarge = this.GetFileBytes("\\Content\\Images\\Photography\\45_untitled_29032014_large.jpg"),
                     ImageMimeType = "image/jpeg",
                     UploadedDate = DateTime.Now,
                     ImageTakenOnDate = DateTime.Today.AddDays(-100),
