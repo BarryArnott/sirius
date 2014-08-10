@@ -2,7 +2,7 @@
 
 @media screen and (min-width: 768px) {
     .image-details-modal {
-        width: 80%;
+        width: 1000px;
         height: auto;
     }
 }
