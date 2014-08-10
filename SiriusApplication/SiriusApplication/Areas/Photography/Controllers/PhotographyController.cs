@@ -82,7 +82,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
         public ActionResult _AlbumImageShowcase(int id, int pageNumber)
         {
             //This should never be greater than 10 as the _GoogleMaps view can only display 10 Google Map api's
-            int numberOfImagesPerPage = 3;
+            int numberOfImagesPerPage = 5;
 
             Album album = _albumRepository.GetAlbumById(id);
             ViewBag.ImageShowcaseTitle = "All photos for the album: " + album.Title;

@@ -362,6 +362,8 @@
     <Content Include="Content\Images\Photography\01_LondonNightShoot_07122012-96_thumbnail.jpg" />
     <Content Include="Content\Images\Photography\02_untitled_29032014_large.jpg" />
     <Content Include="Content\Images\Photography\02_untitled_29032014_thumbnail.jpg" />
+    <Content Include="Content\Images\Photography\09_RedBull_14072013_large.jpg" />
+    <Content Include="Content\Images\Photography\09_RedBull_14072013_thumbnail.jpg" />
     <Content Include="Content\Images\Photography\110_RedBull_14072013_large.jpg" />
     <Content Include="Content\Images\Photography\110_RedBull_14072013_thumbnail.jpg" />
     <Content Include="Content\Images\Photography\118_RedBull_14072013_large.jpg" />
@@ -373,10 +375,11 @@
     <Content Include="Content\Images\Photography\13_LondonNightShoot_12042014_large.jpg" />
     <Content Include="Content\Images\Photography\13_LondonNightShoot_12042014_thumbnail.jpg" />
     <Content Include="Content\Images\Photography\14_untitled_29032014_large.jpg" />
+    <Content Include="Content\Images\Photography\14_untitled_29032014_thumbnail.jpg" />
     <Content Include="Content\Images\Photography\168_RedBull_14072013_large.jpg" />
     <Content Include="Content\Images\Photography\168_RedBull_14072013_thumbnail.jpg" />
     <Content Include="Content\Images\Photography\16_untitled_29032014_large.jpg" />
-    <Content Include="Content\Images\Photography\17_LondonNightShoot_12042014_thumbnail.jpg" />
+    <Content Include="Content\Images\Photography\16_untitled_29032014_thumbnail.jpg" />
     <Content Include="Content\Images\Photography\189_RedBull_14072013_large.jpg" />
     <Content Include="Content\Images\Photography\189_RedBull_14072013_thumbnail.jpg" />
     <Content Include="Content\Images\Photography\190_RedBull_14072013_large.jpg" />
