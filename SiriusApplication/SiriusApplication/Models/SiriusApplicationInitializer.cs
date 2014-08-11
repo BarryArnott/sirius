@@ -85,7 +85,7 @@ namespace SiriusApplication.Models
                                  },
                                  new Image 
                                  {
-                                     AlbumId = 2,
+                                     AlbumId = 3,
                                      Title = "The chef",
                                      Description = "Looking a bit glum after wiping out on the first jump",
                                      ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\110_RedBull_14072013_thumbnail.jpg"),
@@ -102,7 +102,7 @@ namespace SiriusApplication.Models
                                  },
                                  new Image 
                                  {
-                                     AlbumId = 2,
+                                     AlbumId = 3,
                                      Title = "Now then, now then",
                                      Description = "This guy was hilarious. Slapping a fine onto all the soap boxes which wiped out.",
                                      ImageFileThumbnail = this.GetFileBytes("\\Content\\Images\\Photography\\118_RedBull_14072013_thumbnail.jpg"),

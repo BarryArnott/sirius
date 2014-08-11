@@ -1,12 +1,10 @@
 ﻿$(document).ready(function () {
-    $('.btn-primary').click(function () {
-        var url = "/Photography/DisplayImageById";
-        var id = $(this).attr('data-id'); // determine image id
-        $.get(url + '/' + id, function (data) {
-            $('#imageDetailsContainer').html(data);
-            $('#imageDetailsModal').modal('show');
-        });
-    });
+
+    //resets the modal content in order to remove previous remote data
+    $('body').on('hidden.bs.modal', '.modal', function () {
+        $(this).removeData('bs.modal');
+        }
+    );
 
     $('.main-thumbnail').hover(
         function () {

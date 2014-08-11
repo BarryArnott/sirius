@@ -32,12 +32,11 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="thumbnail main-thumbnail">
-                        <div class="caption main-caption">
-                            <h4>@Html.DisplayFor(x => image.Title)</h4>
-                            <p>
-                                <button class="btn btn-primary" data-id="@image.ImageId">Larger image</button>
-                            </p>
-                        </div>
+                        <a data-toggle="modal" href="/Photography/DisplayImageById/@(image.ImageId)" data-target="#imageDetailsModal">
+                            <div class="caption main-caption">
+                                <p>@Html.DisplayFor(x => image.Title)</p>
+                            </div>
+                        </a>
                         <img class="img-responsive" alt="@image.Description" src="@this.Url.Action("DisplayThumbnailImageFileById", "Photography", new { id = image.ImageId })"/>
                     </div>
                 </div>
