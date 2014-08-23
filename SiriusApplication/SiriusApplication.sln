@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiriusApplication", "SiriusApplication\SiriusApplication.csproj", "{0EE1070D-0170-45A9-A767-19952F7A444E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiriusTests", "SiriusTests\SiriusTests.csproj", "{D36D390F-0137-4AD2-A23C-D3CA0D4337C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiriusTests.Unit", "SiriusTests\SiriusTests.Unit.csproj", "{D36D390F-0137-4AD2-A23C-D3CA0D4337C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

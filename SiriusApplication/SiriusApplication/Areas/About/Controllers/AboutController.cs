@@ -10,7 +10,7 @@ namespace SiriusApplication.Areas.About.Controllers
         [HandleError(View = "Error")]
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
     }
 }
