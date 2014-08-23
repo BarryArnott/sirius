@@ -37,6 +37,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
             ViewBag.AlbumShowcaseTitle = "Latest Albums";
 
             List<Album> albums;
+
             if (number == 0)
             {
                 // list all albums
@@ -56,6 +57,7 @@ namespace SiriusApplication.Areas.Photography.Controllers
             ViewBag.ImageShowcaseTitle = "Latest Photos";
 
             List<Image> images;
+
             if (number == 0)
             {
                 images = _imageRepository.GetAllImagesOrderedDescending();
