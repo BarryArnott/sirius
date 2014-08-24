@@ -59,6 +59,7 @@
     <Compile Include="Controllers\ContactControllerTests.cs" />
     <Compile Include="Controllers\CyclingControllerTests.cs" />
     <Compile Include="Controllers\TechnologyControllerTests.cs" />
+    <Compile Include="Models\MockImageRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoutingTests.cs" />
     <Compile Include="Controllers\HomeControllerTests.cs">
